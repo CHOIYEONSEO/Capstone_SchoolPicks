@@ -10,6 +10,7 @@ public class CapstoneSchoolpicksApplication {
 		SpringApplication.run(CapstoneSchoolpicksApplication.class, args);
 
 		System.out.println("Hello World!");
+		System.out.println("Hello World! 2222222");
 	}
 
 }
