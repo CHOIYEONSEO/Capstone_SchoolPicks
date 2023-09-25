@@ -1,0 +1,32 @@
+/* 메인 */
+.container{
+    padding-top: 80px;
+    display: grid;
+
+    grid-template-columns: 450px 450px;
+}
+
+.item:nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.item:nth-child(2){
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.nav{
+    height: 600px;
+    margin-left: 20px; /* 상자 바깥으로 왼쪽 여유주기 */
+    margin-right: 20px; /* 상자 바깥으로 오른쪽 여유주기 */
+    border-radius: 50px;
+    border: solid 4px rgb(116, 149, 198);
+    line-height: 600px;
+    padding-left: 10px; /* 상자 안 글자 왼쪽 여유주기 */
+}
+
+.nav:hover{
+    background-color: rgb(116, 149, 198);
+    border: none;
+}
