@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolPicks</title>
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <!--고정된 상단 바 : 로고, 프로필-->
+    <header>
+        <div class="top_menubar" id="top_logo_div">
+            <a href="">
+                <img src="images/logo.png" alt="schoolpicks logo" id="top_logo_img">
+                <span id="top_logo_text">SchoolPicks</span>
+            </a>
+        </div>
+        <div class="top_menubar" id="top_button_div">
+            <button>
+                <img src="images/account.png" alt="account" id="top_button_img">
+            </button>
+        </div>
+        <div id="dropdown_div">
+            <a href="">
+                <div class="dropdown_content" id="dropdown_profile">
+                    프로필
+                </div>
+            </a>
+            <a href="">
+                <div class="dropdown_content" id="dropdown_all">
+                    내가 쓴 게시글
+                </div>
+            </a>
+            <a href="">
+                <div class="dropdown_content" id="dropdown_signout">
+                    <form th:action="@{/logout}" method="post">
+                        <button type="submit">로그아웃</button>
+                    </form>
+
+                    로그아웃
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!--메인 : 맛집 찾기, 밥메이트 구하기 -->
+    <div class="container">
+        <a class="item" href="">
+            <div class="nav">
+                맛집 찾기
+            </div>
+        </a>
+        
+        <a class="item" href="">
+            <div class="nav">
+                밥메이트 구하기
+            </div>
+        </a>
+    </div>
+
+<h3>수정요구사항</h3>
+로그아웃은 form 형태로 둘러서 button 형식으로 만들어주셨으면 합니다
+
+</body>
+</html>

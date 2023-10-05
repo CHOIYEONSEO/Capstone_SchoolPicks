@@ -1,0 +1,5 @@
+body, div, span, section, header, aside, footer, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, p, b, em, button{
+    margin:0; 
+    padding:0;
+    font-family: sans-serif;
+}
