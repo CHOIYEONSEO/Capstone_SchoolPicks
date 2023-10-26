@@ -27,21 +27,21 @@ public class SignInController {
 
     private final SignInService signInService;
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     public String signInForm(@ModelAttribute("form") SignInForm signInForm,
                              @SessionAttribute(name = SIGN_IN_MEMBER, required = false) Member signInMember,
                              Model model) {
 
-        /**
+        *//**
          * 세션에 회원 데이터가 없으면 로그인 페이지
-         */
+         *//*
         if (signInMember == null) {
             return "sign_in";
         }
 
-        /**
+        *//**
          * 세션이 유지된다면 로그인이 되어있는 상태이므로 메인화면으로 이동
-         */
+         *//*
         model.addAttribute("member", signInMember);
         return "main";
     }
@@ -50,9 +50,9 @@ public class SignInController {
     public String signIn(@Valid @ModelAttribute("form") SignInForm signInForm, BindingResult bindingResult,
                          HttpServletRequest request) {
 
-        /**
+        *//**
          * loginService 에서 로그인 하는 로직. 틀리면 다시 이 주소로
-         */
+         *//*
         if (bindingResult.hasErrors()) {
             return "/sign_in";
         }
@@ -66,11 +66,11 @@ public class SignInController {
         }
 
 
-        /**
+        *//**
          * 로그인 성공처리
          * 세션 있으면 세션 반환, 없으면 신규 세션 생성
          * 세션에 로그인 회원 정보 보관
-         */
+         *//*
         HttpSession session = request.getSession();
         session.setAttribute(SIGN_IN_MEMBER, signInMember);
 
@@ -80,13 +80,13 @@ public class SignInController {
     @PostMapping("/logout")
     public String logout(HttpServletRequest request) {
 
-        /**
+        *//**
          * 로그아웃: 세션을 해제합니다
-         */
+         *//*
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate();
         }
         return "redirect:/";
-    }
+    }*/
 }
