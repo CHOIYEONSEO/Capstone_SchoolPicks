@@ -1,0 +1,14 @@
+#campus_HSSC{
+    background: rgba(43, 102, 83, 0.65);
+}
+
+#campus_NSC{
+    /*
+    position: fixed;
+    left: 303px;
+    */
+    position: absolute;
+    left: 70px;
+}
+
+

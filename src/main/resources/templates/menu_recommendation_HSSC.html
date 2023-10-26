@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu recommendation(인사캠)</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="css/cssreset.css">
+    <link rel="stylesheet" href="css/menu_recommendation.css">
+    <link rel="stylesheet" href="css/menu_recommendation_HSSC.css">
+    <link rel="stylesheet" href="css/multi_range_slider.css">
+</head>
+<body>
+    <header>
+        <span><img src="./images/SchoolPicks_logo.png" alt="SchoolPicks logo" id="schoolPicks_logo"></span>
+        <div class="campus_option">
+            <div class="campus" id="campus_HSSC">
+                <a href="./menu_recommendation_HSSC.html">인사캠</a>
+            </div>
+            <div class="campus" id="campus_NSC">
+                <a href="./menu_recommendation_NSC.html">자과캠</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="explain_div">
+        <span>성균관대학교</span> <span class="highlight">인문사회</span> <span>캠퍼스에서 <br>오늘 뭘 먹을지 고민된다면,</span>
+    </div>
+
+    <div class="container">
+        <div class="content1">
+            <div class="transparent_div" id="transparent_tag_filter">
+                <div class="filter" id="tag_filter">
+                    <span><img src="./images/filter.png" alt="filter" id="filter_img"></span>
+                    <button class="tag" id="tag_restaurant">음식점</button>
+                    <button class="tag" id="tag_cafe">카페</button>
+                    <button class="tag" id="tag_pub">술집</button>
+                </div>    
+            </div>
+            
+            <div class="transparent_div" id="transparent_value_filter">
+                <div class="filter" id="value_filter">
+                    <span><img src="./images/won.png" alt="won" id="won_img"></span>
+                    <div class="multi_range_slider">
+                        <input type="range" id="input_left" min="0" max="50000" value="7000" step="1000"/>
+                        <input type="range" id="input_right" min="0" max="50000" value="21000" step="1000"/>
+    
+                        <div class="slider">
+                            <div class="track"></div>
+                            <div class="range"></div>
+                            <div class="thumb left"></div>
+                            <div class="thumb right"></div>
+                        </div>
+                    </div>
+                    <div class="value_txt">
+                        <span class="min_value_text">0</span> <span>원부터</span> <span class="max_value_text">50000</span><span>원까지</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="content2">
+            <span id="click_txt">Click</span>
+            <img src="./images/click_arrow.png" alt="click" id="click_arrow_img">
+            <img src="./images/vending_machine.png" alt="vending machine" id="vending_machine_img">
+        </div>
+
+        <div class="content3">
+            <span class="menu_recommendation" id="recommendation_HSSC">소친친</span>
+        </div>
+
+        <div class="content4">
+            <a href="" class="goto_navermap">네이버 지도로 이동하기</a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/menu_recommendation.js"></script>
+    <script type="text/javascript" src="./js/multi_range_slider.js"></script>
+</body>
+</html>
