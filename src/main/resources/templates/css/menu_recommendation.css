@@ -147,6 +147,10 @@ header{
     top: 75.8%;
 }
 
+input[type="checkbox"]{
+    display: none;
+}
+
 /* value filter */
 #transparent_value_filter{
     width: 246px;
