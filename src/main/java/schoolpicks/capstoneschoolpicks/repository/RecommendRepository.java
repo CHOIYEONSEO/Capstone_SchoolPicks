@@ -1,8 +1,8 @@
 package schoolpicks.capstoneschoolpicks.repository;
 
-import schoolpicks.capstoneschoolpicks.entity.SchoolType;
-import schoolpicks.capstoneschoolpicks.entity.Shop;
-import schoolpicks.capstoneschoolpicks.entity.ShopType;
+import schoolpicks.capstoneschoolpicks.entity.Shop.SchoolType;
+import schoolpicks.capstoneschoolpicks.entity.Shop.Shop;
+import schoolpicks.capstoneschoolpicks.entity.Shop.ShopType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

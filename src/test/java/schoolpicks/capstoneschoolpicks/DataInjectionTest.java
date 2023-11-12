@@ -1,8 +1,8 @@
 package schoolpicks.capstoneschoolpicks;
 
-import schoolpicks.capstoneschoolpicks.entity.SchoolType;
-import schoolpicks.capstoneschoolpicks.entity.Shop;
-import schoolpicks.capstoneschoolpicks.entity.ShopType;
+import schoolpicks.capstoneschoolpicks.entity.Shop.SchoolType;
+import schoolpicks.capstoneschoolpicks.entity.Shop.Shop;
+import schoolpicks.capstoneschoolpicks.entity.Shop.ShopType;
 import schoolpicks.capstoneschoolpicks.repository.RecommendRepository;
 import schoolpicks.capstoneschoolpicks.repository.ShopRepository;
 import schoolpicks.capstoneschoolpicks.service.ShopRecommendService;

@@ -1,4 +1,4 @@
-package schoolpicks.capstoneschoolpicks.entity;
+package schoolpicks.capstoneschoolpicks.entity.Shop;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

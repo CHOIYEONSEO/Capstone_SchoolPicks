@@ -1,7 +1,7 @@
 package schoolpicks.capstoneschoolpicks.service;
 
 import schoolpicks.capstoneschoolpicks.dto.RecommendDto;
-import schoolpicks.capstoneschoolpicks.entity.Shop;
+import schoolpicks.capstoneschoolpicks.entity.Shop.Shop;
 import schoolpicks.capstoneschoolpicks.repository.RecommendRepository;
 import schoolpicks.capstoneschoolpicks.repository.ShopRepository;
 import lombok.RequiredArgsConstructor;
