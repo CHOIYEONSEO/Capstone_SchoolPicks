@@ -1,0 +1,120 @@
+.detail-child {
+  position: absolute;
+  height: 2.93%;
+  width: 21.12%;
+  top: 59.39%;
+  right: 66.67%;
+  bottom: 37.68%;
+  left: 12.21%;
+  background-color: var(--color-gainsboro-100);
+}
+.image-rectangle {
+  height: 30.52%;
+  top: 23.24%;
+  bottom: 46.24%;
+  left: calc(50% - 129.5px);
+  border-radius: 3px;
+  background-color: var(--color-gainsboro-200);
+  width: 260px;
+}
+.div33,
+.div34,
+.image-rectangle {
+  position: absolute;
+}
+.div34 {
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+}
+.div33 {
+  height: 1.88%;
+  width: 17.05%;
+  top: 59.86%;
+  right: 68.7%;
+  bottom: 38.26%;
+  left: 14.25%;
+  font-size: var(--font-size-smi);
+}
+.div35 {
+  top: 63.26%;
+  left: 14.25%;
+  color: var(--color-dimgray);
+}
+.div35,
+.div36,
+.div37 {
+  position: absolute;
+  letter-spacing: 0.03em;
+}
+.div36 {
+  top: 63.26%;
+  left: 29.52%;
+  color: var(--color-dimgray);
+}
+.div37 {
+  top: 66.78%;
+  left: 13.99%;
+  font-size: var(--font-size-4xs);
+}
+.cancel-1-1 {
+  position: absolute;
+  top: 157px;
+  left: 343px;
+  width: 12px;
+  height: 12px;
+  object-fit: cover;
+}
+.menu-1-15,
+.menu-nav-child2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.menu-nav-child2 {
+  border-radius: 0 var(--br-51xl) var(--br-51xl) 0;
+  background-color: var(--color-blanchedalmond-200);
+}
+.menu-1-15 {
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.menu-selected5 {
+  display: none;
+}
+.menu-selected5,
+.menu-unselected5 {
+  position: absolute;
+  height: 52.78%;
+  width: 59.38%;
+  top: 22.22%;
+  right: 28.13%;
+  bottom: 25%;
+  left: 12.5%;
+}
+.menu-nav4 {
+  position: absolute;
+  top: 667px;
+  left: 0;
+  width: 32px;
+  height: 36px;
+  cursor: pointer;
+}
+.detail {
+  position: relative;
+  background-color: var(--ios-key-background-highlight);
+  width: 100%;
+  height: 852px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-2xs);
+  color: var(--ios-key-label);
+  font-family: var(--font-inter);
+}
