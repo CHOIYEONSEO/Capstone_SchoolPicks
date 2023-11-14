@@ -21,7 +21,7 @@ if (nav3Container) {
 // go back to menu
 var menuNavContainer = document.getElementById("menuNavContainer");
 if (menuNavContainer) {
-    menuNavContainer.addEventListener("click", function (e) {
-        window.location.href = "./menu.html";
+menuNavContainer.addEventListener("click", function (e) {
+    window.location.href = "./menu.html";
 });
 }

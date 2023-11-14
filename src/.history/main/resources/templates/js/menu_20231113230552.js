@@ -15,13 +15,13 @@ if (nav2Container) {
 var nav3Container = document.getElementById("nav3Container");
 if (nav3Container) {
     nav3Container.addEventListener("click", function (e) {
-        window.location.href = "./reviewver2.html";
+        window.location.href = "./reviewver1.html";
     });
 }
 // go back to menu
 var menuNavContainer = document.getElementById("menuNavContainer");
 if (menuNavContainer) {
-    menuNavContainer.addEventListener("click", function (e) {
-        window.location.href = "./menu.html";
+menuNavContainer.addEventListener("click", function (e) {
+    window.location.href = "./menu.html";
 });
 }
