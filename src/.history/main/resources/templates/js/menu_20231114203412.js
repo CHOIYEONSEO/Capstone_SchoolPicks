@@ -18,7 +18,6 @@ if (nav3Container) {
         window.location.href = "./reviewver2.html";
     });
 }
-
 // go back to menu
 var menuNavContainer = document.getElementById("menuNavContainer");
 if (menuNavContainer) {

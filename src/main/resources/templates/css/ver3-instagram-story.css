@@ -1,0 +1,282 @@
+.instance-child {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 225px);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 7px solid var(--color-royalblue);
+  box-sizing: border-box;
+  width: 450px;
+}
+.group-7-1 {
+  position: absolute;
+  height: 112.14%;
+  width: 102.71%;
+  top: 0;
+  right: 0.17%;
+  bottom: -12.14%;
+  left: -2.88%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.header {
+  position: absolute;
+  height: 3.97%;
+  width: 12.77%;
+  top: 3.97%;
+  right: 81.39%;
+  bottom: 92.07%;
+  left: 5.84%;
+}
+.image-2-icon {
+  position: absolute;
+  top: 99px;
+  left: 347.9px;
+  width: 89.9px;
+  height: 625px;
+  object-fit: cover;
+}
+.instance-inner,
+.instance-item {
+  position: absolute;
+  height: 7.22%;
+  width: 2.81%;
+  top: -3.26%;
+  right: 81.6%;
+  bottom: 96.03%;
+  left: 15.58%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  display: none;
+}
+.instance-inner {
+  right: 15.58%;
+  left: 81.6%;
+}
+.div {
+  top: 14.73%;
+  left: 37.01%;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+}
+.div,
+.div1,
+.div2 {
+  position: absolute;
+  letter-spacing: 0.02em;
+}
+.div1 {
+  top: 20.25%;
+  left: 19.48%;
+  font-weight: 500;
+  color: var(--color-midnightblue-200);
+}
+.div2 {
+  top: 32.72%;
+  left: 22.73%;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+}
+.div3 {
+  top: 38.24%;
+  left: 24.24%;
+  font-weight: 500;
+  color: var(--color-midnightblue-200);
+}
+.div3,
+.div4,
+.div5 {
+  position: absolute;
+  letter-spacing: 0.02em;
+}
+.div4 {
+  top: 32.72%;
+  left: 57.14%;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+}
+.div5 {
+  top: 38.24%;
+  left: 60.82%;
+  font-weight: 500;
+  color: var(--color-midnightblue-200);
+}
+.div6 {
+  top: 47.31%;
+  left: 32.47%;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+}
+.div6,
+.div7,
+.div8 {
+  position: absolute;
+  letter-spacing: 0.02em;
+}
+.div7 {
+  top: 52.83%;
+  left: 45.45%;
+  font-weight: 500;
+  color: var(--color-midnightblue-200);
+}
+.div8 {
+  top: 74.5%;
+  left: 55.84%;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+  text-align: center;
+}
+.rectangle-div {
+  position: absolute;
+  height: 6.37%;
+  width: 25.97%;
+  top: 73.37%;
+  right: 46.54%;
+  bottom: 20.25%;
+  left: 27.49%;
+  border-radius: var(--br-12xs);
+  background-color: var(--color-white);
+  border: 3px solid var(--color-royalblue);
+  box-sizing: border-box;
+}
+.instance-child1,
+.line-div {
+  position: absolute;
+  height: 0.57%;
+  top: 69.97%;
+  bottom: 29.46%;
+  left: calc(50% - 202px);
+  border-top: 4px solid var(--color-royalblue);
+  box-sizing: border-box;
+  width: 404px;
+}
+.instance-child1 {
+  top: 26.77%;
+  bottom: 72.66%;
+}
+.b,
+.b1,
+.b2,
+.div10,
+.div9 {
+  position: absolute;
+  letter-spacing: 0.02em;
+}
+.div9 {
+  top: 74.5%;
+  left: 34.2%;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+  color: var(--color-dimgray);
+  text-align: center;
+  display: none;
+}
+.b,
+.b1,
+.b2,
+.div10 {
+  top: 83.29%;
+}
+.div10 {
+  left: 16.88%;
+  font-weight: 800;
+  color: var(--color-midnightblue-200);
+}
+.b,
+.b1,
+.b2 {
+  left: 34.85%;
+  display: none;
+  color: var(--color-dimgray);
+}
+.b1,
+.b2 {
+  left: 52.6%;
+}
+.b2 {
+  left: 70.35%;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 63.9px;
+  left: 32.3px;
+  width: 462px;
+  height: 706px;
+  transform: rotate(3.4deg);
+  transform-origin: 0 0;
+}
+.ver3-instagram-story-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 479px;
+  height: 852px;
+  opacity: 0.7;
+}
+.group-7-11,
+.image-2-icon1 {
+  position: absolute;
+  object-fit: cover;
+}
+.group-7-11 {
+  height: 116.79%;
+  width: 103.56%;
+  top: -17.14%;
+  right: -3.56%;
+  bottom: 0.36%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.image-2-icon1 {
+  top: 39.9px;
+  left: 394.9px;
+  width: 102.9px;
+  height: 625.2px;
+}
+.component-inner,
+.component-item {
+  position: absolute;
+  height: 7.35%;
+  width: 3.7%;
+  top: -4.22%;
+  right: 81.17%;
+  bottom: 96.87%;
+  left: 15.13%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.component-inner {
+  top: -7.72%;
+  right: 15.37%;
+  bottom: 100.37%;
+  left: 80.93%;
+}
+.rectangle-group {
+  position: absolute;
+  top: 97.8px;
+  left: calc(50% - 258.3px);
+  width: 462px;
+  height: 706px;
+  transform: rotate(-4.64deg);
+  transform-origin: 0 0;
+}
+.ver3-instagram-story {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 852px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-lgi);
+  color: var(--color-royalblue);
+  font-family: var(--font-suite);
+}

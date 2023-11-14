@@ -19,6 +19,14 @@ if (nav3Container) {
     });
 }
 
+// go to detal
+var menuNavContainer = document.getElementById("movedetail");
+if (menuNavContainer) {
+    menuNavContainer.addEventListener("click", function (e) {
+        window.location.href = "./detail.html";
+});
+}
+
 // go back to menu
 var menuNavContainer = document.getElementById("menuNavContainer");
 if (menuNavContainer) {
