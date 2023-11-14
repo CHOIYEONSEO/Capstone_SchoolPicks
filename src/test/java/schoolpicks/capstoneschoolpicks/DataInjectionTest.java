@@ -642,6 +642,126 @@ public class DataInjectionTest {
 
         shopRepository.save(shop51);
 
+        Shop shop52 = Shop.builder()
+                .name("백령도바지락칼국수")
+                .price(8000)
+                .description("저희 가족은 칼국수 먹을 땐 늘 먹는 가게.")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("새우만두 4000원\n콩국수 8000원")
+                .url("https://map.naver.com/p/entry/place/1914257701?lng=126.97039659999999&lat=37.297584&placePath=%2Fhome&entry=plt&c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop52);
+
+        Shop shop53 = Shop.builder()
+                .name("사우스스트릿")
+                .price(13000)
+                .description("수제버거 맛집! 슬로우푸드라 살안찌는 탄단지 완벽한 햄버거.")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("베이컨 치즈 버거+감자+음료 14000원\n필리 치즈 스테이크+감자+음료 16000원")
+                .url("https://map.naver.com/p/entry/place/37468093?c=17.64,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop53);
+
+        Shop shop54 = Shop.builder()
+                .name("닭강정스토리")
+                .price(20500)
+                .description("국내산 닭을 사용한 닭강정 맛집수원 성대역 인근에 닭강정스토리!!")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("김밥&닭강정 9500원\n야채김밥 4000원")
+                .url("https://map.naver.com/p/entry/place/1763004792?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop54);
+
+        Shop shop54 = Shop.builder()
+                .name("닭강정스토리")
+                .price(20500)
+                .description("국내산 닭을 사용한 닭강정 맛집수원 성대역 인근에 닭강정스토리!!")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("김밥&닭강정 9500원\n야채김밥 4000원")
+                .url("https://map.naver.com/p/entry/place/1763004792?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop54);
+
+        Shop shop55 = Shop.builder()
+                .name("나츠비")
+                .price(13000)
+                .description("일본 간 듯! 일본 선술집 분위기 완전요. 앉아서 옆 사람과 사케잔 기울이기 딱 좋아요~")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("히레카츠동 13000원\n가라아케동 13000원")
+                .url("https://map.naver.com/p/entry/place/1732759418?c=16.73,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop55);
+
+        Shop shop56 = Shop.builder()
+                .name("최가네")
+                .price(9500)
+                .description("요즘 밥 한끼 먹으려면 만원이 훌쩍 넘어가는데 9천 원대로 한상 가득 나오는곳!!")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("돼지불백 9500원\n수육 9500원")
+                .url("https://map.naver.com/p/entry/place/1309884404?c=17.45,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop56);
+
+        Shop shop57 = Shop.builder()
+                .name("텐푸라바사바사")
+                .price(14000)
+                .description("이제 막 오픈한 매장이고 일본 현지느낌으로 아기자기하고 엄청 깨끗함")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("토리텐동 14000원\n니쿠텐동 15000원")
+                .url("https://map.naver.com/p/entry/place/1309884404?c=17.45,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop57);
+
+        Shop shop58 = Shop.builder()
+                .name("최고집원조수구레")
+                .price(19000)
+                .description("수구레 생소했는데 지인 추천으로 왔다가 완전 반했어요.")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("수구레모듬구이 19000원\n원조수구레 21000원")
+                .url("https://map.naver.com/p/entry/place/1926560785?c=18.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop58);
+
+        Shop shop59 = Shop.builder()
+                .name("백채김치찌개 성균관대점")
+                .price(8500)
+                .description("양이 둘이 먹기에 많네요~^^고기양이 엄청많구요.")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("김치찌개 1인분 8500원\n1인묶음 12000원")
+                .url("https://map.naver.com/p/entry/place/1730294437?c=19.22,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop59);
+
+        Shop shop60 = Shop.builder()
+                .name("만다")
+                .price(8500)
+                .description("여기 아담하지만 음식 진짜 맛있습니다. 양도 많아요. 대학가 앞에있어서 그런지 정말 많이 주십니다.")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.NSC)
+                .menuDescription("돼지고기 가지덮밥 8500원\n간장제육덮밥 8500원")
+                .url("https://map.naver.com/p/entry/place/37994565?c=18.21,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop60);
+
         em.flush();
         em.clear();
 
@@ -890,6 +1010,125 @@ public class DataInjectionTest {
 
         shopRepository.save(shop20);
 
+        Shop shop21= Shop.builder()
+                .name("플렁드")
+                .price(3300)
+                .shopType(ShopType.CAFE)
+                .description("9종류의 빵&구움과자를 사왔는데요 먹자마자 음~음~ 소리가 절로나와요 진짜 맛있네요")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("바질스콘 4000원\n소금빵 3000원")
+                .url("https://map.naver.com/p/entry/place/1291319968?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop21);
+
+        Shop shop22= Shop.builder()
+                .name("비사이드 수원성대점")
+                .price(4300)
+                .shopType(ShopType.CAFE)
+                .description("분위기도 좋고, 커피도 넘 맛있어요. 주변에 맛집도 많아서 디저트&커피 먹기에 좋습니다아")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("플랫화이트 5000원\n아인슈페너 6000원")
+                .url("https://map.naver.com/p/entry/place/906691181?c=15.45,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop22);
+
+        Shop shop23= Shop.builder()
+                .name("사랑해베이글 수원천천점")
+                .price(5000)
+                .shopType(ShopType.CAFE)
+                .description("에그베이컨 베이글 맛있어요! 베스트메뉴 추천이요! 메뉴도 다양하고 다음에또방문해야겠어요!")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("에그베이컨 5800원\n오지치즈 감자 5500원")
+                .url("https://map.naver.com/p/entry/place/17967215?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop23);
+
+        Shop shop24= Shop.builder()
+                .name("카페코지 수원점")
+                .price(6000)
+                .shopType(ShopType.CAFE)
+                .description("간만의 여유 너무 좋으네요! 디카페인 커피 맛집이네요 지금 오전 할인 이벤트로 1000원 할인도해주세요~")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("코코넛 커피 스무디 6000원\n코코넛 딸기 스무디 6300원")
+                .url("https://map.naver.com/p/entry/place/1348602765?c=15.17,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop24);
+
+        Shop shop25= Shop.builder()
+                .name("카페동네 수원천천점")
+                .price(4200)
+                .shopType(ShopType.CAFE)
+                .description("분위기가 너무 좋아요!! 커피도 맛있구요! 혼자서 작업하거나 책읽을수 있는 공간도 있어서 혼자와도 좋을것 같습니다!")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("아메리카노 4200원\n카페라떼 4600원")
+                .url("https://map.naver.com/p/entry/place/1808111273?c=15.17,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop25);
+
+        Shop shop26= Shop.builder()
+                .name("카페동네 수원천천점")
+                .price(4200)
+                .shopType(ShopType.CAFE)
+                .description("분위기가 너무 좋아요!! 커피도 맛있구요! 혼자서 작업하거나 책읽을수 있는 공간도 있어서 혼자와도 좋을것 같습니다!")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("아메리카노 4200원\n카페라떼 4600원")
+                .url("https://map.naver.com/p/entry/place/1808111273?c=15.17,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop26);
+
+        Shop shop27= Shop.builder()
+                .name("카페일구오삼")
+                .price(5300)
+                .shopType(ShopType.CAFE)
+                .description("금요일 저녁에 깄는데 남자 알바생분 넘 친절하세용!! 커피 맛도 좋고 앞에 고양이들도 있구 애교 부려요ㅠㅡㅠ")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("밤밭슈페너 5300원\n흑임자 크림라떼 6000원")
+                .url("https://map.naver.com/p/entry/place/1330259484?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop27);
+
+        Shop shop28= Shop.builder()
+                .name("쿠키폴리스")
+                .price(2100)
+                .shopType(ShopType.CAFE)
+                .description("황치즈 맛집이었... 저는 기본맘모스 쿠키 먹고 실망했는데 황치즈꾸덕컵이랑 황치즈 맘모스가 너무너무 맛있어요")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("소금빵 2100원\n황치즈 꾸덕컵 4500원")
+                .url("https://map.naver.com/p/entry/place/1576120635?c=15.59,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop28);
+
+        Shop shop29= Shop.builder()
+                .name("르 디망슈")
+                .price(5500)
+                .shopType(ShopType.CAFE)
+                .description("왕송호수가서 레일바이크타고 구경한뒤 근처 카페 조용한곳으로 찾다가 와봤는데 완전 성공!!")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("디망슈라떼 6500원\n땅콩크림라떼 6500원")
+                .url("https://map.naver.com/p/entry/place/1453801075?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop29);
+
+        Shop shop30= Shop.builder()
+                .name("오디디")
+                .price(3000)
+                .shopType(ShopType.CAFE)
+                .description("옥라떼 찐옥수수맛. 샌드위치 이렇게 터지게 맹글어주시는 사장님 처 음 봤어요ㅎㅎㅎ와인 초급자인데 종류도 다양.")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("아메리카노 3000원\n카페라떼 4000원")
+                .url("https://map.naver.com/p/entry/place/1588649163?c=16.19,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop30);
 
         em.flush();
         em.clear();
@@ -1138,6 +1377,126 @@ public class DataInjectionTest {
                 .build();
 
         shopRepository.save(shop20);
+
+        Shop shop21 = Shop.builder()
+                .name("어반그레이")
+                .price(21000)
+                .shopType(ShopType.PUB)
+                .description("사장님은 친절하시고 가게 청결하고 조용하고 분위기는 좋아요")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("순살치킨과감자 21000원\n감바스 17000원")
+                .url("https://map.naver.com/p/entry/place/1009778657?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop21);
+
+        Shop shop22 = Shop.builder()
+                .name("쟌비어스")
+                .price(17000)
+                .shopType(ShopType.PUB)
+                .description("쫄뱅이가 새콤달콤, 전골도 칼칼하니 맛나고오 뎅전골에 들어있는 우동사리도 쵝오~")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("순살치킨과감자 21000원\n감바스 17000원")
+                .url("https://map.naver.com/p/entry/place/17967374?c=15.59,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop22);
+
+        Shop shop23 = Shop.builder()
+                .name("낭만가득한")
+                .price(18000)
+                .shopType(ShopType.PUB)
+                .description("지인 추천으로 알게 됐는데 4년동안 학교 다니면서 왜 이런 곳을 지금까지 몰랐을까 싶을 정도로 너무 마음에 든 술집입니다! ")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("오징어땅콩 18000원\n묵은지 해장 술밥 18000원")
+                .url("https://map.naver.com/p/entry/place/1385583026?c=16.78,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop23);
+
+        Shop shop24 = Shop.builder()
+                .name("백사")
+                .price(9900)
+                .shopType(ShopType.PUB)
+                .description("유린기 먹고싶어서 찾다가 가 본 곳이예요! 저희는 식사 목적으로 가서 맛있게 먹고 왔습니다!")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("매콤깐풍닭 9900원\n나가사끼나베 13900원")
+                .url("https://map.naver.com/p/entry/place/1151195743?c=17.84,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop24);
+
+        Shop shop25 = Shop.builder()
+                .name("율전동")
+                .price(14900)
+                .shopType(ShopType.PUB)
+                .description("안주들 가격도 엄청 저렴한데 안주가 모두 맛있어요. 기본찬으로 두부김치가 나오는데 이것도 안주로 최고에요.")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("바지락술찜 14900원\n해장파스타 15900원")
+                .url("https://map.naver.com/p/entry/place/1599415100?c=17.84,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop25);
+
+        Shop shop26 = Shop.builder()
+                .name("율전동")
+                .price(14900)
+                .shopType(ShopType.PUB)
+                .description("안주들 가격도 엄청 저렴한데 안주가 모두 맛있어요. 기본찬으로 두부김치가 나오는데 이것도 안주로 최고에요.")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("바지락술찜 14900원\n해장파스타 15900원")
+                .url("https://map.naver.com/p/entry/place/1599415100?c=17.84,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop26);
+
+        Shop shop27 = Shop.builder()
+                .name("뎅과꼬치로 수원본점")
+                .price(16000)
+                .shopType(ShopType.PUB)
+                .description("일단 너무 맛있습니다 장점으로는 1. 어묵도 맛있고 떡볶이도 너무 맛있습니다. 처음 주문할실때 뎅 떡 세트 추천합니다!!")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("수제꼬치 14000원\n모찌리도후 7000원")
+                .url("https://map.naver.com/p/entry/place/1207624714?c=17.84,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop27);
+
+        Shop shop28 = Shop.builder()
+                .name("1972재개발구역")
+                .price(14000)
+                .shopType(ShopType.PUB)
+                .description("닭강정 마싯어요~~사장님도 넘친절하시구 술이랑 안주가격도 저렴해서 담에 또 올거같아용")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("나가사끼짬뽕 14000원\n재개발고기한판 15500원")
+                .url("https://map.naver.com/p/entry/place/1462338176?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop28);
+
+        Shop shop29 = Shop.builder()
+                .name("밀주집")
+                .price(18900)
+                .shopType(ShopType.PUB)
+                .description("새로 오픈 가 봤는데 음식들이 너무너무 맛있어요!! 너무 맛있어서 술 오지게 먹고가네요,,! 알바생분도 너무 친절하시고")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("묵은지참치말이 8900원\n밀푀유나베 18900원")
+                .url("https://map.naver.com/p/entry/place/1641009802?c=16.61,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop29);
+
+        Shop shop30 = Shop.builder()
+                .name("소주방")
+                .price(13000)
+                .shopType(ShopType.PUB)
+                .description("너무날이 추워져서 뜨끈한 국물로 안주를 시켰어요 꼬치어묵 김치우동에 신라면 컵볶음밥 조합 추천!! 김치 우동 완죠니 맛도리")
+                .schoolType(SchoolType.NSC)
+                .menuDescription("한라토닉세트 13000원\n소고기육전 21000원")
+                .url("https://map.naver.com/p/entry/place/1735557777?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop30);
 
 
         em.flush();
@@ -1604,6 +1963,90 @@ public class DataInjectionTest {
 
         shopRepository.save(shop38);
 
+        Shop shop39 = Shop.builder()
+                .name("페르시안궁전")
+                .price(16000)
+                .description("가성비도 좋고, 맛있어보이는 메뉴가 워낙 많아서 다음에는 통닭카레 먹어보러고요~")
+                .menuDescription("데히치킨카레 14000원\n통닭카레정식 16500원")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.HSSC)
+                .url("https://map.naver.com/p/entry/place/11710271?c=14.95,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop39);
+
+        Shop shop40 = Shop.builder()
+                .name("코야코")
+                .price(7000)
+                .description("떡볶이 메뉴도 1인분씩 선택할수있고 사리도 원하는걸로 추가할 수 있고 생맥주도 판매하셔서 좋네요ㅎㅎ")
+                .menuDescription("치즈떡볶이 5000원\n크림떡볶이 7000원")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.HSSC)
+                .url("https://map.naver.com/p/entry/place/31202565?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop40);
+
+        Shop shop41 = Shop.builder()
+                .name("니로사레스토랑")
+                .price(12000)
+                .description("인도 현지분이 운영하시는 인도커리 맛집이에용~~ ~ 3인세트를 주문했는데 양이 어마어마하게 많아서 배터지는줄 알았어용!")
+                .menuDescription("치킨마크니 12000원\n팔락파니르 13000원")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.HSSC)
+                .url("https://map.naver.com/p/entry/place/21728194?c=15.59,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop41);
+
+        Shop shop42 = Shop.builder()
+                .name("핏제리아오 대학로 본점")
+                .price(20000)
+                .description("리코타치즈 샐러드와 알리오 올리오는 핏제리아오가 짱입니다.")
+                .menuDescription("마르게리따 20000원\n오핏자 20000원")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.HSSC)
+                .url("https://map.naver.com/p/entry/place/33646740?c=15.59,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop42);
+
+        Shop shop43 = Shop.builder()
+                .name("순대실록 대학로본점")
+                .price(9000)
+                .description("순대스테이크와 얼큰곱창순대국 주문 둘 다 누린내 안나고 깔끔합니다")
+                .menuDescription("얼큰곱창순댓국 10000원\n삼겹수육순댓국 13000원")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.HSSC)
+                .url("https://map.naver.com/p/entry/place/20148711?c=16.04,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop43);
+
+        Shop shop44 = Shop.builder()
+                .name("틴틴 대학로본점")
+                .price(9000)
+                .description("문했는데 인테리어랑 뷰가 너무 이뻤고 무엇보다 음식들이 하나하나 다 맛있었어요 직원분도 친절하시고 서비스도 좋았어여")
+                .menuDescription("토마토라구파스타 20000원\n쉬프림 리조또 20000원")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.HSSC)
+                .url("https://map.naver.com/p/entry/place/1083891202?c=16.04,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop44);
+
+        Shop shop45 = Shop.builder()
+                .name("촌놈")
+                .price(16000)
+                .description("배부르게 먹었어요! 고기도 고소함 폭발이구 여러조합으로 만들어 먹을 수 있게 밑반찬, 소스들도 많아서 맛있게 먹었습니다 !")
+                .menuDescription("등덧살심 16000원\n눈꽃 항정살 17000원")
+                .shopType(ShopType.RESTAURANT)
+                .schoolType(SchoolType.HSSC)
+                .url("https://map.naver.com/p/entry/place/11867483?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop45);
+
         em.flush();
         em.clear();
 
@@ -1864,6 +2307,113 @@ public class DataInjectionTest {
 
         shopRepository.save(shop21);
 
+        Shop shop22= Shop.builder()
+                .name("온혜화")
+                .price(3300)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("까눌레 가성비 짱... 날바날이긴 한데 평타 이상은 합니다! 말차소보루스콘 처음 사봤는데 맛있었어요")
+                .menuDescription("플레인스콘 3300원\n구움과자 3500원")
+                .url("https://map.naver.com/p/entry/place/1288024824?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop22);
+
+        Shop shop23 = Shop.builder()
+                .name("빌리엔젤 대학로점")
+                .price(2800)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("대학로 자주 나오는데 오늘 첨 봤네요.. 케익이랑 아 메리카노 맛있어요.. 케익 먹을땐 따뜻한 아메리카 노가 젤 잘 어울리는것 같아요")
+                .menuDescription("메론 마카롱 2800원\n돌체라떼 6200원")
+                .url("https://map.naver.com/p/entry/place/37553498?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop23);
+
+        Shop shop24 = Shop.builder()
+                .name("슬로스텝")
+                .price(7500)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("자몽 덕후들이 가면 너무 좋아할 자몽 들어간 메뉴가 다양하게 있는 대학로 대형 디저트 카페였습니다")
+                .menuDescription("꿀자몽 에이드 7500원\n꿀자몽 7800원")
+                .url("https://map.naver.com/p/entry/place/13560783?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop24);
+        
+        Shop shop25 = Shop.builder()
+                .name("슬로스텝")
+                .price(7500)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("자몽 덕후들이 가면 너무 좋아할 자몽 들어간 메뉴가 다양하게 있는 대학로 대형 디저트 카페였습니다")
+                .menuDescription("꿀자몽 에이드 7500원\n꿀자몽 7800원")
+                .url("https://map.naver.com/p/entry/place/13560783?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop25);
+
+        Shop shop26 = Shop.builder()
+                .name("아티스타")
+                .price(4500)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("또 겨울은 진짜 어느카페에서 못 먹어본 상큼한 맛이라서 계속 마시게 되더라구요!!")
+                .menuDescription("아메리카노 4500원\n모네의 여름 7500원")
+                .url("https://map.naver.com/p/entry/place/1060813303?c=16.48,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop26);
+
+        Shop shop27 = Shop.builder()
+                .name("오드투디저트")
+                .price(6400)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("딸기라떼 진짜 진하고 맛있고 그 다음에 가서 시킨 초코라떼도 너무 맛있었음!")
+                .menuDescription("피넛버터라떼 6400원\n아메리카노 5100원")
+                .url("https://map.naver.com/p/entry/place/1588106120?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop27);
+
+        Shop shop28 = Shop.builder()
+                .name("굽기")
+                .price(4000)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("대학로에서 관극 하고 디저트 사가기 좋은 귀여운 가게. 인생 처음 먹어본 티그레… 이런 아름다운 디 저트가 있었군요…")
+                .menuDescription("비프토마토스튜 14800원\n다크티그래 4000원")
+                .url("https://map.naver.com/p/entry/place/1412211100?c=16.29,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop28);
+
+        Shop shop29 = Shop.builder()
+                .name("치읓")
+                .price(5500)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("마롱푸딩은 엄청 진하고 묵직한 맛이라 조금 가볍고 산뜻한 느낌의 후르츠드림이랑 대박 잘어울리네요")
+                .menuDescription("드립커피 블랜드 5500원\n카페오레 6000원")
+                .url("https://map.naver.com/p/entry/place/1721848168?c=16.73,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop29);
+
+        Shop shop30 = Shop.builder()
+                .name("타르트앤")
+                .price(4000)
+                .shopType(ShopType.CAFE)
+                .schoolType(SchoolType.HSSC)
+                .description("음료도 디저트도 다 맛나고 사장님이 손님마다 특 성 파악하고 세심하게 챙겨주시고 친절하고 센스 있으세요")
+                .menuDescription("스페셜 티커피 4000원\n타르트(조각) 7000원")
+                .url("https://map.naver.com/p/entry/place/35873363?c=16.73,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop30);
 
         em.flush();
         em.clear();
@@ -2113,6 +2663,89 @@ public class DataInjectionTest {
 
         shopRepository.save(shop20);
 
+        Shop shop21 = Shop.builder()
+                .name("쪽당")
+                .price(17900)
+                .shopType(ShopType.PUB)
+                .schoolType(SchoolType.HSSC)
+                .description("가성비 좋고 직원분들도 친절한 포차")
+                .menuDescription("양념쪽갈비 17900원\n생쪽갈비 16900원")
+                .url("https://map.naver.com/p/entry/place/1851152625?c=16.14,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop21);
+
+        Shop shop22 = Shop.builder()
+                .name("두두")
+                .price(17900)
+                .shopType(ShopType.PUB)
+                .schoolType(SchoolType.HSSC)
+                .description("와~수육~미쳤더만요 수육전문점보다 더 맛있었어요 감자전과 디비져 복숭아막걸리")
+                .menuDescription("감자전 18000원\n해물파전 20000원")
+                .url("https://map.naver.com/p/entry/place/31592246?c=16.14,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop22);
+
+        Shop shop23 = Shop.builder()
+                .name("삼덕통닭")
+                .price(20000)
+                .shopType(ShopType.PUB)
+                .schoolType(SchoolType.HSSC)
+                .description("혜자로운 삼덕통닭에서 삼미통닭과 주먹밥 먹어봤어요. 우선 너무 푸짐해 서 깜짝 놀랐습니다")
+                .menuDescription("삼미통닭 한마리 20000원\n산더미 새우튀김 11000원")
+                .url("https://map.naver.com/p/entry/place/1312753888?c=16.14,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop23);
+
+        Shop shop24 = Shop.builder()
+                .name("심야식당")
+                .price(20000)
+                .shopType(ShopType.PUB)
+                .schoolType(SchoolType.HSSC)
+                .description("음식들이 진짜 너무너무 맛있어요! 얼그레이 하이볼도 이번에 새로나왔는데 이것도 너무 맛있네요")
+                .menuDescription("스팸김치찌개 20000원\n명품 오뎅탕 20000원")
+                .url("https://map.naver.com/p/entry/place/38300811?c=16.58,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop24);
+
+        Shop shop25 = Shop.builder()
+                .name("센꼬치")
+                .price(20000)
+                .shopType(ShopType.PUB)
+                .schoolType(SchoolType.HSSC)
+                .description("얼그레이 하이볼이 맛나는 곳인거같아요 하이볼 이랑 꼬치 다 맛있고 매운나가사끼짬뽕도 해물 알 차게 들어있어서 완전 좋아용")
+                .menuDescription("나가사끼짬뽕 20000원\n메로구이 19000원")
+                .url("https://map.naver.com/p/entry/place/38571707?c=16.58,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop25);
+
+        Shop shop26 = Shop.builder()
+                .name("하씨주가")
+                .price(18000)
+                .shopType(ShopType.PUB)
+                .schoolType(SchoolType.HSSC)
+                .description("대학로 술집 중국 여행온줄 알았던 특별한 안주 맛있는 술집")
+                .menuDescription("크리스피새우볶음 18000원\n옌수찌 18000원")
+                .url("https://map.naver.com/p/entry/place/1880363348?c=15.00,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop26);
+
+        Shop shop27 = Shop.builder()
+                .name("자미더홍")
+                .price(9900)
+                .shopType(ShopType.PUB)
+                .schoolType(SchoolType.HSSC)
+                .description("홍콩 메뉴와 무드가 풍만한 대학로 혜화 맛집")
+                .menuDescription("홍콩 골목식당 볶음밥 9900원\n홍골리안 비프 19000원")
+                .url("https://map.naver.com/p/entry/place/1834512918?c=17.10,0,0,0,dh")
+                .build();
+
+        shopRepository.save(shop27);
 
         em.flush();
         em.clear();
