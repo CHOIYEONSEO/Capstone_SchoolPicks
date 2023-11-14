@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class RecommendDto {
+public class RecommendForm {
 
-    private String ShopName;
-    private String ShopDescription;
-    private String ShopMenuDescription;
-
+    private String purposeRestaurant;
+    private String purposeCafe;
+    private String purposePub;
+    private int priceLow;
+    private int priceHigh;
 
 }

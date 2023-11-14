@@ -37,13 +37,14 @@
                     <div class="filter" id="tag_filter">
                         <span><img src="./images/filter.png" alt="filter" id="filter_img"></span>
 
-                        <input type="checkbox" th:value="음식점" th:field="*{purpose}"/>음식점
-                        <input type="checkbox" th:value="카페" th:field="*{purpose}"/>카페
-                        <input type="checkbox" th:value="술집" th:field="*{purpose}"/>술집
+                        <!--<input type="checkbox" th:value="음식점" th:field="*{purposeRestaurant}"/>음식점
+                        <input type="checkbox" th:value="카페" th:field="*{purposeCafe}"/>카페
+                        <input type="checkbox" th:value="술집" th:field="*{purposePub}"/>술집-->
 
-                        <button class="tag" id="tag_restaurant">음식점</button>
-                        <button class="tag" id="tag_cafe">카페</button>
-                        <button class="tag" id="tag_pub">술집</button>
+
+                        <input type="checkbox" id="restaurant_value" th:value="음식점" th:field="*{purposeRestaurant}"><label for="restaurant_value" class="tag" id="tag_restaurant">음식점</label>
+                        <input type="checkbox" id="cafe_value" th:value="카페" th:field="*{purposeCafe}"><label for="cafe_value" class="tag" id="tag_cafe">카페</label>
+                        <input type="checkbox" id="pub_value" th:value="술집" th:field="*{purposePub}"><label for="pub_value" class="tag" id="tag_pub">술집</label>
                     </div>
                 </div>
 

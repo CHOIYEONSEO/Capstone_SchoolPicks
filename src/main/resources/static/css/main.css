@@ -1,0 +1,55 @@
+/* 메인 */
+.container{
+    padding-top: 80px;
+    display: grid;
+
+    grid-template-columns: 450px 450px;
+}
+
+.item:nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.item:nth-child(2){
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.nav{
+    height: 600px;
+    margin-left: 20px; /* 상자 바깥으로 왼쪽 여유주기 */
+    margin-right: 20px; /* 상자 바깥으로 오른쪽 여유주기 */
+    border-radius: 50px;
+    border: solid 3px rgb(116, 149, 198);
+    line-height: 600px;
+    padding-left: 10px; /* 상자 안 글자 왼쪽 여유주기 */
+}
+
+.nav:hover{
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+#find_restaurant{
+    background-image: url(../images/find_restaurant.jpeg);
+    background-size: cover;
+    text-align: center;
+    line-height: 1158px;
+}
+
+.nav_div{
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.838);
+    font-size: 1.2rem;
+}
+
+#find_friend{
+    background-image: url(../images/find_friend.jpeg);
+    background-size: cover;
+    text-align: center;
+    line-height: 1158px;
+}

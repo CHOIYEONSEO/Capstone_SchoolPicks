@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.RecommendDto;
 import com.example.demo.entity.Shop;
 import com.example.demo.repository.RecommendRepository;
 import com.example.demo.repository.ShopRepository;
@@ -18,9 +19,9 @@ public class ShopRecommendService {
 
     // 일단 연서님이 만들어주신 내용이 가게 이름만 반환하면 되니까
     // 해당 내용에 맞춰서 작성을 했습니다.
-    public String recommend(String purpose, int priceMin, int priceMax){
+    public String recommend(String schoolTypes, List<String> shopTypes, int priceMin, int priceMax){
 
-        List<Shop> shops = recommendRepository.findSelectedShop(purpose, priceMin, priceMax);
+        List<Shop> shops = recommendRepository.findSelectedShop(schoolTypes, shopTypes, priceMin, priceMax);
         String answer; // 결과 값 리턴
 
         // 조건에 맞는 경우가 없으면?
@@ -35,6 +36,31 @@ public class ShopRecommendService {
         int idx = random.nextInt(shops.size());
         Shop shop = shops.get(idx);
         return shop.getName();
+    }
+
+    // 일단 연서님이 만들어주신 내용이 가게 이름만 반환하면 되니까
+    // 해당 내용에 맞춰서 작성을 했습니다.
+    public RecommendDto recommend_dto(String schoolTypes, List<String> shopTypes, int priceMin, int priceMax){
+
+        List<Shop> shops = recommendRepository.findSelectedShop(schoolTypes, shopTypes, priceMin, priceMax);
+        String answer; // 결과 값 리턴
+
+        // 조건에 맞는 경우가 없으면?
+        if(shops.isEmpty()){
+            return RecommendDto.builder()
+                    .ShopName("조건에 맞는 가게가 없습니다. 다시 골라주세요.")
+                    .build();
+        }
+        Random random = new Random();
+
+        int idx = random.nextInt(shops.size());
+        Shop shop = shops.get(idx);
+
+        return RecommendDto.builder()
+                .ShopName(shop.getName())
+                .ShopDescription(shop.getDescription())
+                .ShopMenuDescription(shop.getMenuDescription())
+                .build();
     }
 
 }

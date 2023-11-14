@@ -1,0 +1,87 @@
+/* Reference : https://codepen.io/MinzCode/pen/MWKgyqb */
+.multi_range_slider{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 57px;
+    width: 80%;
+    max-width: 500px;
+}
+  
+.slider {
+    position: relative;
+    z-index: 1;
+    height: 10px;
+}
+  
+.slider > .track {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: rgba(43,102,83,0.6);
+}
+
+.slider > .range {
+    position: absolute;
+    z-index: 2;
+    left: 25%;
+    right: 25%;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: rgb(7, 42, 96);
+}
+
+.slider > .thumb {
+    position: absolute;
+    z-index: 3;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(7, 43, 96);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(7, 43, 96,0.1);
+    transition: box-shadow .3s ease-in-out;
+}
+
+.slider > .thumb.left {
+    left: 25%;
+    transform: translate(-6px, -2.3px);
+}
+
+.slider > .thumb.right {
+    right: 25%;
+    transform: translate(6px, -2.3px);
+}
+
+.slider > .thumb.hover {
+    box-shadow: 0 0 0 10px rgba(7, 43, 96,.1);
+}
+
+.slider > .thumb.active {
+    box-shadow: 0 0 0 13px rgba(7, 43, 96,.2);
+}
+
+input[type="range"] {
+    position: absolute;
+    pointer-events: none;
+    -webkit-appearance: none;
+    z-index: 2;
+    height: 10px;
+    width: 100%;
+    opacity: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    border: 0 none;
+    background-color: red;
+    cursor: pointer;
+    -webkit-appearance: none;
+}

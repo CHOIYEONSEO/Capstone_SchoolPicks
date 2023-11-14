@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.RecommendDto;
+import com.example.demo.dto.RecommendForm;
 import com.example.demo.service.ShopRecommendService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,9 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import static com.example.demo.entity.ShopType.RESTAURANT;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.demo.entity.SchoolType.HSSC;
+import static com.example.demo.entity.SchoolType.NSC;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -21,21 +25,32 @@ public class MenuController {
     private final ShopRecommendService shopRecommendService;
 
     @GetMapping("/menu_recommendation_NSC")
-    public String findRestaurantNSC(@ModelAttribute("recommend") RecommendDto recommendDto) {
-        recommendDto.setPriceLow(7000);
-        recommendDto.setPriceHigh(18000);
+    public String findRestaurantNSC(@ModelAttribute("recommend") RecommendForm recommendForm) {
+        recommendForm.setPriceLow(7000);
+        recommendForm.setPriceHigh(18000);
         return "menu_recommendation_NSC";
     }
 
     @PostMapping("/menu_recommendation_NSC")
-    public String recommendNSC(@ModelAttribute("recommend") RecommendDto recommendDto, Model model) {
-        log.info("Purpose = " + recommendDto.getPurpose());
-        log.info("priceLow = " + recommendDto.getPriceLow());
-        log.info("priceHigh = " + recommendDto.getPriceHigh());
-        String purpose = recommendDto.getPurpose();
-        purpose = getPurposeType(purpose);
+    public String recommendNSC(@ModelAttribute("recommend") RecommendForm recommendForm, Model model) {
+        log.info("purposeRestaurant = " + recommendForm.getPurposeRestaurant());
+        log.info("purposeCafe = " + recommendForm.getPurposeCafe());
+        log.info("purposePub = " + recommendForm.getPurposePub());
+        log.info("priceLow = " + recommendForm.getPriceLow());
+        log.info("priceHigh = " + recommendForm.getPriceHigh());
 
-        String restaurant = shopRecommendService.recommend(purpose, recommendDto.getPriceLow(), recommendDto.getPriceHigh());
+        List<String> purposes = new ArrayList<>();
+        if (recommendForm.getPurposeRestaurant() != null) {
+            purposes.add(getPurposeType(recommendForm.getPurposeRestaurant()));
+        }
+        if (recommendForm.getPurposeCafe() != null) {
+            purposes.add(getPurposeType(recommendForm.getPurposeCafe()));
+        }
+        if (recommendForm.getPurposePub() != null) {
+            purposes.add(getPurposeType(recommendForm.getPurposePub()));
+        }
+
+        String restaurant = shopRecommendService.recommend("nsc", purposes, recommendForm.getPriceLow(), recommendForm.getPriceHigh());
         log.info("RESTAURANT = " + restaurant);
 
         model.addAttribute("restaurant", restaurant);
@@ -43,21 +58,33 @@ public class MenuController {
     }
 
     @GetMapping("/menu_recommendation_HSSC")
-    public String findRestaurantHSSC(@ModelAttribute("recommend") RecommendDto recommendDto) {
-        recommendDto.setPriceLow(7000);
-        recommendDto.setPriceHigh(18000);
+    public String findRestaurantHSSC(@ModelAttribute("recommend") RecommendForm recommendForm) {
+        recommendForm.setPriceLow(7000);
+        recommendForm.setPriceHigh(18000);
         return "menu_recommendation_HSSC";
     }
 
     @PostMapping("/menu_recommendation_HSSC")
-    public String recommendHSSC(@ModelAttribute("recommend") RecommendDto recommendDto, Model model) {
-        log.info("Purpose = " + recommendDto.getPurpose());
-        log.info("priceLow = " + recommendDto.getPriceLow());
-        log.info("priceHigh = " + recommendDto.getPriceHigh());
-        String purpose = recommendDto.getPurpose();
-        purpose = getPurposeType(purpose);
+    public String recommendHSSC(@ModelAttribute("recommend") RecommendForm recommendForm, Model model) {
+        log.info("purposeRestaurant = " + recommendForm.getPurposeRestaurant());
+        log.info("purposeCafe = " + recommendForm.getPurposeCafe());
+        log.info("purposePub = " + recommendForm.getPurposePub());
+        log.info("priceLow = " + recommendForm.getPriceLow());
+        log.info("priceHigh = " + recommendForm.getPriceHigh());
 
-        String restaurant = shopRecommendService.recommend(purpose, recommendDto.getPriceLow(), recommendDto.getPriceHigh());
+        List<String> purposes = new ArrayList<>();
+        if (recommendForm.getPurposeRestaurant() != null) {
+            purposes.add(getPurposeType(recommendForm.getPurposeRestaurant()));
+        }
+        if (recommendForm.getPurposeCafe() != null) {
+            purposes.add(getPurposeType(recommendForm.getPurposeCafe()));
+        }
+        if (recommendForm.getPurposePub() != null) {
+            purposes.add(getPurposeType(recommendForm.getPurposePub()));
+        }
+
+
+        String restaurant = shopRecommendService.recommend("hssc", purposes, recommendForm.getPriceLow(), recommendForm.getPriceHigh());
         log.info("RESTAURANT = " + restaurant);
 
         model.addAttribute("restaurant", restaurant);
