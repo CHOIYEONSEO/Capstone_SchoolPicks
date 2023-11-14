@@ -18,7 +18,6 @@ public class RecommendRepository {
 
     final EntityManager em;
 
-
     public List<Shop> findSelectedShop(String schoolTypes, List<String> shopTypes, int priceMin, int priceMax) {
 
         List<ShopType> shopType  = setShopType(shopTypes);// shopType 설정

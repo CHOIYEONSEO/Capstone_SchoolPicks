@@ -44,5 +44,6 @@ public class FindMateRoom {
     @OneToMany(mappedBy = "findMateRoom")
     private List<RoomUser> roomUsers = new ArrayList<>();
 
-
+    @OneToMany(mappedBy = "findMateRoom")
+    private List<RoomUserForGroup> roomUserForGroups = new ArrayList<>();
 }

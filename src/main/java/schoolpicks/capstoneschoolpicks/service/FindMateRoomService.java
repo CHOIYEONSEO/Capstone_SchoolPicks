@@ -2,15 +2,14 @@ package schoolpicks.capstoneschoolpicks.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import schoolpicks.capstoneschoolpicks.dto.FindMateRoomDto;
-import schoolpicks.capstoneschoolpicks.dto.FindMateRoomPageDto;
-import schoolpicks.capstoneschoolpicks.dto.GetRoomListDto;
+import schoolpicks.capstoneschoolpicks.dto.FindMate.FindMateRoomDto;
+import schoolpicks.capstoneschoolpicks.dto.FindMate.FindMateRoomPageDto;
+import schoolpicks.capstoneschoolpicks.dto.FindMate.GetRoomListDto;
 import schoolpicks.capstoneschoolpicks.entity.FindMate.FindMateRoom;
 import schoolpicks.capstoneschoolpicks.entity.FindMate.RoomUser;
 import schoolpicks.capstoneschoolpicks.repository.FindMateRoomRepository;
 import schoolpicks.capstoneschoolpicks.repository.RoomUserRepository;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package schoolpicks.capstoneschoolpicks.dto;
+package schoolpicks.capstoneschoolpicks.dto.Recommend;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
