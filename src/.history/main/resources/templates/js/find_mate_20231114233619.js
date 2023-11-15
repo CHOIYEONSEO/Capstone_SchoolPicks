@@ -9,11 +9,12 @@ if (groupContainer8) {
 var groupContainer8 = document.getElementById("insta1");
 if (groupContainer8) {
     groupContainer8.addEventListener("click", function (e) {
-        var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
-        navigator.clipboard.writeText(linkToCopy).then(function() {
-            alert('링크가 클립보드에 저장되었습니다.');
+        // 현재 페이지의 URL을 클립보드에 복사
+        var currentUrl = window.location.href;
+        navigator.clipboard.writeText(currentUrl).then(function() {
+            alert("주소가 복사되었습니다!");
         }).catch(function(err) {
-            console.error('클립보드 저장 실패: ', err);
+            console.error('클립보드 복사 실패: ', err);
         });
 
         window.location.href = "./ver1-instagram-story.html";
@@ -24,13 +25,6 @@ if (groupContainer8) {
 var groupContainer8 = document.getElementById("insta2");
 if (groupContainer8) {
     groupContainer8.addEventListener("click", function (e) {
-        var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
-        navigator.clipboard.writeText(linkToCopy).then(function() {
-            alert('링크가 클립보드에 저장되었습니다.');
-        }).catch(function(err) {
-            console.error('클립보드 저장 실패: ', err);
-        });
-
         window.location.href = "./ver2-instagram-story.html";
     });
 }
@@ -39,13 +33,6 @@ if (groupContainer8) {
 var groupContainer8 = document.getElementById("insta3");
 if (groupContainer8) {
     groupContainer8.addEventListener("click", function (e) {
-        var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
-        navigator.clipboard.writeText(linkToCopy).then(function() {
-            alert('링크가 클립보드에 저장되었습니다.');
-        }).catch(function(err) {
-            console.error('클립보드 저장 실패: ', err);
-        });
-
         window.location.href = "./ver3-instagram-story.html";
     });
 }
