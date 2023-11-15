@@ -94,20 +94,40 @@ public class FindMateRoomService {
         return findMateRoomPageDto;
     }
 
-    // 이름 출력하고 싶지 않을 때 사용
+    // 이름 출력하고 싶지 않을 때 작성자 이름만 가져옴.
     public FindMateRoomPageDto showFindMateRoomWithBlindMode(String roomId){
 
         FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
+
+        List<String> users = new ArrayList<>();
+        users.add(findMateRoom.getRoomUsers().get(0).getUserName());
 
         FindMateRoomPageDto findMateRoomPageDto = FindMateRoomPageDto.builder()
                 .localDateTime(findMateRoom.getPlanTime())
                 .headCount(findMateRoom.getHeadCount())
                 .roomWriter(findMateRoom.getRoomWriter())
                 .roomMessage(findMateRoom.getRoomMessage())
-                .users(null)
+                .users(users)
                 .build();
 
         return findMateRoomPageDto;
+    }
+
+    // 비공개 모드에서 이름 전체 조회, 비밀번호 틀렸으면 null로 보냅니다.
+    public List<String> getUserNameInBlindMode(String roomId, String password){
+
+        FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
+
+        if(findMateRoom.getRoomPassword().equals(password)){
+            List<String> users = new ArrayList<>();
+            for(RoomUser roomUser : findMateRoom.getRoomUsers()){
+                users.add(roomUser.getUserName());
+            }
+
+            return users;
+        }
+
+        return null;
     }
 
     // 방 조회
