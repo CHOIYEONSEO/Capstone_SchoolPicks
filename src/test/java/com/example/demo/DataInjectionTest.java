@@ -1,8 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.entity.SchoolType;
-import com.example.demo.entity.Shop;
-import com.example.demo.entity.ShopType;
+import com.example.demo.entity.Shop.SchoolType;
+import com.example.demo.entity.Shop.Shop;
+import com.example.demo.entity.Shop.ShopType;
 import com.example.demo.repository.RecommendRepository;
 import com.example.demo.repository.ShopRepository;
 import com.example.demo.service.ShopRecommendService;

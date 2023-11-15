@@ -317,3 +317,12 @@ input[type="checkbox"]{
     line-height: 13px;
     letter-spacing: 0.03em;
 }
+
+#goto_detail{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+}

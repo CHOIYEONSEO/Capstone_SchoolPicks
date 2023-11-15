@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.RecommendForm;
+import com.example.demo.dto.Recommend.RecommendForm;
 import com.example.demo.service.ShopRecommendService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.demo.entity.SchoolType.HSSC;
-import static com.example.demo.entity.SchoolType.NSC;
 
 
 @Controller

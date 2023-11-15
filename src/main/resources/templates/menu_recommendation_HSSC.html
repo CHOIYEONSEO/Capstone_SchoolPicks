@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/menu_recommendation.css">
     <link rel="stylesheet" href="css/menu_recommendation_HSSC.css">
     <link rel="stylesheet" href="css/multi_range_slider.css">
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/menu-recommendation.css" />
 </head>
 <body>
     <header>
@@ -34,23 +36,9 @@
                 <div class="transparent_div" id="transparent_tag_filter">
                     <div class="filter" id="tag_filter">
                         <span><img src="./images/filter.png" alt="filter" id="filter_img"></span>
-
-                        <!--<input type="checkbox" th:value="음식점" th:field="*{purposeRestaurant}"/>음식점
-                        <input type="checkbox" th:value="카페" th:field="*{purposeCafe}"/>카페
-                        <input type="checkbox" th:value="술집" th:field="*{purposePub}"/>술집-->
-
-
-<!--                        <button class="tag" id="tag_restaurant">음식점</button>-->
-<!--                        <button class="tag" id="tag_cafe">카페</button>-->
-<!--                        <button class="tag" id="tag_pub">술집</button>-->
-
                         <input type="checkbox" id="restaurant_value" th:value="음식점" th:field="*{purposeRestaurant}"><label for="restaurant_value" class="tag" id="tag_restaurant">음식점</label>
                         <input type="checkbox" id="cafe_value" th:value="카페" th:field="*{purposeCafe}"><label for="cafe_value" class="tag" id="tag_cafe">카페</label>
-                        <input type="checkbox" id="pub_value" th:value="술집" th:field="*{purposePub}"><label for="pub_value" class="tag" id="tag_pub">술집</label>
-
-
-
-                    </div>
+                        <input type="checkbox" id="pub_value" th:value="술집" th:field="*{purposePub}"><label for="pub_value" class="tag" id="tag_pub">술집</label>      </div>
                 </div>
 
                 <div class="transparent_div" id="transparent_value_filter">
@@ -87,11 +75,28 @@
         </div>
 
         <div class="content4">
+            <!--<a href="" class="goto_navermap">네이버 지도로 이동하기</a>-->
+            <span id="goto_detail">음식점 정보 보기</span>
             <a href="" class="goto_navermap" th:href="@{https://map.naver.com/p/search/{restaurant}(restaurant=${restaurant})}">네이버 지도로 이동하기</a>
+        </div>
+    </div>
+
+    <div class="menu-nav5" id="menuNavContainer">
+        <div class="menu-nav-child3"></div>
+        <div class="menu-selected6">
+            <img class="group-7-14" alt="" src="./public/menu-1-11@2x.png" />
+        </div>
+        <div class="menu-unselected6">
+            <img
+                class="group-7-14"
+                alt=""
+                src="./public/menu-1-285c4da1-11@2x.png"
+            />
         </div>
     </div>
 
     <script type="text/javascript" src="./js/menu_recommendation.js"></script>
     <script type="text/javascript" src="./js/multi_range_slider.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
 </body>
 </html>

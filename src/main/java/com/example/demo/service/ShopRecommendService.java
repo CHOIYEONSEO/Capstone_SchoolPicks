@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.RecommendDto;
-import com.example.demo.entity.Shop;
+import com.example.demo.dto.Recommend.RecommendDto;
+import com.example.demo.entity.Shop.Shop;
 import com.example.demo.repository.RecommendRepository;
 import com.example.demo.repository.ShopRepository;
 import lombok.RequiredArgsConstructor;
