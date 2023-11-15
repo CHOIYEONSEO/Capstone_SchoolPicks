@@ -23,5 +23,6 @@ vendingMachine.addEventListener("click", (e) => {
 })
 
 detailBtn.addEventListener("click", (e) => {
-    alert("음식점 세부 정보");
+    /*alert("음식점 세부 정보");*/
+    window.location.href = "./detail.html";
 })
