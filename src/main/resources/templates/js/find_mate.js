@@ -41,3 +41,50 @@ if (groupContainer8) {
         }
     });
 }
+
+function clickCheck(target) {
+    document.querySelectorAll(`input[type=checkbox]`)
+        .forEach(el => el.checked = false);
+
+    target.checked = true;
+}
+
+var ver1Select = document.getElementById("ver1_select");
+var ver2Select = document.getElementById("ver2_select");
+var ver3Select = document.getElementById("ver3_select");
+var ver4Select = document.getElementById("ver4_select");
+if (ver1Select) {
+    ver1Select.addEventListener("click", function (e) {
+        this.style.background = 'rgba(220, 232, 228, 0.4)';
+        ver2Select.style.background = 'none';
+        ver3Select.style.background = 'none';
+        ver4Select.style.background = 'none';
+    });
+}
+
+if (ver2Select) {
+    ver2Select.addEventListener("click", function (e) {
+        this.style.background = 'rgba(220, 232, 228, 0.4)';
+        ver1Select.style.background = 'none';
+        ver3Select.style.background = 'none';
+        ver4Select.style.background = 'none';
+    });
+}
+
+if (ver3Select) {
+    ver3Select.addEventListener("click", function (e) {
+        this.style.background = 'rgba(220, 232, 228, 0.4)';
+        ver1Select.style.background = 'none';
+        ver2Select.style.background = 'none';
+        ver4Select.style.background = 'none';
+    });
+}
+
+if (ver4Select) {
+    ver4Select.addEventListener("click", function (e) {
+        this.style.background = 'rgba(220, 232, 228, 0.4)';
+        ver1Select.style.background = 'none';
+        ver2Select.style.background = 'none';
+        ver3Select.style.background = 'none';
+    });
+}
