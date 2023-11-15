@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-sf-pro-text: "SF Pro Text";
+  --font-poor-story: "Poor Story";
+  --font-odin-rounded: "Odin Rounded";
+
+  /* font sizes */
+  --font-size-3xs: 10px;
+  --font-size-4xl: 23px;
+  --font-size-base: 16px;
+  --font-size-mid: 17px;
+  --font-size-5xs: 8px;
+  --font-size-6xs: 7px;
+  --font-size-lg: 18px;
+  --font-size-6xl: 25px;
+  --font-size-3xl: 22px;
+  --font-size-2xs: 11px;
+  --font-size-smi: 13px;
+  --font-size-4xs: 9px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+
+  /* Colors */
+  --ios-key-background-highlight: #fff;
+  --color-blanchedalmond-100: rgba(255, 233, 200, 0.4);
+  --color-blanchedalmond-200: rgba(255, 233, 200, 0.6);
+  --color-dimgray: #717171;
+  --ios-keyboard-background: rgba(197, 201, 208, 0.9);
+  --ios-key-label: #000;
+  --ios-accent: #0f77f0;
+  --ios-key-background-dim: #aeb3be;
+  --color-teal-100: #2b6653;
+  --color-teal-200: rgba(43, 102, 83, 0.65);
+  --color-teal-300: rgba(43, 102, 83, 0);
+  --color-teal-400: rgba(43, 102, 83, 0.4);
+  --color-gainsboro-100: #dce8e4;
+  --color-gainsboro-200: #dfdfdf;
+  --color-gainsboro-300: rgba(220, 232, 228, 0.4);
+  --color-lightsteelblue-100: #c9daf4;
+  --color-lightsteelblue-200: rgba(201, 218, 244, 0.4);
+
+  /* Border radiuses */
+  --br-51xl: 70px;
+  --br-8xs: 5px;
+  --br-5xs: 8px;
+  --br-mini: 15px;
+  --br-11xs: 2px;
+  --br-4xl: 23px;
+  --br-xl: 20px;
+  --br-6xs: 7px;
+  --br-lg: 18px;
+  --br-38xl: 57px;
+
+  /* Effects */
+  --ios-background-blur: blur(54px);
+}

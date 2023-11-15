@@ -118,6 +118,30 @@ header{
     line-height: 23px;
     letter-spacing: 0.03em;
 }
+/*
+input#restaurant_value + label{
+    background-color: #DFDFDF;
+}
+
+input#restaurant_value:checked + label{
+    background-color: rgba(252,180,221,0.8);
+}
+
+input#cafe_value + label{
+    background-color: #DFDFDF;
+}
+
+input#cafe_value:checked + label{
+    background-color: rgba(254,214,98,0.8);
+}
+
+input#pub_value + label{
+    background-color: #DFDFDF;
+}
+
+input#pub_value:checked + label{
+    background-color: rgba(164,231,231,0.8);
+}*/
 
 #tag_restaurant{
     /*
@@ -133,11 +157,23 @@ header{
     top: 32%;
 }
 
+#restaurant_value{
+    position: absolute;
+    left: 13%;
+    top: 36%;
+}
+
 #tag_cafe{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
     top: 54%;
+}
+
+#cafe_value{
+    position: absolute;
+    left: 13%;
+    top: 58%;
 }
 
 #tag_pub{
@@ -147,9 +183,18 @@ header{
     top: 75.8%;
 }
 
+#pub_value{
+    position: absolute;
+    left: 13%;
+    top: 79.8%;
+}
+
+
+/*
 input[type="checkbox"]{
     display: none;
 }
+*/
 
 /* value filter */
 #transparent_value_filter{
@@ -271,4 +316,13 @@ input[type="checkbox"]{
     font-size: 13px;
     line-height: 13px;
     letter-spacing: 0.03em;
+}
+
+#goto_detail{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 0.03em;
+    cursor: pointer;
 }
