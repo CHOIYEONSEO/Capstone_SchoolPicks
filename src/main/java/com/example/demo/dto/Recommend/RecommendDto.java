@@ -15,5 +15,4 @@ public class RecommendDto {
     private String ShopDescription;
     private String ShopMenuDescription;
 
-
 }

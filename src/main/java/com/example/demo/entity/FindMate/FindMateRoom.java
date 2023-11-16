@@ -44,6 +44,19 @@ public class FindMateRoom {
     @OneToMany(mappedBy = "findMateRoom")
     private List<RoomUser> roomUsers = new ArrayList<>();
 
-    @OneToMany(mappedBy = "findMateRoom")
-    private List<RoomUserForGroup> roomUserForGroups = new ArrayList<>();
+    @Override
+    public String toString() {
+        return "FindMateRoom{" +
+                "id=" + id +
+                ", roomId='" + roomId + '\'' +
+                ", roomTitle='" + roomTitle + '\'' +
+                ", shopName='" + shopName + '\'' +
+                ", planTime=" + planTime +
+                ", headCount=" + headCount +
+                ", roomWriter='" + roomWriter + '\'' +
+                ", roomMessage='" + roomMessage + '\'' +
+                ", isPrivate=" + isPrivate +
+                ", roomPassword='" + roomPassword + '\'' +
+                '}';
+    }
 }

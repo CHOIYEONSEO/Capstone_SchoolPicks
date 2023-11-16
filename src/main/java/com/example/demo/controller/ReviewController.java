@@ -19,11 +19,4 @@ public class ReviewController {
         return "reviewver2";
     }
 
-
-
-
-
-
-
-
 }

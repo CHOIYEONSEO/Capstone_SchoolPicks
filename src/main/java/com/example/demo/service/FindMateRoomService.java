@@ -17,8 +17,6 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class FindMateRoomService {
-
-
     private final FindMateRoomRepository findMateRoomRepository;
     private final RoomUserRepository roomUserRepository;
 
@@ -56,7 +54,6 @@ public class FindMateRoomService {
         return roomId;
     }
 
-    // 그냥 오류가 난다는 가정없이 코드를 짜겠습니다. 제대로 넘겨주면 오류가 나지 않는 부분이니까요.
     public void joinFindMateRoom(String userName, String roomId){
 
         FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
@@ -68,13 +65,13 @@ public class FindMateRoomService {
 
         try{
             roomUserRepository.save(roomUser);
+            System.out.println("유저 데이터 저장이 완료되었습니다.");
         } catch(Exception e){
             System.out.println("데이터 베이스 오류입니다.");
         }
 
     }
 
-    // 이름 출력하고 싶을 때 사용
     public FindMateRoomPageDto showFindMateRoom(String roomId){
 
         FindMateRoom findMateRoom = findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId);
@@ -90,6 +87,7 @@ public class FindMateRoomService {
                 .roomWriter(findMateRoom.getRoomWriter())
                 .roomMessage(findMateRoom.getRoomMessage())
                 .users(users)
+                .roomId(roomId)
                 .build();
 
         return findMateRoomPageDto;
@@ -143,9 +141,19 @@ public class FindMateRoomService {
             getRoomListDtos.add(GetRoomListDto.builder()
                     .roomTitle(findMateRoom.getRoomTitle())
                     .roomWriter(findMateRoom.getRoomWriter())
+                    .roomId(findMateRoom.getRoomId())
+                    .planTime(findMateRoom.getPlanTime())
                     .build());
         }
 
         return getRoomListDtos;
+
     }
+
+    // 전체 방 조회
+    public List<FindMateRoom> findAllFindMateRoom(){
+        return findMateRoomRepository.findAll();
+    }
+
+
 }

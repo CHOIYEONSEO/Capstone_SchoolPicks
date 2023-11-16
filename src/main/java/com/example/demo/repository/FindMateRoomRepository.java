@@ -14,9 +14,6 @@ public interface FindMateRoomRepository extends JpaRepository<FindMateRoom, Long
     @Query("SELECT f FROM FindMateRoom f JOIN FETCH f.roomUsers WHERE f.roomId = :roomId")
     FindMateRoom findFindMateRoomWithRoomUsers(@Param("roomId") String roomId);
 
-    @Query("SELECT f FROM FindMateRoom f JOIN FETCH f.roomUserForGroups WHERE f.roomId = :roomId")
-    FindMateRoom findFindMateRoomWithRoomUserForGroup(@Param("roomId") String roomId);
-
     FindMateRoom findByRoomId(String roomId);
 
     List<FindMateRoom> findByRoomWriterAndRoomPassword(String roomWriter, String roomPassword);
