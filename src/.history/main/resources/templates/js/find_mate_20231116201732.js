@@ -22,7 +22,7 @@ if (groupContainer9) {
 var groupContainer10 = document.getElementById("insta1");
 if (groupContainer10) {
     groupContainer10.addEventListener("click", function (e) {
-        window.location.href = "./ver1-instagram-story.html";
+        window.location.href = "/ver1-instagram-story.html";
     });
 }
 

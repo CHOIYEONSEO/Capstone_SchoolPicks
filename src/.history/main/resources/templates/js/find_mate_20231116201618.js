@@ -6,7 +6,7 @@ if (groupContainer8) {
 }
 
 //button for clipboard href -> need to make button for clip board
-var groupContainer9 = document.getElementById("clipbutton");
+var groupContainer9 = document.getElementById("insta1");
 if (groupContainer9) {
     groupContainer9.addEventListener("click", function (e) {
         var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
@@ -19,7 +19,7 @@ if (groupContainer9) {
 }
 
 //temp for sharing: find-mate-ver1
-var groupContainer10 = document.getElementById("insta1");
+var groupContainer10 = document.getElementById("clipbutton");
 if (groupContainer10) {
     groupContainer10.addEventListener("click", function (e) {
         window.location.href = "./ver1-instagram-story.html";
