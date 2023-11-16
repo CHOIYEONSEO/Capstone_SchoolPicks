@@ -27,12 +27,12 @@ public class FindMateController {
     private String roomId;
     private boolean isPrivate = true;
 
-    @GetMapping("/find-mate-")
+    @GetMapping("/mate")
     public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm) {
         return "find-mate-";
     }
 
-    @PostMapping("/find-mate-")
+    @PostMapping("/mate")
     public String postFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model) {
 
         //로그 찍기
@@ -55,17 +55,28 @@ public class FindMateController {
 
         roomId = findMateRoomService.createFindMateRoom(findMateRoomDto);
 
+        //테스트용 유저 추가
+        findMateRoomService.joinFindMateRoom("유저2", roomId);
+        findMateRoomService.joinFindMateRoom("유저3", roomId);
+        findMateRoomService.joinFindMateRoom("유저4", roomId);
+        findMateRoomService.joinFindMateRoom("유저5", roomId);
+
 
         log.info("Before roomId = " + roomId);
         log.info("Before isPrivacy = " + isPrivate);
 
 
-        return "/find-mate-ver1";
+        return "find-mate-check";
+    }
+
+    @GetMapping("/mate/check")
+    public String checkFindMateRoom() {
+        return "find-mate-check";
     }
 
 
 
-    @GetMapping("/find-mate-ver1")
+    @GetMapping("/mate/room")
     public String showFindMateRoom(@ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         log.info("=== @GetMapping showFindMateRoom 접근 ===");
@@ -110,10 +121,45 @@ public class FindMateController {
         findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
 
-
-
-
         return "find-mate-ver1";
+    }
+
+    @GetMapping("/mate/instagram")
+    public String shareInstagram(@ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm) {
+
+        FindMateRoomPageDto findMateRoomPageDto;
+        if (isPrivate) {
+            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
+        } else {
+            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
+        }
+
+        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
+        String[] localDateTimeSplit = localDateTime.split("-");
+        String year = localDateTimeSplit[0];
+        String month = localDateTimeSplit[1];
+        String date = localDateTimeSplit[2];
+        String day = "(" + localDateTimeSplit[3] + ")";
+        int hour = Integer.parseInt(localDateTimeSplit[4]);
+        String minute = localDateTimeSplit[5];
+        String time;
+        if (hour >= 12) {
+            time = "오후 " + (hour - 12) + ":" + minute;
+        } else {
+            time = "오전 " + hour + ":" + minute;
+        }
+
+        findMateRoomPageForm.setYear(year);
+        findMateRoomPageForm.setMonth(month);
+        findMateRoomPageForm.setDate(date);
+        findMateRoomPageForm.setDay(day);
+        findMateRoomPageForm.setTime(time);
+        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
+        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
+        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
+        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
+
+        return "ver1-instagram-story";
     }
 
 

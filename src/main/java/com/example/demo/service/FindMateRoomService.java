@@ -98,7 +98,8 @@ public class FindMateRoomService {
     // 이름 출력하고 싶지 않을 때 작성자 이름만 가져옴.
     public FindMateRoomPageDto showFindMateRoomWithBlindMode(String roomId){
 
-        FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
+//        FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
+        FindMateRoom findMateRoom = findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId);
 
         List<String> users = new ArrayList<>();
         users.add(findMateRoom.getRoomUsers().get(0).getUserName());
