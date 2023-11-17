@@ -20,13 +20,6 @@
   height: 852px;
   opacity: 0.7;
 }
-.component-child12,
-.component-child13 {
-  position: absolute;
-  border-radius: var(--br-11xs);
-  background-color: var(--color-white);
-  box-sizing: border-box;
-}
 .component-child12 {
   height: 98.85%;
   width: 99.59%;
@@ -37,6 +30,10 @@
   border-top: 2.5px solid var(--color-black);
   border-right: 2.5px solid var(--color-black);
   border-left: 2.5px solid var(--color-black);
+  position: absolute;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  box-sizing: border-box;
 }
 .component-child13 {
   height: 94.65%;
@@ -46,8 +43,12 @@
   bottom: 3.25%;
   left: 3.23%;
   border: 2.5px solid var(--color-black);
+  position: absolute;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  box-sizing: border-box;
 }
-.div92 {
+.restaurant_name {
   position: absolute;
   top: 28.28%;
   left: 11.32%;
@@ -70,7 +71,7 @@
 .span1 {
   font-size: var(--font-size-base);
 }
-.div93 {
+.date {
   position: absolute;
   top: 35.7%;
   left: 12.39%;
@@ -86,20 +87,20 @@
   border-top: 2px solid var(--color-dimgray);
   box-sizing: border-box;
 }
-.div94,
-.div95,
-.parent1 {
+.div94{
   position: absolute;
   top: 17.24%;
   left: 0;
 }
-.div95,
-.parent1 {
+.reservater_number{
+  position: absolute;
   top: 0;
   left: 69.72%;
   font-size: var(--font-size-4xl);
+
 }
 .parent1 {
+  position: absolute;
   height: 4.06%;
   width: 23.5%;
   top: 41.58%;
@@ -119,20 +120,19 @@
   border-top: 2px solid var(--color-dimgray);
   box-sizing: border-box;
 }
-.div96,
-.div97,
-.parent2 {
+.div96{
   position: absolute;
   top: 20.69%;
   left: 0;
 }
-.div97,
-.parent2 {
+.reservater_name {
+  position: absolute;
   top: 0;
   left: 61.38%;
   font-size: var(--font-size-4xl);
 }
 .parent2 {
+  position: absolute;
   height: 4.06%;
   width: 31.26%;
   top: 47.47%;
@@ -175,7 +175,7 @@
   left: 18.8%;
   font-size: var(--font-size-base);
 }
-.component-child19 {
+.reservater_guest {
   position: absolute;
   height: 5.18%;
   width: 28.45%;
@@ -187,34 +187,31 @@
   border: 2px solid var(--color-black);
   box-sizing: border-box;
 }
-.div100 {
+.guest_name {
   position: absolute;
   top: 80.65%;
   left: 24.29%;
 }
-.div101,
-.div102 {
-  top: 80.65%;
-  display: none;
-}
 .div101 {
   position: absolute;
   left: 43.59%;
+  top: 80.65%;
+  display: none;
 }
 .div102 {
   left: 62.99%;
-}
-.div102,
-.div103,
-.div104 {
+  top: 80.65%;
+  display: none;
   position: absolute;
 }
 .div103 {
+  position: absolute;
   top: 86.11%;
   left: 24.4%;
   display: none;
 }
-.div104 {
+.reservater_button {
+  position: absolute;
   top: 74.21%;
   left: 68.59%;
   font-size: var(--font-size-base);
@@ -241,8 +238,7 @@
   bottom: 92.16%;
   left: 6.04%;
 }
-.component-child20,
-.component-child21 {
+.component-child20 {
   position: absolute;
   height: 10.95%;
   width: 33.39%;
@@ -255,12 +251,16 @@
   max-height: 100%;
 }
 .component-child21 {
+  position: absolute;
   height: 7.24%;
   width: 98.88%;
   top: 92.37%;
   right: -11.34%;
   bottom: 0.39%;
   left: 12.46%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
 }
 .rectangle-parent19 {
   position: absolute;

@@ -1,5 +1,4 @@
-.instance-child2,
-.instance-child3 {
+.instance-child2 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -11,6 +10,7 @@
   background-color: var(--color-lightpink);
 }
 .instance-child3 {
+  position: absolute;
   height: 95.75%;
   width: 93.51%;
   top: 2.12%;
@@ -19,6 +19,8 @@
   left: 3.25%;
   border: 2.5px solid var(--color-midnightblue-100);
   box-sizing: border-box;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-lightpink);
 }
 .group-7-13 {
   position: absolute;
@@ -33,7 +35,6 @@
   max-height: 100%;
   object-fit: cover;
 }
-.group-icon,
 .header3 {
   position: absolute;
   height: 3.97%;
@@ -44,6 +45,7 @@
   left: 6.06%;
 }
 .group-icon {
+  position: absolute;
   height: 7.25%;
   width: 15.15%;
   top: 14.36%;
@@ -54,15 +56,15 @@
   overflow: hidden;
   max-height: 100%;
 }
-.b9,
-.div34 {
+.restaurant_name {
   position: absolute;
   top: 23.23%;
   left: 36.15%;
   font-size: var(--font-size-4xl);
   letter-spacing: 0.13em;
 }
-.div34 {
+.date {
+  position: absolute;
   top: 28.05%;
   left: 24.24%;
   font-size: var(--font-size-sm);
@@ -99,63 +101,69 @@
   font-size: var(--font-size-smi);
   color: var(--color-lightpink);
 }
-.div36,
-.div37,
-.div38,
-.div39,
-.div40,
-.div41,
-.div42,
-.div43 {
+.num2 {
   position: absolute;
   top: 0;
   left: 0;
   letter-spacing: 0.13em;
   font-weight: 500;
 }
-.div37,
-.div38,
-.div39,
-.div40,
-.div41,
-.div42,
-.div43 {
+.num3 {
+  position: absolute;
+  top: 0;
+  left: 13.54%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
   left: 13.54%;
 }
-.div38,
-.div39,
-.div40,
-.div41,
-.div42,
-.div43 {
+.num4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
   left: 27.43%;
 }
-.div39,
-.div40,
-.div41,
-.div42,
-.div43 {
+.num5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
   left: 41.32%;
 }
-.div40,
-.div41,
-.div42,
-.div43 {
+.num6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
   left: 54.86%;
 }
-.div41,
-.div42,
-.div43 {
+.num7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
   left: 68.75%;
 }
-.div42,
-.div43 {
+.num8{
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
   left: 82.29%;
 }
-.div43 {
+.num9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
   left: 96.18%;
 }
-.circle-1-icon,
 .parent {
   position: absolute;
   height: 2.69%;
@@ -166,19 +174,19 @@
   left: 18.61%;
 }
 .circle-1-icon {
+  position: absolute;
   height: 5.54%;
   width: 8.46%;
   top: 40.58%;
   right: 62.73%;
   bottom: 53.88%;
-  left: 28.81%;
+  left: 33.81%;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
 }
-.div44,
-.div45 {
+.reservater_name {
   position: absolute;
   top: 51.98%;
   left: 44.81%;
@@ -186,10 +194,12 @@
   font-weight: 600;
 }
 .div45 {
+  position: absolute;
   width: 19.84%;
   top: 28.57%;
   left: 40.21%;
   font-weight: 500;
+  letter-spacing: 0.13em;
   display: inline-block;
 }
 .rectangle-parent4 {
@@ -212,8 +222,7 @@
   font-weight: 500;
   display: inline-block;
 }
-.rectangle-parent5,
-.rectangle-parent6 {
+.rectangle-parent5 {
   position: absolute;
   height: 4.96%;
   width: 92.64%;
@@ -225,11 +234,17 @@
   color: var(--color-lightpink);
 }
 .rectangle-parent6 {
+  position: absolute;
+  height: 4.96%;
+  width: 92.64%;
+  right: 3.68%;
+  left: 3.68%;
+  font-size: var(--font-size-smi);
+  color: var(--color-lightpink);
   top: 72.95%;
   bottom: 22.1%;
 }
-.div48,
-.div49 {
+.reservater_guest {
   position: absolute;
   top: 83.99%;
   left: 22.08%;
@@ -237,8 +252,10 @@
   font-weight: 600;
 }
 .div49 {
+  position: absolute;
   top: 79.18%;
   left: 85.06%;
+  letter-spacing: 0.13em;
   font-size: var(--font-size-smi);
   font-weight: 500;
 }
@@ -250,14 +267,12 @@
   bottom: 17%;
   left: 3.46%;
   border-top: 2px solid var(--color-midnightblue-100);
-}
-.instance-child4,
-.instance-child5,
-.instance-child6 {
   position: absolute;
   box-sizing: border-box;
 }
 .instance-child5 {
+  position: absolute;
+  box-sizing: border-box;
   height: 5.38%;
   width: 0.43%;
   top: 77.62%;
@@ -267,6 +282,8 @@
   border-right: 2px solid var(--color-midnightblue-100);
 }
 .instance-child6 {
+  position: absolute;
+  box-sizing: border-box;
   height: 0.28%;
   width: 93.07%;
   top: 87.68%;
@@ -276,8 +293,7 @@
   border-top: 2px solid var(--color-midnightblue-100);
   display: none;
 }
-.div50,
-.div51 {
+.div50 {
   position: absolute;
   top: 83.99%;
   left: 44.59%;
@@ -287,9 +303,18 @@
   display: none;
 }
 .div51 {
+  position: absolute;
+  top: 83.99%;
   left: 67.1%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  color: var(--color-black);
+  display: none;
+
 }
 .instance-child7 {
+  position: absolute;
+  display: none;
   height: 0.28%;
   width: 93.07%;
   top: 92.63%;
@@ -299,13 +324,9 @@
   border-top: 2px solid var(--color-midnightblue-100);
   box-sizing: border-box;
 }
-.div52,
-.instance-child7,
-.instance-child8 {
+.div52 {
   position: absolute;
   display: none;
-}
-.div52 {
   top: 88.95%;
   left: 22.08%;
   letter-spacing: 0.13em;
@@ -313,6 +334,8 @@
   color: var(--color-black);
 }
 .instance-child8 {
+  position: absolute;
+  display: none;
   height: 0.28%;
   width: 93.07%;
   top: 97.59%;
@@ -340,14 +363,6 @@
   height: 852px;
   opacity: 0.7;
 }
-.circle-1-icon1,
-.component-child6,
-.group-7-14 {
-  position: absolute;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-}
 .group-7-14 {
   height: 116.79%;
   width: 103.56%;
@@ -356,9 +371,16 @@
   bottom: 0.36%;
   left: 0;
   object-fit: cover;
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
 }
-.circle-1-icon1,
 .component-child6 {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
   height: 7.44%;
   width: 15.32%;
   top: 9.69%;
@@ -374,6 +396,10 @@
   bottom: 59.27%;
   left: 31.66%;
   object-fit: cover;
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
 }
 .rectangle-parent7 {
   position: absolute;
