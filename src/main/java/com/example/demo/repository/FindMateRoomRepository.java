@@ -16,5 +16,9 @@ public interface FindMateRoomRepository extends JpaRepository<FindMateRoom, Long
 
     FindMateRoom findByRoomId(String roomId);
 
+    FindMateRoom deleteByRoomId(String roomId);
+
+    List<FindMateRoom> findByRoomWriterContainingOrRoomTitleContaining(String partialRoomWriter, String roomTitlePrefix);
+
     List<FindMateRoom> findByRoomWriterAndRoomPassword(String roomWriter, String roomPassword);
 }

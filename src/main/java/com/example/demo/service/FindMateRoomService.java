@@ -81,6 +81,7 @@ public class FindMateRoomService {
             users.add(roomUser.getUserName());
         }
 
+        // password, shopName추가
         FindMateRoomPageDto findMateRoomPageDto = FindMateRoomPageDto.builder()
                 .localDateTime(findMateRoom.getPlanTime())
                 .headCount(findMateRoom.getHeadCount())
@@ -88,6 +89,8 @@ public class FindMateRoomService {
                 .roomMessage(findMateRoom.getRoomMessage())
                 .users(users)
                 .roomId(roomId)
+                .roomPassword(findMateRoom.getRoomPassword())
+                .shopName(findMateRoom.getShopName())
                 .build();
 
         return findMateRoomPageDto;
@@ -102,12 +105,16 @@ public class FindMateRoomService {
         List<String> users = new ArrayList<>();
         users.add(findMateRoom.getRoomUsers().get(0).getUserName());
 
+        // password, shopName, roomId추가
         FindMateRoomPageDto findMateRoomPageDto = FindMateRoomPageDto.builder()
                 .localDateTime(findMateRoom.getPlanTime())
                 .headCount(findMateRoom.getHeadCount())
                 .roomWriter(findMateRoom.getRoomWriter())
                 .roomMessage(findMateRoom.getRoomMessage())
                 .users(users)
+                .roomPassword(findMateRoom.getRoomPassword())
+                .shopName(findMateRoom.getShopName())
+                .roomId(findMateRoom.getRoomId())
                 .build();
 
         return findMateRoomPageDto;
@@ -153,6 +160,26 @@ public class FindMateRoomService {
     // 전체 방 조회
     public List<FindMateRoom> findAllFindMateRoom(){
         return findMateRoomRepository.findAll();
+    }
+
+    // roomId로 내역지우기
+    public void deleteFindMateRoom(String roomId){
+        FindMateRoom findMateRoom = findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId);
+        System.out.println(findMateRoom.getRoomId());
+        List<RoomUser> roomUsers = findMateRoom.getRoomUsers();
+        for(RoomUser roomUser: roomUsers){
+            roomUserRepository.delete(roomUser);
+        }
+
+        findMateRoomRepository.delete(findMateRoom);
+    }
+
+    // 검색한 것에 따라 제목, 이름에 대해 방 정보 객체 전부 조회해오기
+    // 그냥 전체 방 조회할 때도 FindMateRoom 객체 넘겼으니까 얘도 전체 넘길게요.
+    // size가 0이면 null로 반환할게요 그 때는 조회된 게 없는 거 메세지나 팝업 띄워주세요.
+    public List<FindMateRoom> findMateRoomSearch(String keyword){
+        List<FindMateRoom> findMateRooms = findMateRoomRepository.findByRoomWriterContainingOrRoomTitleContaining(keyword,keyword);
+        return findMateRooms;
     }
 
 

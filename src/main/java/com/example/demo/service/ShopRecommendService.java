@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.Recommend.RecommendDto;
+import com.example.demo.dto.Recommend.SpecificDto;
 import com.example.demo.entity.Shop.Shop;
 import com.example.demo.repository.RecommendRepository;
 import com.example.demo.repository.ShopRepository;
@@ -36,6 +37,22 @@ public class ShopRecommendService {
         int idx = random.nextInt(shops.size());
         Shop shop = shops.get(idx);
         return shop.getName();
+    }
+
+    // 우선 거기서 가져올만한 내용이 가게 이름 밖에 없어서 가게이름으로 가져왔습니다.
+    // 좌표는 제가 시간 날 때마다 조금씩 추가할게요. 일단 null로 두겠습니다.
+    public SpecificDto specificInformation(String shopName){
+        Shop shop = shopRepository.findByName(shopName);
+
+        SpecificDto specific = SpecificDto.builder()
+                .shopName(shopName)
+                .shopDescription(shop.getDescription())
+                .shopMenuDescription(shop.getMenuDescription())
+                .x_position(null)
+                .y_position(null)
+                .build();
+
+        return specific;
     }
 
     // 일단 연서님이 만들어주신 내용이 가게 이름만 반환하면 되니까

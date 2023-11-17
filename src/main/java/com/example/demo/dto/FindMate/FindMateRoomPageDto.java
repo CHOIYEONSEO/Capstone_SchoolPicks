@@ -20,6 +20,8 @@ public class FindMateRoomPageDto {
     int headCount;
     String roomWriter;
     String roomMessage;
+    String roomPassword;
+    String shopName;
 
     List<String> users = new ArrayList<>();
 }

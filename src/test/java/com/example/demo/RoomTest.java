@@ -36,8 +36,8 @@ public class RoomTest {
     void 방생성(){
 
         FindMateRoomDto findMateRoomDto = FindMateRoomDto.builder()
-                .roomTitle("테스트")
-                .roomWriter("백명규")
+                .roomTitle("배고파")
+                .roomWriter("테스트2")
                 .roomPassword("1234")
                 .headCount(8)
                 .planTime(LocalDateTime.now())
@@ -60,6 +60,13 @@ public class RoomTest {
 
         findMateRoomService.joinFindMateRoom(userName, roomId);
 
+        em.flush();
+        em.clear();
+    }
+
+    @Test
+    void 방제거(){
+        findMateRoomService.deleteFindMateRoom("0fe6a90d-e857-41e1-9a43-47b992e1fc56");
         em.flush();
         em.clear();
     }
