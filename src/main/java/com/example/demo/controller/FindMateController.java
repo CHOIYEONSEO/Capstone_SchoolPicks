@@ -114,6 +114,7 @@ public class FindMateController {
         log.info("day = " + day);
         log.info("time = " + time);
 
+//        findMateRoomPageForm.setShopName();
         findMateRoomPageForm.setYear(year);
         findMateRoomPageForm.setMonth(month);
         findMateRoomPageForm.setDate(date);
@@ -123,6 +124,9 @@ public class FindMateController {
         findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
         findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
+
+
+
 
         return "find-mate-ver1";
     }
