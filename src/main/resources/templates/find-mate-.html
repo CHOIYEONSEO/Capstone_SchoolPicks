@@ -75,7 +75,7 @@
       <div class="group-child1"></div>
       <input type="text" th:field="*{roomPassword}" name="edit_password" class="div31" placeholder="4자리 비밀번호를 입력하세요" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
     </div>
-    <div class="menu-nav3" id="menuNavContainer">
+    <div class="menu-nav3" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
       <div class="menu-nav-child1"></div>
       <div class="menu-selected4">
         <img class="group-7-13" alt="" src="./public/menu-1-11@2x.png" />
@@ -88,10 +88,12 @@
         />
       </div>
     </div>
-    <div class="rectangle-parent1" id="groupContainer8">
-      <div class="group-child11"></div>
-      <div class="div32">작성완료</div>
-    </div>
+    <button type="submit" th:onclick="|location.href='@{/mate/check/{roomId}(roomId=${roomId})}'|">
+      <div class="rectangle-parent1" id="groupContainer8">
+        <div class="group-child11"></div>
+        <div class="div32">작성완료</div>
+      </div>
+    </button>
 
     <div class="find-mate-item"></div>
     <div class="transparent8"></div>
@@ -119,7 +121,7 @@
       <div class="ver4">ver4</div>
       <div class="random">Random</div>
     </div>
-    <button type="submit" th:onclick="|location.href='@{/mate/check}'|">임시버튼ㄴ</button>
+<!--    <button type="submit" th:onclick="|location.href='@{/mate/check}'|">임시버튼ㄴ</button>-->
   </form>
 
 

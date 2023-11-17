@@ -29,10 +29,10 @@ public class IndexController {
         return "menu_recommendation_NSC";
     }*/
 
-    @GetMapping("/detail")
+    /*@GetMapping("/detail")
     public String detail() {
         return "detail";
-    }
+    }*/
 
     /*@GetMapping("/find-mate-")
     public String findMate() {

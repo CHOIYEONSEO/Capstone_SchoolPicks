@@ -79,7 +79,7 @@
       <div class="group-parent">
         <div class="rectangle-parent" id="insta1">
           <div class="group-child"></div>
-          <div class="instagram-story" th:onclick="|location.href='@{/mate/instagram}'|">
+          <div class="instagram-story" th:onclick="|location.href='@{/mate/instagram/{roomId}(roomId=${roomId})}'|">
             <p class="instagram">Instagram</p>
             <p class="instagram">story</p>
           </div>
@@ -95,7 +95,7 @@
         <div class="group-inner"></div>
         <div class="div21">수정하기</div>
       </div>
-      <div class="menu-nav2" id="menuNavContainer">
+      <div class="menu-nav2" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
         <div class="menu-nav-inner"></div>
         <div class="menu-selected3">
           <img class="group-7-12" alt="" src="/public/menu-1-12@2x.png" />

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDateTime;
@@ -40,6 +41,8 @@ public class FindMateController {
 
         if (findMateRoomForm.getIsPrivate().equals("false")) {
             isPrivate = false;
+        } else {
+            isPrivate = true;
         }
 
         FindMateRoomDto findMateRoomDto = new FindMateRoomDto(
@@ -54,6 +57,7 @@ public class FindMateController {
         );
 
         roomId = findMateRoomService.createFindMateRoom(findMateRoomDto);
+        model.addAttribute("roomId", roomId);
 
         //테스트용 유저 추가
         findMateRoomService.joinFindMateRoom("유저2", roomId);
@@ -61,23 +65,22 @@ public class FindMateController {
         findMateRoomService.joinFindMateRoom("유저4", roomId);
         findMateRoomService.joinFindMateRoom("유저5", roomId);
 
-
         log.info("Before roomId = " + roomId);
         log.info("Before isPrivacy = " + isPrivate);
 
-
         return "find-mate-check";
     }
 
-    @GetMapping("/mate/check")
-    public String checkFindMateRoom() {
+    @GetMapping("/mate/check/{roomId}")
+    public String checkFindMateRoom(@PathVariable String roomId, Model model) {
+        model.addAttribute("roomId", roomId);
         return "find-mate-check";
     }
 
 
 
-    @GetMapping("/mate/room")
-    public String showFindMateRoom(@ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
+    @GetMapping("/mate/room/{roomId}")
+    public String showFindMateRoom(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         log.info("=== @GetMapping showFindMateRoom 접근 ===");
         log.info("roomId = " + roomId);
@@ -124,8 +127,8 @@ public class FindMateController {
         return "find-mate-ver1";
     }
 
-    @GetMapping("/mate/instagram")
-    public String shareInstagram(@ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm) {
+    @GetMapping("/mate/instagram/{roomId}")
+    public String shareInstagram(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
         if (isPrivate) {
@@ -158,6 +161,8 @@ public class FindMateController {
         findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
         findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
+
+        model.addAttribute("roomId", roomId);
 
         return "ver1-instagram-story";
     }

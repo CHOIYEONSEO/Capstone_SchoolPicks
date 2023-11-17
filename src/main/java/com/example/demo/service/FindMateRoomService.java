@@ -148,4 +148,9 @@ public class FindMateRoomService {
 
         return getRoomListDtos;
     }
+
+    // 전체 방 조회
+    public List<FindMateRoom> findAllFindMateRoom(){
+        return findMateRoomRepository.findAll();
+    }
 }

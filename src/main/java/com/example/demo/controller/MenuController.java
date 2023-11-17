@@ -89,6 +89,12 @@ public class MenuController {
         return "menu_recommendation_HSSC";
     }
 
+    @GetMapping("/detail")
+    public String showDetail() {
+
+        return "detail";
+    }
+
 
 
     private static String getPurposeType(String purpose) {
