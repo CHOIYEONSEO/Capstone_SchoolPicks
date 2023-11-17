@@ -15,6 +15,7 @@ import java.util.List;
 @Builder
 public class FindMateRoomPageDto {
 
+    String roomId;
     LocalDateTime localDateTime;
     int headCount;
     String roomWriter;

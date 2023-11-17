@@ -23,4 +23,14 @@ public class RoomUser {
     @ManyToOne
     @JoinColumn(name = "FIND_MATE_ROOM_ID")
     private FindMateRoom findMateRoom;
+
+
+    @Override
+    public String toString() {
+        return "RoomUser{" +
+                "Id=" + Id +
+                ", userName='" + userName + '\'' +
+                '}';
+    }
+
 }

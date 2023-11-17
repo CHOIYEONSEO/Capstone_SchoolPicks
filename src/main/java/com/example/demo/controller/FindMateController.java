@@ -167,12 +167,6 @@ public class FindMateController {
         return "ver1-instagram-story";
     }
 
-
-
-
-
-
-
     private static void logPostFindMateRoom(FindMateRoomForm findMateRoomForm) {
         log.info("=== Post 완료! ===");
         log.info("게시글 제목 = " + findMateRoomForm.getRoomTitle());
