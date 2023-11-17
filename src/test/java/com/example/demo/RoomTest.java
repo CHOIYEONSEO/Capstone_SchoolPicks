@@ -2,7 +2,6 @@ package com.example.demo;
 
 import com.example.demo.dto.FindMate.FindMateRoomDto;
 import com.example.demo.repository.FindMateRoomRepository;
-import com.example.demo.repository.RoomUserForGroupRepository;
 import com.example.demo.repository.RoomUserRepository;
 import com.example.demo.service.FindMateRoomService;
 import org.assertj.core.api.Assertions;
@@ -22,9 +21,6 @@ public class RoomTest {
 
     @Autowired
     FindMateRoomRepository findMateRoomRepository;
-
-    @Autowired
-    RoomUserForGroupRepository roomUserForGroupRepository;
 
     @Autowired
     RoomUserRepository roomUserRepository;

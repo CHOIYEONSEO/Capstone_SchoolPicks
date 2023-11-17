@@ -126,6 +126,9 @@ public class FindMateController {
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
 
 
+        model.addAttribute("password", "5678");
+
+
 
 
         return "find-mate-ver1";

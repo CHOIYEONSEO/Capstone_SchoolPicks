@@ -39,13 +39,14 @@ if (groupContainer8) {
 
 //temp for sharing: 수정하기
 var groupContainer8 = document.getElementById("edit");
+var password5678 = document.getElementById("password5678").innerText;
 if (groupContainer8) {
     groupContainer8.addEventListener("click", function (e) {
         var editpass1 = prompt('비밀번호를 입력하시오',"게시글 수정 비밀번호를 입력하세요");
         if(!editpass1) { //취소 눌렀을때
         }
-        if(editpass1.toLowerCase() == "1398") { //1398로 암호지정하면
-//            window.location.href = "./find-mate-.html";
+        if(editpass1.toLowerCase() == password5678){ //1398로 암호지정하면
+            window.location.href = "/mate";
         }
     });
 }
