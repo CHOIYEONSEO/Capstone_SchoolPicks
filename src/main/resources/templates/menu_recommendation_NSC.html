@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +10,18 @@
     <link rel="stylesheet" href="css/menu_recommendation.css">
     <link rel="stylesheet" href="css/menu_recommendation_NSC.css">
     <link rel="stylesheet" href="css/multi_range_slider.css">
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/menu-recommendation.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/menu-recommendation.css" />
 </head>
 <body>
     <header>
         <span><img src="./images/SchoolPicks_logo.png" alt="SchoolPicks logo" id="schoolPicks_logo"></span>
         <div class="campus_option">
             <div class="campus" id="campus_HSSC">
-                <a href="./menu_recommendation_HSSC.html">인사캠</a>
+                <a href="./menu_recommendation_HSSC.html" th:href="@{/menu_recommendation_HSSC}">인사캠</a>
             </div>
             <div class="campus" id="campus_NSC">
-                <a href="./menu_recommendation_NSC.html">자과캠</a>
+                <a href="./menu_recommendation_NSC.html" th:href="@{/menu_recommendation_NSC}">자과캠</a>
             </div>
         </div>
     </header>
@@ -31,55 +31,58 @@
     </div>
 
     <div class="container">
-        <div class="content1">
-            <div class="transparent_div" id="transparent_tag_filter">
-                <div class="filter" id="tag_filter">
-                    <span><img src="./images/filter.png" alt="filter" id="filter_img"></span>
-                    <input type="checkbox" id="restaurant_value"><label for="restaurant_value" class="tag" id="tag_restaurant">음식점</label>
-                    <input type="checkbox" id="cafe_value"><label for="cafe_value" class="tag" id="tag_cafe">카페</label>
-                    <input type="checkbox" id="pub_value"><label for="pub_value" class="tag" id="tag_pub">술집</label>
-                </div>    
-            </div>
-            
-            <div class="transparent_div" id="transparent_value_filter">
-                <div class="filter" id="value_filter">
-                    <span><img src="./images/won.png" alt="won" id="won_img"></span>
-                    <div class="multi_range_slider">
-                        <input type="range" id="input_left" min="0" max="50000" value="7000" step="1000"/>
-                        <input type="range" id="input_right" min="0" max="50000" value="21000" step="1000"/>
-    
-                        <div class="slider">
-                            <div class="track"></div>
-                            <div class="range"></div>
-                            <div class="thumb left"></div>
-                            <div class="thumb right"></div>
+        <form th:object="${recommend}" method="post">
+            <div class="content1">
+                <div class="transparent_div" id="transparent_tag_filter">
+                    <div class="filter" id="tag_filter">
+                        <span><img src="./images/filter.png" alt="filter" id="filter_img"></span>
+                        <input type="checkbox" id="restaurant_value" th:value="음식점" th:field="*{purposeRestaurant}"><label for="restaurant_value" class="tag" id="tag_restaurant">음식점</label>
+                        <input type="checkbox" id="cafe_value" th:value="카페" th:field="*{purposeCafe}"><label for="cafe_value" class="tag" id="tag_cafe">카페</label>
+                        <input type="checkbox" id="pub_value" th:value="술집" th:field="*{purposePub}"><label for="pub_value" class="tag" id="tag_pub">술집</label>
+                    </div>
+                </div>
+
+                <div class="transparent_div" id="transparent_value_filter">
+                    <div class="filter" id="value_filter">
+                        <span><img src="./images/won.png" alt="won" id="won_img"></span>
+                        <div class="multi_range_slider">
+                            <input type="range" id="input_left" min="0" max="20000" step="1000" th:value="7000" th:field="*{priceLow}"  />
+                            <input type="range" id="input_right" min="0" max="20000" step="1000" th:value="20000" th:field="*{priceHigh}"/>
+
+                            <div class="slider">
+                                <div class="track"></div>
+                                <div class="range"></div>
+                                <div class="thumb left"></div>
+                                <div class="thumb right"></div>
+                            </div>
                         </div>
+                        <div class="value_txt">
+                            <span class="min_value_text">0</span> <span>원부터</span> <span class="max_value_text">50000</span><span>원까지</span>
+                        </div>
+
                     </div>
-                    <div class="value_txt">
-                        <span class="min_value_text">0</span> <span>원부터</span> <span class="max_value_text">50000</span><span>원까지</span>
-                    </div>
-                    
                 </div>
             </div>
-        </div>
 
-        <div class="content2">
-            <span id="click_txt">Click</span>
-            <img src="./images/click_arrow.png" alt="click" id="click_arrow_img">
-            <img src="./images/vending_machine.png" alt="vending machine" id="vending_machine_img">
-        </div>
+            <div class="content2">
+                <span id="click_txt">Click</span>
+                <img src="./images/click_arrow.png" alt="click" id="click_arrow_img">
+                <button type="submit"><img src="./images/vending_machine.png" alt="vending machine" id="vending_machine_img"></button>
+            </div>
+        </form>
 
         <div class="content3">
-            <span class="menu_recommendation" id="recommendation_NSC">오늘은 학식이닷!</span>
+            <span class="menu_recommendation" id="recommendation_NSC" th:text="${restaurant} ?: '오늘은 학식이닷!'">오늘은 학식이닷!</span>
         </div>
 
         <div class="content4">
             <!--<a href="" class="goto_navermap">네이버 지도로 이동하기</a>-->
             <span id="goto_detail">음식점 정보 보기</span>
+            <a href="" class="goto_navermap" th:href="@{https://map.naver.com/p/search/{restaurant}(restaurant=${restaurant})}">네이버 지도로 이동하기</a>
         </div>
     </div>
 
-    <div class="menu-nav5" id="menuNavContainer">
+    <div class="menu-nav5" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
         <div class="menu-nav-child3"></div>
         <div class="menu-selected6">
             <img class="group-7-14" alt="" src="./public/menu-1-11@2x.png" />
@@ -93,8 +96,8 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="./js/menu_recommendation.js"></script>
-    <script type="text/javascript" src="./js/multi_range_slider.js"></script>
-    <script type="text/javascript" src="./js/menu.js"></script>
+    <script type="text/javascript" src="/js/menu_recommendation.js"></script>
+    <script type="text/javascript" src="/js/multi_range_slider.js"></script>
+    <script type="text/javascript" src="/js/menu.js"></script>
 </body>
 </html>

@@ -10,9 +10,9 @@ const detailBtn = document.getElementById('goto_detail');
 const vendingMachine = document.getElementById('vending_machine_img');
 
 vendingMachine.addEventListener("click", (e) => {
-    var recommendation = '율천회관';
+//    var recommendation = '율천회관';
 
-    document.getElementById('recommendation_NSC').innerHTML = recommendation;
+//    document.getElementById('recommendation_NSC').innerHTML = recommendation;
 })
 
 /* 명륜캠 */

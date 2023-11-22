@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -33,7 +33,7 @@
       <div class="div109">음식점 설명</div>
       <img class="cancel-1-1" id="cancel_detail" src="./public/cancel-1-1@2x.png" />
 
-      <div class="menu-nav2" id="menuNavContainer">
+      <div class="menu-nav2" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
         <div class="menu-nav-inner"></div>
         <div class="menu-selected2">
           <img class="menu-1-12" alt="" src="./public/menu-1-1@2x.png" />

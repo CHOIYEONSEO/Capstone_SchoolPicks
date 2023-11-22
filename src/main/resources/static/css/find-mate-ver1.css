@@ -119,6 +119,16 @@
   top: 466px;
   left: 50px;
 }
+
+.message_div{
+  position: absolute;
+  top: 497px;
+  left: 50px;
+  width: 295px;
+  height: 110px;
+  overflow: auto;
+}
+
 .find-mate-ver1-child2 {
   position: absolute;
   top: 605.5px;
@@ -142,6 +152,27 @@
   box-sizing: border-box;
   width: 142px;
   height: 40px;
+}
+
+.guest_div{
+  position: absolute;
+  padding-left: 10px;
+  top: 674px;
+  left: 65px;
+  font-size: var(--font-size-4xl);
+  width: 260px;
+  height: 70px;
+  overflow: auto;
+}
+
+ul{
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+li{
+  float: left;
+  margin-right: 25px;
 }
 
 .div16,
@@ -334,4 +365,8 @@
   font-size: var(--font-size-lg);
   color: var(--ios-key-label);
   font-family: var(--font-poor-story);
+}
+
+#password5678{
+   display: none;
 }

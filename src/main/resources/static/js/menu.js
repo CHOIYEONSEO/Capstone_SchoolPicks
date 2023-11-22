@@ -1,3 +1,4 @@
+/*
 var nav1Container = document.getElementById("nav1Container");
 if (nav1Container) {
     nav1Container.addEventListener("click", function (e) {
@@ -46,4 +47,4 @@ if (cancelDetail) {
     cancelDetail.addEventListener("click", function (e) {
         history.back();
 });
-}
+}*/
