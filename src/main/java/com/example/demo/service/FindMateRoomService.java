@@ -52,6 +52,7 @@ public class FindMateRoomService {
         return roomId;
     }
 
+    // 임시 주석
     public void joinFindMateRoom(String userName, String roomId){
 
         FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
