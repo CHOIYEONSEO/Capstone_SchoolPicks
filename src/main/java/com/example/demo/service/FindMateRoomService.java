@@ -49,8 +49,6 @@ public class FindMateRoomService {
         }
 
 
-        // 여기 사용하실 때 나중에 공유할 수 있는 url 띄우는 바 부분을 만들어서
-        // 조회와 관련된 url에 roomId 붙여서 get Method로 가져오면 될 것 같습니다.
         return roomId;
     }
 
