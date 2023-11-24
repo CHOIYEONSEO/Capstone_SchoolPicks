@@ -12,17 +12,11 @@ public class FindMateRoomForm {
 
     String roomTitle;
     String shopName;
-
     String planTime;
-
     int headCount;
-
     String roomWriter;
-
     String roomMessage;
-
     String isPrivate;
-
     String roomPassword;
 
 }
