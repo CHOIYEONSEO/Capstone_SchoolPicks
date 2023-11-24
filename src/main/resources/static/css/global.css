@@ -60,3 +60,7 @@ body {
   /* Effects */
   --ios-background-blur: blur(54px);
 }
+
+button {
+  border: none;
+}
