@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -36,7 +37,8 @@ public class FindMateController {
     }
 
     @PostMapping("/mate")
-    public String postFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model) {
+    public String postFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model
+            , RedirectAttributes redirectAttributes) {
 
         //로그 찍기
         logPostFindMateRoom(findMateRoomForm);
@@ -70,7 +72,7 @@ public class FindMateController {
         log.info("Before roomId = " + roomId);
         log.info("Before isPrivacy = " + isPrivate);
 
-        return "find-mate-check";
+        return "redirect:/mate/room/" + roomId;
     }
 
     @GetMapping("/mate/check/{roomId}")
@@ -127,11 +129,7 @@ public class FindMateController {
         findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
 
-
         model.addAttribute("password", "5678");
-
-
-
 
         return "find-mate-ver1";
     }
