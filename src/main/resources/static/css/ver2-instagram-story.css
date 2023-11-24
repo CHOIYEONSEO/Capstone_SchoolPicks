@@ -1,0 +1,454 @@
+.instance-child2 {
+  position: absolute;
+  height: 706px;
+  width: 462px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-lightpink);
+}
+.instance-child3 {
+  position: absolute;
+  height: 95.75%;
+  width: 93.51%;
+  top: 2.12%;
+  right: 3.25%;
+  bottom: 2.12%;
+  left: 3.25%;
+  border: 2.5px solid var(--color-midnightblue-100);
+  box-sizing: border-box;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-lightpink);
+}
+.group-7-13 {
+  position: absolute;
+  height: 112.14%;
+  width: 102.71%;
+  top: 0;
+  right: 0.17%;
+  bottom: -12.14%;
+  left: -2.88%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.header3 {
+  position: absolute;
+  height: 3.97%;
+  width: 12.77%;
+  top: 3.97%;
+  right: 81.17%;
+  bottom: 92.07%;
+  left: 6.06%;
+  transform: rotate(4.64deg);
+}
+.group-icon {
+  position: absolute;
+  height: 7.25%;
+  width: 15.15%;
+  top: 14.36%;
+  right: 44.05%;
+  bottom: 78.39%;
+  left: 40.8%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.restaurant_name {
+  position: absolute;
+  top: 23.23%;
+  left: 38.15%;
+  font-size: var(--font-size-4xl);
+  letter-spacing: 0.13em;
+}
+.date {
+  position: absolute;
+  top: 28.05%;
+  left: 26.24%;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.1em;
+  color: var(--color-midnightblue-200);
+}
+.group-child1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-midnightblue-100);
+}
+.div35 {
+  position: absolute;
+  width: 12.41%;
+  top: 28.57%;
+  left: 45.69%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  display: inline-block;
+}
+.rectangle-parent3 {
+  position: absolute;
+  height: 4.96%;
+  width: 92.64%;
+  top: 32.58%;
+  right: 3.68%;
+  bottom: 62.46%;
+  left: 3.68%;
+  font-size: var(--font-size-smi);
+  color: var(--color-lightpink);
+}
+.num2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+}
+.num3 {
+  position: absolute;
+  top: 0;
+  left: 13.54%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  left: 13.54%;
+}
+.num4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  left: 27.43%;
+}
+.num5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  left: 41.32%;
+}
+.num6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  left: 54.86%;
+}
+.num7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  left: 68.75%;
+}
+.num8{
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  left: 82.29%;
+}
+.num9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  left: 96.18%;
+}
+.parent {
+  position: absolute;
+  height: 2.69%;
+  width: 62.34%;
+  top: 40.79%;
+  right: 19.05%;
+  bottom: 56.52%;
+  left: 18.2%;
+}
+.circle-1-icon {
+  position: absolute;
+  height: 5.54%;
+  width: 8.46%;
+  top: 40.58%;
+  right: 62.73%;
+  bottom: 53.88%;
+  left: 33.81%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.reservater_name {
+  position: absolute;
+  top: 51.98%;
+  left: 45%;
+  letter-spacing: 0.13em;
+  font-weight: 600;
+}
+.div45 {
+  position: absolute;
+  width: 19.84%;
+  top: 28.57%;
+  left: 42.21%;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  display: inline-block;
+}
+.rectangle-parent4 {
+  position: absolute;
+  height: 4.96%;
+  width: 92.64%;
+  top: 45.89%;
+  right: 3.68%;
+  bottom: 49.15%;
+  left: 3.68%;
+  font-size: var(--font-size-smi);
+  color: var(--color-lightpink);
+}
+.message_div{
+  position: absolute;
+  top: 439.5px;
+  left: 40px;
+  width: 378px;
+  height: 70px;
+  overflow: auto;
+  font-weight: 500;
+}
+
+.div46 {
+  position: absolute;
+  width: 27.27%;
+  top: 28.57%;
+  left: 39.66%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  display: inline-block;
+}
+.rectangle-parent5 {
+  position: absolute;
+  height: 4.96%;
+  width: 92.64%;
+  top: 55.81%;
+  right: 3.68%;
+  bottom: 39.24%;
+  left: 3.68%;
+  font-size: var(--font-size-smi);
+  color: var(--color-lightpink);
+}
+.rectangle-parent6 {
+  position: absolute;
+  height: 4.96%;
+  width: 92.64%;
+  right: 3.68%;
+  left: 3.68%;
+  font-size: var(--font-size-smi);
+  color: var(--color-lightpink);
+  top: 72.95%;
+  bottom: 22.1%;
+}
+.reservater_guest {
+  position: absolute;
+  top: 84.9%;
+  left: 22.08%;
+  letter-spacing: 0.13em;
+  font-weight: 600;
+}
+.div49 {
+  position: absolute;
+  top: 79.18%;
+  left: 85.06%;
+  letter-spacing: 0.13em;
+  font-size: var(--font-size-smi);
+  font-weight: 500;
+}
+.instance-child4 {
+  height: 0.28%;
+  width: 93.07%;
+  top: 82.72%;
+  right: 3.46%;
+  bottom: 17%;
+  left: 3.46%;
+  border-top: 2px solid var(--color-midnightblue-100);
+  position: absolute;
+  box-sizing: border-box;
+}
+.instance-child5 {
+  position: absolute;
+  box-sizing: border-box;
+  height: 5.38%;
+  width: 0.43%;
+  top: 77.62%;
+  right: 21%;
+  bottom: 17%;
+  left: 78.57%;
+  border-right: 2px solid var(--color-midnightblue-100);
+}
+.instance-child6 {
+  position: absolute;
+  box-sizing: border-box;
+  height: 0.28%;
+  width: 93.07%;
+  top: 87.68%;
+  right: 3.46%;
+  bottom: 12.04%;
+  left: 3.46%;
+  border-top: 2px solid var(--color-midnightblue-100);
+  display: none;
+}
+.div50 {
+  position: absolute;
+  top: 83.99%;
+  left: 44.59%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  color: var(--color-black);
+  display: none;
+}
+.div51 {
+  position: absolute;
+  top: 83.99%;
+  left: 67.1%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  color: var(--color-black);
+  display: none;
+
+}
+.instance-child7 {
+  position: absolute;
+  display: none;
+  height: 0.28%;
+  width: 93.07%;
+  top: 92.63%;
+  right: 3.46%;
+  bottom: 7.08%;
+  left: 3.46%;
+  border-top: 2px solid var(--color-midnightblue-100);
+  box-sizing: border-box;
+}
+.div52 {
+  position: absolute;
+  display: none;
+  top: 88.95%;
+  left: 22.08%;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  color: var(--color-black);
+}
+.instance-child8 {
+  position: absolute;
+  display: none;
+  height: 0.28%;
+  width: 93.07%;
+  top: 97.59%;
+  right: 3.46%;
+  bottom: 2.12%;
+  left: 3.46%;
+  border-top: 2px solid var(--color-midnightblue-100);
+  box-sizing: border-box;
+}
+.rectangle-parent2 {
+  position: absolute;
+  top: 63.9px;
+  left: 32.3px;
+  width: 462px;
+  height: 706px;
+  transform: rotate(3.4deg);
+  transform-origin: 0 0;
+}
+.ver2-instagram-story-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-black);
+  width: 479px;
+  height: 852px;
+  opacity: 0.7;
+}
+.group-7-14 {
+  height: 116.79%;
+  width: 103.56%;
+  top: -17.14%;
+  right: -3.56%;
+  bottom: 0.36%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.component-child6 {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  height: 7.44%;
+  width: 15.32%;
+  top: 9.69%;
+  right: 40.78%;
+  bottom: 82.88%;
+  left: 42.9%;
+}
+.circle-1-icon1 {
+  position: absolute;
+  margin-left: -25px;
+  margin-top: -9px;
+  width: 37px;
+  height: 37px;
+  object-fit: cover;
+}
+#img2_display{
+  display: inline;
+}
+#img3_display{
+  display: none;
+}
+#img4_display{
+  display: none;
+}
+#img5_display{
+  display: none;
+}
+#img6_display{
+  display: none;
+}
+#img7_display{
+  display: none;
+}
+#img8_display{
+  display: none;
+}
+#img9_display{
+  display: none;
+}
+
+.rectangle-parent7 {
+  position: absolute;
+  top: 97.8px;
+  left: -18.8px;
+  width: 462px;
+  height: 706px;
+  transform: rotate(-4.64deg);
+  transform-origin: 0 0;
+}
+.ver2-instagram-story {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 852px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-midnightblue-100);
+  font-family: var(--font-inter);
+}
