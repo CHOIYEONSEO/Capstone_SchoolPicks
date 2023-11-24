@@ -29,8 +29,6 @@ public class FindMateController {
     private String roomId;
     private boolean isPrivate = true;
 
-    // ModelAttribute는 위에서 넘어오는 모든 객체 한꺼번에 표시해주는 거
-    // findMateForm 형태인 것 같은데 일단 저장을 해보면 알지 않을까?
     @GetMapping("/mate")
     public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm) {
         return "find-mate-";
@@ -39,7 +37,6 @@ public class FindMateController {
     @PostMapping("/mate")
     public String postFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model
             , RedirectAttributes redirectAttributes) {
-
         //로그 찍기
         logPostFindMateRoom(findMateRoomForm);
 

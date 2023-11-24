@@ -49,11 +49,10 @@ public class FindMateRoomService {
         }
 
 
-        // 여기 사용하실 때 나중에 공유할 수 있는 url 띄우는 바 부분을 만들어서
-        // 조회와 관련된 url에 roomId 붙여서 get Method로 가져오면 될 것 같습니다.
         return roomId;
     }
 
+    // 임시 주석
     public void joinFindMateRoom(String userName, String roomId){
 
         FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
@@ -174,9 +173,6 @@ public class FindMateRoomService {
         findMateRoomRepository.delete(findMateRoom);
     }
 
-    // 검색한 것에 따라 제목, 이름에 대해 방 정보 객체 전부 조회해오기
-    // 그냥 전체 방 조회할 때도 FindMateRoom 객체 넘겼으니까 얘도 전체 넘길게요.
-    // size가 0이면 null로 반환할게요 그 때는 조회된 게 없는 거 메세지나 팝업 띄워주세요.
     public List<FindMateRoom> findMateRoomSearch(String keyword){
         List<FindMateRoom> findMateRooms = findMateRoomRepository.findByRoomWriterContainingOrRoomTitleContaining(keyword,keyword);
         return findMateRooms;
