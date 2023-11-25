@@ -2824,54 +2824,5 @@ public class DataInjectionTest {
 
     }
 
-    @Autowired
-    ShopRecommendService shopRecommendService;
-
-    @Autowired
-    RecommendRepository recommendRepository;
-
-    @Test
-    void 동적쿼리작동확인(){
-
-
-        // 0개
-        List<String> shopType = new ArrayList<>();
-        Shop selectedShop1 = recommendRepository.findSelectedShop("nsc", shopType, 1000, 20000).get(0);
-        System.out.println(selectedShop1);
-
-        List<String> shopType1 = new ArrayList<>();
-        Shop selectedShop2 = recommendRepository.findSelectedShop("hssc", shopType1, 1000, 20000).get(0);
-        System.out.println(selectedShop2);
-
-        List<String> shopType2 = new ArrayList<>();
-        shopType2.add("cafe");
-        Shop selectedShop3 = recommendRepository.findSelectedShop("nsc", shopType2, 1000, 20000).get(0);
-        System.out.println(selectedShop3);
-
-        List<String> shopType3 = new ArrayList<>();
-        shopType3.add("cafe");
-        Shop selectedShop4 = recommendRepository.findSelectedShop("hssc", shopType3, 1000, 20000).get(0);
-        System.out.println(selectedShop4);
-
-        List<String> shopType4 = new ArrayList<>();
-        shopType4.add("restaurant");
-        shopType4.add("cafe");
-        Shop selectedShop5 = recommendRepository.findSelectedShop("nsc", shopType4, 1000, 20000).get(0);
-        System.out.println(selectedShop5);
-
-        List<String> shopType5 = new ArrayList<>();
-        shopType5.add("restaurant");
-        shopType5.add("cafe");
-        Shop selectedShop6 = recommendRepository.findSelectedShop("nsc", shopType5, 1000, 20000).get(56);
-        System.out.println(selectedShop6);
-
-        List<String> shopType6 = new ArrayList<>();
-        shopType6.add("restaurant");
-        shopType6.add("cafe");
-        shopType6.add("pub");
-        Shop selectedShop7 = recommendRepository.findSelectedShop("nsc", shopType6, 1000, 20000).get(56);
-        System.out.println(selectedShop7);
-    }
-
 
 }

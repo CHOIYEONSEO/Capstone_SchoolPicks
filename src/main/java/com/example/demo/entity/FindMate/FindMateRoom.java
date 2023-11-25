@@ -41,6 +41,8 @@ public class FindMateRoom {
 
     String roomPassword;
 
+    int version;
+
     @OneToMany(mappedBy = "findMateRoom")
     private List<RoomUser> roomUsers = new ArrayList<>();
 

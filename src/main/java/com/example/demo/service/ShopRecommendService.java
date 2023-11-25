@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -57,6 +59,23 @@ public class ShopRecommendService {
                 .build();
 
         return specific;
+    }
+
+    public SpecificDto findShopById(Long id){
+
+        Optional<Shop> optionalShop = shopRepository.findById(id);
+
+        Shop shop = optionalShop.orElseThrow(() -> new NoSuchElementException("Shop not found"));
+
+        SpecificDto specificDto = SpecificDto.builder()
+                .x_position(shop.getXPosition())
+                .y_position(shop.getYPosition())
+                .shopName(shop.getName())
+                .shopDescription(shop.getDescription())
+                .shopMenuDescription(shop.getMenuDescription())
+                .build();
+
+        return specificDto;
     }
 
     // 일단 연서님이 만들어주신 내용이 가게 이름만 반환하면 되니까

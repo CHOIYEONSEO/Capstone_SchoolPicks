@@ -50,7 +50,7 @@ public class RecommendRepository {
         }
         else if(shopTypes.size() == 2){
             // 음식점 종류별 DB 질의
-            TypedQuery<Shop> query = em.createQuery("SELECT s FROM Shop s WHERE s.shopType = :shop_type OR s.shopType = :shop_type2 AND s.price >= :price_low AND s.price <= :price_high AND s.schoolType = :school_type", Shop.class);
+            TypedQuery<Shop> query = em.createQuery("SELECT s FROM Shop s WHERE (s.shopType = :shop_type OR s.shopType = :shop_type2) AND s.price >= :price_low AND s.price <= :price_high AND s.schoolType = :school_type", Shop.class);
 
             query.setParameter("price_low", priceMin); // 가격 하한선
             query.setParameter("price_high", priceMax); // 가격 상한선

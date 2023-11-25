@@ -54,7 +54,8 @@ public class FindMateController {
                 findMateRoomForm.getRoomWriter(),
                 findMateRoomForm.getRoomMessage(),
                 isPrivate,
-                findMateRoomForm.getRoomPassword()
+                findMateRoomForm.getRoomPassword(),
+                findMateRoomForm.getVersion()
         );
 
         roomId = findMateRoomService.createFindMateRoom(findMateRoomDto);

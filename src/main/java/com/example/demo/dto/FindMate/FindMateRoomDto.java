@@ -28,4 +28,6 @@ public class FindMateRoomDto {
     boolean isPrivate;
 
     String roomPassword;
+
+    int version;
 }

@@ -22,6 +22,8 @@ public class FindMateRoomPageDto {
     String roomMessage;
     String roomPassword;
     String shopName;
+    int version;
 
+    @Builder.Default
     List<String> users = new ArrayList<>();
 }

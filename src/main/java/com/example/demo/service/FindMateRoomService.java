@@ -34,6 +34,7 @@ public class FindMateRoomService {
                 .roomMessage(dto.getRoomMessage())
                 .isPrivate(dto.isPrivate())
                 .roomPassword(dto.getRoomPassword())
+                .version(dto.getVersion())
                 .build();
 
         RoomUser roomUser = RoomUser.builder()
@@ -90,6 +91,7 @@ public class FindMateRoomService {
                 .roomId(roomId)
                 .roomPassword(findMateRoom.getRoomPassword())
                 .shopName(findMateRoom.getShopName())
+                .version(findMateRoom.getVersion())
                 .build();
 
         return findMateRoomPageDto;
@@ -114,6 +116,7 @@ public class FindMateRoomService {
                 .roomPassword(findMateRoom.getRoomPassword())
                 .shopName(findMateRoom.getShopName())
                 .roomId(findMateRoom.getRoomId())
+                .version(findMateRoom.getVersion())
                 .build();
 
         return findMateRoomPageDto;

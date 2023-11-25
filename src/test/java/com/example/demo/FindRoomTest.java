@@ -4,6 +4,7 @@ import com.example.demo.dto.Recommend.SpecificDto;
 import com.example.demo.entity.Shop.Shop;
 import com.example.demo.service.FindMateRoomService;
 import com.example.demo.service.ShopRecommendService;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -24,9 +25,8 @@ public class FindRoomTest {
     @Test
     void 상세조회테스트(){
         SpecificDto specificDto = shopRecommendService.specificInformation("소친친");
-        System.out.println(specificDto.getShopName());
-        System.out.println(specificDto.getShopDescription());
-        System.out.println(specificDto.getShopMenuDescription());
+
+        Assertions.assertThat(specificDto.getShopName()).isEqualTo("소친친");
     }
 
     @Test
