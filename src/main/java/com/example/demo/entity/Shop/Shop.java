@@ -33,4 +33,7 @@ public class Shop {
     private String description;
     private String menuDescription;
 
+    private String xPosition;
+    private String yPosition;
+
 }
