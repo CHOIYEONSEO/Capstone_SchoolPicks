@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.Recommend.RecommendDto;
 import com.example.demo.dto.Recommend.SpecificDto;
 import com.example.demo.entity.Shop.Shop;
 import com.example.demo.repository.RecommendRepository;
@@ -43,24 +42,6 @@ public class ShopRecommendService {
         return shop;
     }
 
-
-
-    // 우선 거기서 가져올만한 내용이 가게 이름 밖에 없어서 가게이름으로 가져왔습니다.
-    // 좌표는 제가 시간 날 때마다 조금씩 추가할게요. 일단 null로 두겠습니다.
-    public SpecificDto specificInformation(String shopName){
-        Shop shop = shopRepository.findByName(shopName);
-
-        SpecificDto specific = SpecificDto.builder()
-                .shopName(shopName)
-                .shopDescription(shop.getDescription())
-                .shopMenuDescription(shop.getMenuDescription())
-                .x_position(null)
-                .y_position(null)
-                .build();
-
-        return specific;
-    }
-
     public SpecificDto findShopById(Long id){
 
         Optional<Shop> optionalShop = shopRepository.findById(id);
@@ -78,29 +59,5 @@ public class ShopRecommendService {
         return specificDto;
     }
 
-    // 일단 연서님이 만들어주신 내용이 가게 이름만 반환하면 되니까
-    // 해당 내용에 맞춰서 작성을 했습니다.
-    public RecommendDto recommend_dto(String schoolTypes, List<String> shopTypes, int priceMin, int priceMax){
-
-        List<Shop> shops = recommendRepository.findSelectedShop(schoolTypes, shopTypes, priceMin, priceMax);
-        String answer; // 결과 값 리턴
-
-        // 조건에 맞는 경우가 없으면?
-        if(shops.isEmpty()){
-            return RecommendDto.builder()
-                    .ShopName("조건에 맞는 가게가 없습니다. 다시 골라주세요.")
-                    .build();
-        }
-        Random random = new Random();
-
-        int idx = random.nextInt(shops.size());
-        Shop shop = shops.get(idx);
-
-        return RecommendDto.builder()
-                .ShopName(shop.getName())
-                .ShopDescription(shop.getDescription())
-                .ShopMenuDescription(shop.getMenuDescription())
-                .build();
-    }
 
 }

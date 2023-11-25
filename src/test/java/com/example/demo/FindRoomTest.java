@@ -23,13 +23,6 @@ public class FindRoomTest {
     ShopRecommendService shopRecommendService;
 
     @Test
-    void 상세조회테스트(){
-        SpecificDto specificDto = shopRecommendService.specificInformation("소친친");
-
-        Assertions.assertThat(specificDto.getShopName()).isEqualTo("소친친");
-    }
-
-    @Test
     void 제목및작성자검색테스트(){
         findMateRoomService.findMateRoomSearch("스트");
     }

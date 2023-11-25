@@ -1,8 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.entity.Shop.SchoolType;
 import com.example.demo.entity.Shop.Shop;
-import com.example.demo.entity.Shop.ShopType;
 import com.example.demo.repository.RecommendRepository;
 import com.example.demo.service.ShopRecommendService;
 import org.assertj.core.api.Assertions;
@@ -12,13 +10,12 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.transaction.Transactional;
-import java.util.Collections;
 import java.util.List;
 
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Transactional
-public class ShopRecommendTest {
+public class ShopRecommendRepositoryTest {
 
     @Autowired
     ShopRecommendService shopRecommendService;
@@ -26,7 +23,8 @@ public class ShopRecommendTest {
     @Autowired
     RecommendRepository recommendRepository;
 
-    // 메뉴 추천 케이스별 작동여부 체크
+    // 메뉴 추천 케이스별 작동여부 체크, 모든 케이스 테스트 완료
+    // 2023.11.16 선택 사항이 2개인 경우 쿼리상 우선 순위문제로 버그가 발생햇었고 해결 완료
     @Test
     void 음식점추천테스트(){
 
