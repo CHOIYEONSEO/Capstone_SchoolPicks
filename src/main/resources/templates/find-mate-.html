@@ -88,7 +88,7 @@
         />
       </div>
     </div>
-    <button class="div32 rectangle-parent1 group-child11" id="groupContainer8"   type="submit" th:onclick="|location.href='@{/mate/check/{roomId}(roomId=${roomId})}'|">
+    <button class="div32 rectangle-parent1 group-child11" id="groupContainer8" type="submit" th:onclick="|location.href='@{/mate/check/{roomId}(roomId=${roomId})}'|">
         작성완료
     </button>
 
@@ -97,7 +97,7 @@
     <b class="b8">컨셉 선택하기</b>
     <div class="find-mate-inner"></div>
 
-    <div class="ver1-selected" id="ver1_select">
+    <div class="ver1-selected" id="ver1_select" value="1" th:field="${version}">
       <div class="ver1">ver1</div>
       <img class="find-mate-child" alt="" src="./public/group-461.svg" />
     </div>

@@ -19,4 +19,5 @@ public class FindMateRoomForm {
     String isPrivate;
     String roomPassword;
 
+    int version;
 }

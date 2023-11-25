@@ -20,14 +20,15 @@ public class ShopRecommendService {
 
     // 일단 연서님이 만들어주신 내용이 가게 이름만 반환하면 되니까
     // 해당 내용에 맞춰서 작성을 했습니다.
-    public String recommend(String schoolTypes, List<String> shopTypes, int priceMin, int priceMax){
+    public Shop recommend(String schoolTypes, List<String> shopTypes, int priceMin, int priceMax){
 
         List<Shop> shops = recommendRepository.findSelectedShop(schoolTypes, shopTypes, priceMin, priceMax);
         String answer; // 결과 값 리턴
 
         // 조건에 맞는 경우가 없으면?
         if(shops.isEmpty()){
-            return "다시 선택해주세요.";
+//            return "다시 선택해주세요.";
+            return null;
             // 이 경우에 인터넷 위에 뜨는 Toast 메세지 같은 거처럼
             // 금액조건에 맞는 식당이 없습니다, 금액의 범위를 더 넓게 조정해주세요.
             // 라고 띄워주시면 될 것 같습니다.
@@ -36,8 +37,11 @@ public class ShopRecommendService {
 
         int idx = random.nextInt(shops.size());
         Shop shop = shops.get(idx);
-        return shop.getName();
+//        return shop.getName();
+        return shop;
     }
+
+
 
     // 우선 거기서 가져올만한 내용이 가게 이름 밖에 없어서 가게이름으로 가져왔습니다.
     // 좌표는 제가 시간 날 때마다 조금씩 추가할게요. 일단 null로 두겠습니다.

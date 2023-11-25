@@ -69,14 +69,16 @@ public class FindMateController {
         log.info("Before roomId = " + roomId);
         log.info("Before isPrivacy = " + isPrivate);
 
+        log.info("version = " + findMateRoomForm.getVersion());
+
         return "redirect:/mate/room/" + roomId;
     }
 
-    @GetMapping("/mate/check/{roomId}")
+/*    @GetMapping("/mate/check/{roomId}")
     public String checkFindMateRoom(@PathVariable String roomId, Model model) {
         model.addAttribute("roomId", roomId);
         return "find-mate-check";
-    }
+    }*/
 
 
 
@@ -126,7 +128,8 @@ public class FindMateController {
         findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
 
-        model.addAttribute("password", "5678");
+        model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
+
 
         return "find-mate-ver1";
     }

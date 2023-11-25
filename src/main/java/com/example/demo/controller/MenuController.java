@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.Recommend.RecommendForm;
+import com.example.demo.entity.Shop.Shop;
 import com.example.demo.service.ShopRecommendService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
@@ -48,10 +50,11 @@ public class MenuController {
             purposes.add(getPurposeType(recommendForm.getPurposePub()));
         }
 
-        String restaurant = shopRecommendService.recommend("nsc", purposes, recommendForm.getPriceLow(), recommendForm.getPriceHigh());
-        log.info("RESTAURANT = " + restaurant);
+        Shop restaurant = shopRecommendService.recommend("nsc", purposes, recommendForm.getPriceLow(), recommendForm.getPriceHigh());
+        log.info("RESTAURANT = " + restaurant.getName());
 
-        model.addAttribute("restaurant", restaurant);
+        model.addAttribute("restaurant", restaurant.getName());
+        model.addAttribute("restaurantId", restaurant.getId());
         return "menu_recommendation_NSC";
     }
 
@@ -82,15 +85,22 @@ public class MenuController {
         }
 
 
-        String restaurant = shopRecommendService.recommend("hssc", purposes, recommendForm.getPriceLow(), recommendForm.getPriceHigh());
-        log.info("RESTAURANT = " + restaurant);
+        Shop restaurant = shopRecommendService.recommend("hssc", purposes, recommendForm.getPriceLow(), recommendForm.getPriceHigh());
+        log.info("RESTAURANT = " + restaurant.getName());
 
-        model.addAttribute("restaurant", restaurant);
+        model.addAttribute("restaurant", restaurant.getName());
+        model.addAttribute("restaurantId", restaurant.getId());
         return "menu_recommendation_HSSC";
     }
 
-    @GetMapping("/detail")
-    public String showDetail() {
+    /*@GetMapping("/detail")
+    public String showDetailOrigin() {
+        return "detail";
+    }*/
+
+    @GetMapping("/detail/{restaurantId}")
+    public String showDetail(@PathVariable String restaurantId) {
+        log.info("restaurant = " + restaurantId);
 
         return "detail";
     }
