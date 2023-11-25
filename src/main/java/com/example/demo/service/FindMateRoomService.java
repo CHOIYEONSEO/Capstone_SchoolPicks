@@ -63,6 +63,11 @@ public class FindMateRoomService {
                 .findMateRoom(findMateRoom)
                 .build();
 
+        // 적정 인원보다 많은 경우 reject, 나중에 이거 신호로 변경
+        if(findMateRoom.getRoomUsers().size() == findMateRoom.getHeadCount()){
+            return;
+        }
+
         try{
             roomUserRepository.save(roomUser);
             System.out.println("유저 데이터 저장이 완료되었습니다.");
