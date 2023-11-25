@@ -37,6 +37,20 @@ if (groupContainer8) {
 }
 */
 
+//button for clipboard href -> need to make button for clip board
+var groupContainer9 = document.getElementById("clipbutton");
+if (groupContainer9) {
+    groupContainer9.addEventListener("click", function (e) {
+        var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
+        navigator.clipboard.writeText(linkToCopy).then(function() {
+            alert('링크가 클립보드에 저장되었습니다.');
+        }).catch(function(err) {
+            console.error('클립보드 저장 실패: ', err);
+        });
+    });
+}
+
+
 //temp for sharing: 수정하기
 var groupContainer8 = document.getElementById("edit");
 var password5678 = document.getElementById("password5678").innerText;
