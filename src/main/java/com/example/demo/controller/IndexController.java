@@ -39,10 +39,16 @@ public class IndexController {
         return "find-mate-";
     }*/
 
-    /*@GetMapping("/find-mate-ver1")
-    public String findMateVer1() {
-        return "find-mate-ver1";
-    }*/
+    @GetMapping("/find-mate-ver2")
+    public String findMateVer2() {
+        return "find-mate-ver2";
+    }
+
+    @GetMapping("/find-mate-ver3")
+    public String findMateVer3() {
+        return "find-mate-ver3";
+    }
+
 
     @GetMapping("/menu")
     public String menu() {
@@ -57,6 +63,16 @@ public class IndexController {
     @GetMapping("/ver1-instagram-story")
     public String instagramStory() {
         return "ver1-instagram-story";
+    }
+
+    @GetMapping("/ver2-instagram-story")
+    public String instagramStory2() {
+        return "ver2-instagram-story";
+    }
+
+    @GetMapping("/ver3-instagram-story")
+    public String instagramStory3() {
+        return "ver3-instagram-story";
     }
 
 
