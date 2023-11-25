@@ -173,10 +173,6 @@ public class FindMateRoomService {
         findMateRoomRepository.delete(findMateRoom);
     }
 
-    // 검색한 것에 따라 제목, 이름에 대해 방 정보 객체 전부 조회해오기
-    // 그냥 전체 방 조회할 때도 FindMateRoom 객체 넘겼으니까 얘도 전체 넘길게요.
-    // size가 0이면 null로 반환할게요 그 때는 조회된 게 없는 거 메세지나 팝업 띄워주세요.
-    // 조회할 내용이 캡스톤이면 "캡", "스", "캡스" 이런 식으로 조회해도 검색이 됩니다.
     public List<FindMateRoom> findMateRoomSearch(String keyword){
         List<FindMateRoom> findMateRooms = findMateRoomRepository.findByRoomWriterContainingOrRoomTitleContaining(keyword,keyword);
         return findMateRooms;
