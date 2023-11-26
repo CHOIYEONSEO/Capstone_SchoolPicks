@@ -285,6 +285,14 @@ li:nth-child(4n){
   margin-right: 0px;
 }
 
+.close_time_div{
+  position: absolute;
+  top: 79.18%;
+  left: 30.7%;
+  font-size: var(--font-size-smi);
+  color: var(--color-midnightblue-200);
+}
+
 .div49 {
   position: absolute;
   top: 79.18%;
