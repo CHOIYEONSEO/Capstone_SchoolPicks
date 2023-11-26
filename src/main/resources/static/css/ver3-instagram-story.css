@@ -227,7 +227,7 @@
   letter-spacing: 0.02em;
   top: 85.29%;
   left: 16.88%;
-  width: 320px;
+  width: 328px;
   height: 80px;
   overflow: auto;
 }
@@ -239,7 +239,7 @@ ul{
 
 li{
   float: left;
-  margin-right: 53px;
+  margin-right: 32px;
   margin-bottom: 15px;
 }
 li:nth-child(1){

@@ -167,10 +167,29 @@
   outline: none;
 }
 
+.close_time_div{
+  position: absolute;
+  top: 603px;
+  left: 147px;
+  width: 170px;
+  font-size: var(--font-size-base);
+  color: rgba(38, 57, 159, 0.6);
+}
+
+.close_date_text{
+  float: right;
+  position: relative;
+}
+.close_time_text1{
+  clear: both;
+  float: right;
+  position: relative;
+}
+
 .guest_div{
   position: absolute;
   padding-left: 10px;
-  top: 625px;
+  top: 655px;
   left: 64px;
   font-size: var(--font-size-4xl);
   width: 260px;
@@ -185,6 +204,13 @@ ul{
 li{
   float: left;
   margin-right: 25px;
+}
+li:nth-child(1){
+  font-weight: 800;
+  color: var(--color-midnightblue-200);
+}
+li:nth-child(4n){
+  margin-right: 0px;
 }
 
 .menu-1-1 {

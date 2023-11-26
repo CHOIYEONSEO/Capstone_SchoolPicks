@@ -251,12 +251,20 @@
   font-weight: 500;
 }
 
+.close_time_div{
+  position: absolute;
+  top: 630px;
+  left: 160px;
+  font-size: var(--font-size-smi);
+  color: var(--color-midnightblue-200);
+}
+
 .guest_div{
   position: absolute;
-  top: 625px;
+  top: 653px;
   left: 68px;
   width: 280px;
-  height: 100px;
+  height: 95px;
   overflow: auto;
   letter-spacing: 0.13em;
   font-weight: 500;
@@ -270,7 +278,7 @@ ul{
 
 li{
   float: left;
-  margin-right: 54px;
+  margin-right: 60px;
   margin-bottom: 15px;
 }
 li:nth-child(1){

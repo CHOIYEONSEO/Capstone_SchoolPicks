@@ -133,7 +133,7 @@
 
 .find-mate-ver1-child2 {
   position: absolute;
-  top: 605.5px;
+  top: 601.5px;
   left: 39.5px;
   border-top: 5px solid var(--ios-key-label);
   box-sizing: border-box;
@@ -143,11 +143,11 @@
 .div15,
 .rectangle-div {
   position: absolute;
-  top: 627px;
+  top: 623px;
   left: 51px;
 }
 .rectangle-div {
-  top: 618px;
+  top: 614px;
   left: 148px;
   border-radius: 1px;
   border: 2px solid var(--ios-key-label);
@@ -156,14 +156,22 @@
   height: 40px;
 }
 
+.close_time_div{
+  position: absolute;
+  top: 661px;
+  left: 132px;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray);
+}
+
 .guest_div{
   position: absolute;
   padding-left: 10px;
-  top: 674px;
+  top: 683px;
   left: 65px;
   font-size: var(--font-size-4xl);
   width: 260px;
-  height: 70px;
+  height: 63px;
   overflow: auto;
 }
 
@@ -174,7 +182,10 @@ ul{
 
 li{
   float: left;
-  margin-right: 25px;
+  margin-right: 28px;
+}
+li:nth-child(4n){
+  margin-right: 0px;
 }
 
 .div16,
@@ -202,7 +213,7 @@ li{
 .div20,
 .group-7-12 {
   position: absolute;
-  top: 627px;
+  top: 623px;
   left: 305px;
 }
 .group-7-12 {
