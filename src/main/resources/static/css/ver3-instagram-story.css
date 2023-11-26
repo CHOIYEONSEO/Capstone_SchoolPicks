@@ -213,14 +213,43 @@
   position: absolute;
   letter-spacing: 0.02em;
 }
+
+.close_time_div{
+  position: absolute;
+  top: 80.6%;
+  left: 43%;
+  font-size: var(--font-size-base);
+  color: rgba(38, 57, 159, 0.55);
+}
+
 .reservater_list {
   position: absolute;
   letter-spacing: 0.02em;
-  top: 83.29%;
+  top: 85.29%;
   left: 16.88%;
+  width: 320px;
+  height: 80px;
+  overflow: auto;
+}
+
+ul{
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+li{
+  float: left;
+  margin-right: 53px;
+  margin-bottom: 15px;
+}
+li:nth-child(1){
   font-weight: 800;
   color: var(--color-midnightblue-200);
 }
+li:nth-child(4n){
+  margin-right: 0px;
+}
+
 .rectangle-parent {
   position: absolute;
   top: 63.9px;
