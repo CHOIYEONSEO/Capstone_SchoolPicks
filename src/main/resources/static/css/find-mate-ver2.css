@@ -250,6 +250,37 @@
   font-size: var(--font-size-smi);
   font-weight: 500;
 }
+
+.guest_div{
+  position: absolute;
+  top: 625px;
+  left: 68px;
+  width: 280px;
+  height: 100px;
+  overflow: auto;
+  letter-spacing: 0.13em;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+ul{
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+li{
+  float: left;
+  margin-right: 54px;
+  margin-bottom: 15px;
+}
+li:nth-child(1){
+  color: var(--color-midnightblue-100);
+  font-weight: 600;
+}
+li:nth-child(3n){
+  margin-right: 0px;
+}
+
 .find-mate-ver2-inner {
   position: absolute;
   top: 621px;
