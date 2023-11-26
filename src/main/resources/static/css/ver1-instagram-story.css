@@ -207,6 +207,15 @@
   left: 18.8%;
   font-size: var(--font-size-base);
 }
+
+.close_time_div{
+  position: absolute;
+  top: 79.5%;
+  left: 43%;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray);
+}
+
 .component-child19 {
   position: absolute;
   height: 5.18%;
@@ -219,6 +228,33 @@
   border: 2px solid var(--color-black);
   box-sizing: border-box;
 }
+
+.reservater_list {
+  position: absolute;
+  top: 83.3%;
+  left: 16.5%;
+  width: 339px;
+  height: 80px;
+  overflow: auto;
+}
+
+ul{
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+li{
+  float: left;
+  margin-right: 59px;
+  margin-bottom: 15px;
+}
+li:nth-child(1){
+  font-weight: 600;
+}
+li:nth-child(4n){
+  margin-right: 0px;
+}
+
 .div100 {
   position: absolute;
   top: 80.65%;
