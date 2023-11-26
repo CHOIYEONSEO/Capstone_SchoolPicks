@@ -104,10 +104,6 @@ public class FindMateController {
     @GetMapping("/mate/room/ver1/{roomId}")
     public String showFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
-        log.info("=== @GetMapping showFindMateRoom 접근 ===");
-        log.info("roomId = " + roomId);
-        log.info("isPrivacy = " + isPrivate);
-
         FindMateRoomPageDto findMateRoomPageDto;
         if (isPrivate) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
@@ -130,13 +126,6 @@ public class FindMateController {
             time = "오전 " + hour + ":" + minute;
         }
 
-        log.info("year = " + year);
-        log.info("month = " + month);
-        log.info("date = " + date);
-        log.info("day = " + day);
-        log.info("time = " + time);
-        log.info("shopName = " + findMateRoomPageDto.getShopName());
-
         findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
         findMateRoomPageForm.setYear(year);
         findMateRoomPageForm.setMonth(month);
@@ -152,6 +141,16 @@ public class FindMateController {
 
 
         return "find-mate-ver1";
+    }
+
+    /**
+     * 수정하기
+     * 기존에 있던 게시글을 리포지토리에서 삭제하고, 게시글을 만드는 페이지로 이동한다
+     */
+    @PostMapping("/mate/room/ver1/{roomId}")
+    public String editFindMateRoomVer1(@PathVariable String roomId) {
+        findMateRoomService.deleteFindMateRoom(roomId);
+        return "find-mate-";
     }
 
     @GetMapping("/mate/room/ver2/{roomId}")

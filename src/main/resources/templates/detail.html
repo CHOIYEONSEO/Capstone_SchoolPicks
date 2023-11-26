@@ -24,13 +24,16 @@
     />
   </head>
   <body>
-    <div class="detail">
+    <div class="detail" th:object="${specific}">
       <div class="image-rectangle" id="map"></div>
       <div class="div105">
-        <div class="div106">음식점이름</div>
+        <div class="div106" th:text="*{shopName}">음식점이름</div>
       </div>
-      <div class="div107"><span class="detail_menu_1">대표메뉴1</span><span class="detail_menu_2">대표메뉴2</span></div>
-      <div class="div109">음식점 설명</div>
+      <div class="div107">
+        <span class="detail_menu_1" th:text="*{shopMenuDescription}">대표메뉴1</span>
+<!--        <span class="detail_menu_2">대표메뉴2</span>-->
+      </div>
+      <div class="div109" th:text="*{shopDescription}">음식점 설명</div>
       <img class="cancel-1-1" id="cancel_detail" src="/public/cancel-1-1@2x.png" />
 
       <div class="menu-nav2" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">

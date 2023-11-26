@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.Recommend.RecommendForm;
+import com.example.demo.dto.Recommend.SpecificDto;
 import com.example.demo.entity.Shop.Shop;
 import com.example.demo.service.ShopRecommendService;
 import lombok.RequiredArgsConstructor;
@@ -84,7 +85,6 @@ public class MenuController {
             purposes.add(getPurposeType(recommendForm.getPurposePub()));
         }
 
-
         Shop restaurant = shopRecommendService.recommend("hssc", purposes, recommendForm.getPriceLow(), recommendForm.getPriceHigh());
         log.info("RESTAURANT = " + restaurant.getName());
 
@@ -93,14 +93,16 @@ public class MenuController {
         return "menu_recommendation_HSSC";
     }
 
-    /*@GetMapping("/detail")
-    public String showDetailOrigin() {
-        return "detail";
-    }*/
-
     @GetMapping("/detail/{restaurantId}")
-    public String showDetail(@PathVariable String restaurantId) {
+    public String showDetail(@PathVariable String restaurantId, @ModelAttribute("specific") SpecificDto specificDto) {
         log.info("restaurant = " + restaurantId);
+
+        SpecificDto specific = shopRecommendService.findShopById(Long.parseLong(restaurantId));
+        specificDto.setShopName(specific.getShopName());
+        specificDto.setShopMenuDescription(specific.getShopMenuDescription());
+        specificDto.setShopDescription(specific.getShopDescription());
+        specificDto.setX_position(specific.getX_position());
+        specificDto.setY_position(specific.getY_position());
 
         return "detail";
     }
