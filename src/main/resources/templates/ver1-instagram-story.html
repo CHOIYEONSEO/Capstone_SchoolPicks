@@ -30,7 +30,7 @@
       <div class="rectangle-parent19">
         <div class="component-child12"></div>
         <div class="component-child13"></div>
-        <div class="div92">음식점 이름</div>
+        <div class="div92" th:text="*{shopName}">음식점 이름</div>
         <div class="component-child14"></div>
         <div class="div93">
           <span th:text="*{year}">2023</span>
@@ -66,9 +66,12 @@
         <div class="div99">배고픈 사람 :</div>
 
         <div class="component-child19"></div>
-        <ul th:each="user : *{users}">
-          <li th:text="${user}">이땡떙</li>
-        </ul>
+        <div class="reservater_list">
+          <ul th:each="user : *{users}">
+            <li th:text="${user}">이땡떙</li>
+          </ul>
+          <!--최땡땡-->
+        </div>
         <div class="div100">최땡땡</div>
         <div class="div101">이땡땡</div>
         <div class="div102">백땡땡</div>

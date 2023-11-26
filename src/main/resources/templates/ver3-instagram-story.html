@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -24,7 +24,7 @@
     />
 </head>
 <body>
-<div class="ver3-instagram-story">
+<div class="ver3-instagram-story" th:object="${findMateRoomPage}">
     <div class="rectangle-parent">
         <div class="instance-child"></div>
         <div class="header">
@@ -48,20 +48,25 @@
         <img class="component-item" alt="" src="/public/group-51.svg" />
         <img class="component-inner" alt="" src="/public/group-51.svg" />
 
-        <div class="restaurant_name">음식점 이름</div>
-        <div class="date">2023년 10월 29일 (일) 오후 5:30</div>
+        <div class="restaurant_name" th:text="*{shopName}">음식점 이름</div>
+        <div class="date" th:text="|*{year}년 *{month}월 *{date}일 *{day} *{time}|">2023년 10월 29일 (일) 오후 5:30</div>
         <div class="reservater_name">예약자</div>
-        <div class="div3">최땡땡</div>
+        <div class="div3" th:text="*{roomWriter}">최땡땡</div>
         <div class="div4">예약인원</div>
-        <div class="reservater_number">총 4명</div>
-        <div class="div6">예약자의 메시지</div>
-        <div class="reservater_message">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores perspiciatis voluptatem voluptas voluptatum dicta pariatur facere veniam inventore voluptate, quo repellendus ipsum, quaerat quidem fugit quis illum quas nemo delectus!</div>
+        <div class="reservater_number" th:text="|총 *{headCount}명|">총 4명</div>
+        <div class="div6" th:text="|*{roomWriter}의 메시지|">예약자의 메시지</div>
+        <div class="reservater_message" th:text="*{roomMessage}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores perspiciatis voluptatem voluptas voluptatum dicta pariatur facere veniam inventore voluptate, quo repellendus ipsum, quaerat quidem fugit quis illum quas nemo delectus!</div>
         <div class="reservater_button">추가하기</div>
         <div class="reservater_add"></div>
         <div class="line-div"></div>
         <div class="instance-child1"></div>
         <div class="div9">예약자</div>
-        <div class="reservater_list">최땡땡</div>
+        <div class="reservater_list">
+            <ul th:each="user : *{users}">
+                <li th:text="${user}">이땡떙</li>
+            </ul>
+            <!--최땡땡-->
+        </div>
     </div>
 </div>
 </body>
