@@ -108,6 +108,11 @@
   left: 69.72%;
   font-size: var(--font-size-4xl);
 }
+
+.div95{
+  width: 250px;
+}
+
 .parent1 {
   height: 4.06%;
   width: 23.5%;
@@ -141,6 +146,11 @@
   left: 61.38%;
   font-size: var(--font-size-4xl);
 }
+
+.div97{
+  width: 250px;
+}
+
 .parent2 {
   height: 4.06%;
   width: 31.26%;
@@ -167,6 +177,19 @@
   left: 12.5%;
   font-size: var(--font-size-base);
 }
+
+.message_div{
+  position: absolute;
+  top: 419.5px;
+  left: 40px;
+  width: 363px;
+  height: 75px;
+  overflow: auto;
+  font-weight: 500;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
 .component-child18 {
   position: absolute;
   height: 0.7%;

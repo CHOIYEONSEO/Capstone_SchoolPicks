@@ -37,9 +37,9 @@
         <div th:text="${password}" id="password5678">1234</div>
       </div>
       <div class="group-parent">
-        <div class="rectangle-parent" id="insta1">
+        <div class="rectangle-parent" th:onclick="|location.href='@{/mate/instagram/{roomId}(roomId=${roomId})}'|" id="insta1">
           <div class="group-child"></div>
-          <div class="instagram-story" th:onclick="|location.href='@{/mate/instagram/{roomId}(roomId=${roomId})}'|">
+          <div class="instagram-story">
             <p class="instagram">Instagram</p>
             <p class="instagram">story</p>
           </div>
