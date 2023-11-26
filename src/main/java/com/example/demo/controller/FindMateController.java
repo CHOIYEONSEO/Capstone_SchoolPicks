@@ -61,12 +61,6 @@ public class FindMateController {
         roomId = findMateRoomService.createFindMateRoom(findMateRoomDto);
         model.addAttribute("roomId", roomId);
 
-        //테스트용 유저 추가
-        findMateRoomService.joinFindMateRoom("유저2", roomId);
-        findMateRoomService.joinFindMateRoom("유저3", roomId);
-        findMateRoomService.joinFindMateRoom("유저4", roomId);
-        findMateRoomService.joinFindMateRoom("유저5", roomId);
-
         log.info("Before roomId = " + roomId);
         log.info("Before isPrivacy = " + isPrivate);
 
