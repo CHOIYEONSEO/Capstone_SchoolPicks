@@ -26,16 +26,6 @@
 <body>
 <div class="reviewver2">
 
-    <h1>[예시부분]</h1>
-    <ul th:each="room : ${rooms}">
-        <button th:onclick="|location.href='@{/mate/room/{roomId}(roomId=*{room.roomId})}'|">
-            <li th:text="|No. ${room.id}|">게시글 인덱스</li>
-            <li th:text="${room.roomTitle}">게시글 제목</li>
-            <li th:text="${room.roomWriter}">작성자 이름</li>
-        </button>>
-    </ul>
-
-
     <div class="header">
         <img class="group-7-1" alt="" src="/public/group-7-1@2x.png" />
     </div>
@@ -48,7 +38,17 @@
                 src="/public/magnifiyingglass-1@2x.png"
         />
     </div>
-    <div class="review_line1"></div>
+    <!--<h1>[예시부분]</h1>-->
+    <div class="review_content">
+        <ul class="ul_border" th:each="room : ${rooms}">
+            <button class="content_button" th:onclick="|location.href='@{/mate/room/{roomId}(roomId=*{room.roomId})}'|">
+                <li class="content_no" th:text="|No. ${room.id}|">게시글 인덱스</li>
+                <li class="content_title" th:text="${room.roomTitle}"><span class="title_background">게시글 제목</span></li>
+                <li class="content_writer" th:text="${room.roomWriter}">작성자 이름</li>
+            </button>
+        </ul>
+    </div>
+    <!--<div class="review_line1"></div>
     <div class="title1">[게시글 제목]</div>
     <div class="no13">No.13</div>
     <div class="writer1">작성자</div>
@@ -63,7 +63,9 @@
     <div class="review_line4"></div>
     <div class="title4">[게시글 제목]</div>
     <div class="no10">No.10</div>
-    <div class="writer4">작성자</div>
+    <div class="writer4">작성자</div>-->
+
+
     <div class="menu-nav" id = "menuNavContainer" th:onclick="|location.href='@{/menu}'|">
         <div class="menu-nav-child"></div>
         <div class="menu-selected">
@@ -77,7 +79,7 @@
             />
         </div>
     </div>
-    <div class="review_line5"></div>
+    <!--<div class="review_line5"></div>
     <div class="title5">[게시글 제목]</div>
     <div class="no9">No.9</div>
     <div class="writer5">작성자</div>
@@ -115,7 +117,7 @@
     <div class="title13">[게시글 제목]</div>
     <div class="no1">No.1</div>
     <div class="writer13">작성자</div>
-    <div class="div26">1</div>
+    <div class="div26">1</div>-->
 </div>
 
 <script type="text/javascript" src="/js/reviewer.js"></script>
