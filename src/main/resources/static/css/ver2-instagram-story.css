@@ -258,10 +258,33 @@
 .reservater_guest {
   position: absolute;
   top: 84.9%;
-  left: 22.08%;
+  left: 14%;
   letter-spacing: 0.13em;
+  font-weight: 500;
+  width: 360px;
+  height: 80px;
+  overflow: auto;
+  color: var(--color-black);
+}
+
+ul{
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+li{
+  float: left;
+  margin-right: 57px;
+  margin-bottom: 15px;
+}
+li:nth-child(1){
+  color: var(--color-midnightblue-100);
   font-weight: 600;
 }
+li:nth-child(4n){
+  margin-right: 0px;
+}
+
 .div49 {
   position: absolute;
   top: 79.18%;
