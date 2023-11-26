@@ -2,8 +2,12 @@ package com.example.demo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 @AllArgsConstructor(staticName="set")
 public class ResponseDto<D> {
 
@@ -19,5 +23,9 @@ public class ResponseDto<D> {
     // 실패했을 때 정의하는 메서드
     public static <D> ResponseDto<D> setFailed(String message){
         return ResponseDto.set(false, message, null);
+    }
+
+    public boolean getResult(){
+        return this.result;
     }
 }

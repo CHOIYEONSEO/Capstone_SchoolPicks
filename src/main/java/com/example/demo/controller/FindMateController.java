@@ -4,6 +4,7 @@ import com.example.demo.dto.FindMate.FindMateRoomDto;
 import com.example.demo.dto.FindMate.FindMateRoomForm;
 import com.example.demo.dto.FindMate.FindMateRoomPageDto;
 import com.example.demo.dto.FindMate.FindMateRoomPageForm;
+import com.example.demo.dto.ResponseDto;
 import com.example.demo.service.FindMateRoomService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 
 @Controller
@@ -46,20 +48,51 @@ public class FindMateController {
             isPrivate = true;
         }
 
-        FindMateRoomDto findMateRoomDto = new FindMateRoomDto(
-                findMateRoomForm.getRoomTitle(),
-                findMateRoomForm.getShopName(),
-                LocalDateTime.parse(findMateRoomForm.getPlanTime()),
-                findMateRoomForm.getHeadCount(),
-                findMateRoomForm.getRoomWriter(),
-                findMateRoomForm.getRoomMessage(),
-                isPrivate,
-                findMateRoomForm.getRoomPassword(),
-                findMateRoomForm.getVersion()
-        );
+        FindMateRoomDto findMateRoomDto = null;
 
-        roomId = findMateRoomService.createFindMateRoom(findMateRoomDto);
+        try{
+            findMateRoomDto = new FindMateRoomDto(
+                    findMateRoomForm.getRoomTitle(),
+                    findMateRoomForm.getShopName(),
+                    LocalDateTime.parse(findMateRoomForm.getPlanTime()),
+                    LocalDateTime.parse(findMateRoomForm.getExpiredTime()),
+                    findMateRoomForm.getHeadCount(),
+                    findMateRoomForm.getRoomWriter(),
+                    findMateRoomForm.getRoomMessage(),
+                    isPrivate,
+                    findMateRoomForm.getRoomPassword(),
+                    findMateRoomForm.getVersion()
+            );
+        } catch(DateTimeParseException e){ // 시간값 제대로 입력 안한 경우 처리
+            return "find-mate-";
+        } catch(NullPointerException e){ // 시간 제대로 반영되게 만들어주시면 감사하겠습니다.
+            findMateRoomDto = new FindMateRoomDto(
+                    findMateRoomForm.getRoomTitle(),
+                    findMateRoomForm.getShopName(),
+                    LocalDateTime.parse(findMateRoomForm.getPlanTime()),
+                    null,
+                    findMateRoomForm.getHeadCount(),
+                    findMateRoomForm.getRoomWriter(),
+                    findMateRoomForm.getRoomMessage(),
+                    isPrivate,
+                    findMateRoomForm.getRoomPassword(),
+                    findMateRoomForm.getVersion()
+            );
+        }
+
+        ResponseDto<String> response = findMateRoomService.createFindMateRoom(findMateRoomDto);
+
+        if(!response.getResult()){ // 시간값이 앞이거나 다른 값을 제대로 안 넣은 경우 처리
+            return "find-mate-";
+        }
+
+
+        // 이거 나중에 출력하실 때 사용하세요.
+        model.addAttribute("message", response.getMessage());
+
+        String roomId = response.getData();
         model.addAttribute("roomId", roomId);
+
 
         log.info("Before roomId = " + roomId);
         log.info("Before isPrivacy = " + isPrivate);

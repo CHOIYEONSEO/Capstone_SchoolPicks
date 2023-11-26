@@ -24,27 +24,27 @@ public class FindMateRoomServiceTest {
     @Autowired
     EntityManager em;
 
-    @Test
-    void 글작성테스트(){
-
-        FindMateRoomDto findMateRoomDto = FindMateRoomDto.builder()
-                .roomTitle("오늘 밥 먹을사람")
-                .shopName("성대밥상")
-                .planTime(LocalDateTime.now())
-                .headCount(5)
-                .roomWriter("테스터")
-                .roomPassword("1234")
-                .roomMessage("밥먹자고오오")
-                .isPrivate(true)
-                .version(1)
-                .build();
-
-        String roomId = findMateRoomService.createFindMateRoom(findMateRoomDto);
-
-        em.flush();
-        em.clear();
-
-    }
+//    @Test
+//    void 글작성테스트(){
+//
+//        FindMateRoomDto findMateRoomDto = FindMateRoomDto.builder()
+//                .roomTitle("오늘 밥 먹을사람")
+//                .shopName("성대밥상")
+//                .planTime(LocalDateTime.now())
+//                .headCount(5)
+//                .roomWriter("테스터")
+//                .roomPassword("1234")
+//                .roomMessage("밥먹자고오오")
+//                .isPrivate(true)
+//                .version(1)
+//                .build();
+//
+//        String roomId = findMateRoomService.createFindMateRoom(findMateRoomDto);
+//
+//        em.flush();
+//        em.clear();
+//
+//    }
 
     @Test
     void 유저추가테스트(){

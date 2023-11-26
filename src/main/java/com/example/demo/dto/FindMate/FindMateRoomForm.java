@@ -13,6 +13,7 @@ public class FindMateRoomForm {
     String roomTitle;
     String shopName;
     String planTime;
+    String expiredTime;
     int headCount;
     String roomWriter;
     String roomMessage;

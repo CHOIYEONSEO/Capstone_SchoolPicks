@@ -30,6 +30,9 @@ public class FindMateRoom {
     @DateTimeFormat(pattern = "yyyy-MM-dd/HH:mm:ss")
     private LocalDateTime planTime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd/HH:mm:ss")
+    private LocalDateTime expiredTime;
+
     int headCount;
 
     String roomWriter;

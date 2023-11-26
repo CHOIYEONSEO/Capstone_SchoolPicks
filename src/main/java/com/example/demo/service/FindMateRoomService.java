@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.dto.FindMate.FindMateRoomDto;
 import com.example.demo.dto.FindMate.FindMateRoomPageDto;
 import com.example.demo.dto.FindMate.GetRoomListDto;
+import com.example.demo.dto.ResponseDto;
 import com.example.demo.entity.FindMate.FindMateRoom;
 import com.example.demo.entity.FindMate.RoomUser;
 import com.example.demo.repository.FindMateRoomRepository;
@@ -10,6 +11,8 @@ import com.example.demo.repository.RoomUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -20,15 +23,28 @@ public class FindMateRoomService {
     private final FindMateRoomRepository findMateRoomRepository;
     private final RoomUserRepository roomUserRepository;
 
-    public String createFindMateRoom(FindMateRoomDto dto){
+    public ResponseDto<String> createFindMateRoom(FindMateRoomDto dto){
 
         String roomId = UUID.randomUUID().toString();
+
+        LocalDateTime currentTime = LocalDateTime.now();
+        LocalDateTime targetTime = currentTime.plus(30, ChronoUnit.MINUTES);
+
+        if(dto.getPlanTime().isBefore(targetTime)){ // 30분보다 일찍 잡힌 경우
+            return ResponseDto.setFailed("일찍 시간을 최소 30분 이상으로 설정해주세요.");
+        }
+
+        // 마감시간이 만료시간보다 뒤에 있거나, 현재 시간보다 앞에 있는 경우 에러 발생
+//        if(dto.getExpiredTime().isAfter(dto.getPlanTime()) || dto.getExpiredTime().isBefore(currentTime)){
+//            return ResponseDto.setFailed("마감 시간은 현재시간부터 약속시간까지만 가능합니다.");
+//        }
 
         FindMateRoom findMateRoom = FindMateRoom.builder()
                 .roomId(roomId)
                 .roomTitle(dto.getRoomTitle())
                 .shopName(dto.getShopName())
                 .planTime(dto.getPlanTime())
+                .expiredTime(dto.getExpiredTime())
                 .headCount(dto.getHeadCount())
                 .roomWriter(dto.getRoomWriter())
                 .roomMessage(dto.getRoomMessage())
@@ -46,11 +62,11 @@ public class FindMateRoomService {
             findMateRoomRepository.save(findMateRoom);
             roomUserRepository.save(roomUser);
         } catch(Exception e){
-            System.out.println("데이터 베이스 오류입니다.");
+            return ResponseDto.setFailed("데이터베이스 상의 에러가 있습니다.");
         }
 
 
-        return roomId;
+        return ResponseDto.setSuccess("방을 개설하는데 성공하였습니다.", roomId);
     }
 
     // 임시 주석
@@ -65,6 +81,12 @@ public class FindMateRoomService {
 
         // 적정 인원보다 많은 경우 reject, 나중에 이거 신호로 변경
         if(findMateRoom.getRoomUsers().size() == findMateRoom.getHeadCount()){
+            return;
+        }
+
+        // 시간을 초과한 경우도 reject
+        LocalDateTime currentTime = LocalDateTime.now();
+        if(currentTime.isAfter(findMateRoom.getExpiredTime())){
             return;
         }
 

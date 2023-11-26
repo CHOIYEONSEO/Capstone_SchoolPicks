@@ -19,6 +19,8 @@ public class FindMateRoomDto {
 
     LocalDateTime planTime;
 
+    LocalDateTime expiredTime;
+
     int headCount;
 
     String roomWriter;
