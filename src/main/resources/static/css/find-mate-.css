@@ -110,11 +110,11 @@
 
 .div24 {
   position: absolute;
-  top: -7px;
+  top: -3px;
   right: 10px;
   font-size: var(--font-size-3xs);
-  letter-spacing: 0.11em;
   font-weight: 300;
+  text-align: right;
 }
 .transparent-container,
 .transparent3 {
@@ -283,6 +283,25 @@
   bottom: 28.52%;
   left: 30.5px;
 }
+
+.transparent-parent5 {
+  position: absolute;
+  height: 2%;
+  width: 332px;
+  top: 73.58%;
+  bottom: 24.76%;
+  left: 30.5px;
+}
+
+.close_div{
+  position: absolute;
+  top: -3px;
+  right: 10px;
+  font-size: var(--font-size-3xs);
+  font-weight: 300;
+  text-align: right;
+}
+
 .menu-nav-child1 {
   height: 100%;
   width: 100%;
@@ -332,7 +351,7 @@
 }
 .rectangle-parent1 {
   position: absolute;
-  top: 636px;
+  top: 664px;
   left: 148px;
   width: 98px;
   height: 38px;

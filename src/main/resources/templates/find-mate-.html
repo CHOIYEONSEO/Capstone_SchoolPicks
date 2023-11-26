@@ -75,6 +75,11 @@
       <div class="group-child1"></div>
       <input type="text" th:field="*{roomPassword}" name="edit_password" class="div31" placeholder="4자리 비밀번호를 입력하세요" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
     </div>
+    <div class="transparent-parent5">
+      <b class="b">예약자 추가 마감시간</b>
+      <div class="group-child1"></div>
+      <input type="datetime-local" name="close_date_time" class="close_div" id="tempt8">
+    </div>
     <div class="menu-nav3" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
       <div class="menu-nav-child1"></div>
       <div class="menu-selected4">
