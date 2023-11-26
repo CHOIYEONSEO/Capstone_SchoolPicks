@@ -1,3 +1,14 @@
+.radio-btn{
+  display: none;
+}
+
+input[type=radio]:checked + .selected>.ver1-selected,
+input[type=radio]:checked + .selected>.ver2-selected,
+input[type=radio]:checked + .selected>.ver3-selected,
+input[type=radio]:checked + .selected>.ver4-selected{
+  background-color: var(--color-gainsboro-300);
+}
+
 .ver1-selected {
   position: absolute;
   top: 172px;
@@ -23,7 +34,7 @@
 }
 .ver4-selected {
   left: 276px;
-  background-color: var(--color-gainsboro-300);
+  /*background-color: var(--color-gainsboro-300);*/
 }
 .group-7-13 {
   position: absolute;

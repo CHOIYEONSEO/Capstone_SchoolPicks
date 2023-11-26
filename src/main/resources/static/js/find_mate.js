@@ -72,6 +72,7 @@ function clickCheck(target) {
     target.checked = true;
 }
 
+/*
 var ver1Select = document.getElementById("ver1_select");
 var ver2Select = document.getElementById("ver2_select");
 var ver3Select = document.getElementById("ver3_select");
@@ -111,3 +112,4 @@ if (ver4Select) {
         ver3Select.style.background = 'none';
     });
 }
+*/
