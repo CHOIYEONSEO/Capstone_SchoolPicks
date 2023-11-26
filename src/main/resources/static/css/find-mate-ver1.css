@@ -312,6 +312,7 @@ li{
   border-radius: var(--br-4xl);
   background-color: var(--color-lightsteelblue-100);
   width: 57px;
+  height: 28px;
 }
 .div21 {
   position: absolute;
