@@ -78,7 +78,7 @@
     <div class="transparent-parent5">
       <b class="b">예약자 추가 마감시간</b>
       <div class="group-child1"></div>
-      <input type="datetime-local" name="close_date_time" class="close_div" id="tempt8">
+      <input type="datetime-local" th:field="*{expiredTime}" name="close_date_time" class="close_div" id="tempt8">
     </div>
     <div class="menu-nav3" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
       <div class="menu-nav-child1"></div>
@@ -102,19 +102,19 @@
     <b class="b8">컨셉 선택하기</b>
     <div class="find-mate-inner"></div>
 
-    <input name="choose-ver" class="radio-btn" type="radio" id="ver1_select"><label for="ver1_select" class="selected">
+    <input name="choose-ver" class="radio-btn" type="radio" id="ver1_select" th:value="1" th:field="${findMateRoom.version}"><label for="ver1_select" class="selected">
       <div class="ver1-selected">
         <div class="ver1">ver1</div>
         <img class="find-mate-child" alt="" src="./public/group-461.svg" />
       </div>
     </label>
-    <input name="choose-ver" class="radio-btn" type="radio" id="ver2_select"><label for="ver2_select" class="selected">
+    <input name="choose-ver" class="radio-btn" type="radio" id="ver2_select" th:value="2" th:field="${findMateRoom.version}"><label for="ver2_select" class="selected">
       <div class="ver2-selected">
         <div class="ver2">ver2</div>
         <img class="find-mate-child1" alt="" src="./public/group-47.svg" />
       </div>
     </label>
-    <input name="choose-ver" class="radio-btn" type="radio" id="ver3_select"><label for="ver3_select" class="selected">
+    <input name="choose-ver" class="radio-btn" type="radio" id="ver3_select" th:value="3" th:field="${findMateRoom.version}"><label for="ver3_select" class="selected">
       <div class="ver3-selected">
         <div class="ver3">ver3</div>
         <b class="reser-vation">
@@ -125,7 +125,7 @@
         </b>
       </div>
     </label>
-    <input name="choose-ver" class="radio-btn" type="radio" id="ver4_select"><label for="ver4_select" class="selected">
+    <input name="choose-ver" class="radio-btn" type="radio" id="ver4_select" th:value="4" th:field="${findMateRoom.version}"><label for="ver4_select" class="selected">
       <div class="ver4-selected">
         <div class="ver4">ver4</div>
         <div class="random">Random</div>

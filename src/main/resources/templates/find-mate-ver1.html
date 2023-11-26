@@ -37,7 +37,7 @@
         <div th:text="${password}" id="password5678">1234</div>
       </div>
       <div class="group-parent">
-        <div class="rectangle-parent" th:onclick="|location.href='@{/mate/instagram/{roomId}(roomId=${roomId})}'|" id="insta1">
+        <div class="rectangle-parent" th:onclick="|location.href='@{/mate/instagram/ver1/{roomId}(roomId=${roomId})}'|" id="insta1">
           <div class="group-child"></div>
           <div class="instagram-story">
             <p class="instagram">Instagram</p>
@@ -69,7 +69,7 @@
           />
         </div>
       </div>
-      <div class="div8">음식점 이름</div>
+      <div class="div8" th:text="*{shopName}">음식점 이름</div>
       <div class="find-mate-ver1-item"></div>
       <div class="div9">
         <span th:text="*{year}">2023</span>
