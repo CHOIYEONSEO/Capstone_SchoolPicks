@@ -198,22 +198,8 @@ public class FindMateRoomService {
 
     // roomId로 내역지우기
     public void deleteFindMateRoom(String roomId){
-        FindMateRoom findMateRoom = findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId);
-        log.info("findMateRoom = " + findMateRoom);
-
+        FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
         findMateRoomRepository.delete(findMateRoom);
-
-        log.info("findMateRoom = " + findMateRoom);
-        log.info("findMateRoom.getRoomUsers() = " + findMateRoom.getRoomUsers());
-
-        List<RoomUser> roomUsers = findMateRoom.getRoomUsers();
-        for(RoomUser roomUser: roomUsers){
-            roomUserRepository.delete(roomUser);
-        }
-
-
-        log.info("After findMateRoom = " + findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId));
-        log.info("After findMateRoom.getRoomUsers() = " + findMateRoom.getRoomUsers());
     }
 
     public List<FindMateRoom> findMateRoomSearch(String keyword){

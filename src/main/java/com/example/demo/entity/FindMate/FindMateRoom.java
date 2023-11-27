@@ -48,7 +48,8 @@ public class FindMateRoom {
 
     int version;
 
-    @OneToMany(mappedBy = "findMateRoom")
+    @OneToMany(mappedBy = "findMateRoom", cascade = CascadeType.REMOVE)
+    @Fetch(FetchMode.JOIN)
     private List<RoomUser> roomUsers = new ArrayList<>();
 
     @Override
