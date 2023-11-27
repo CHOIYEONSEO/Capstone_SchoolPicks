@@ -5,6 +5,7 @@ import com.example.demo.dto.FindMate.FindMateRoomForm;
 import com.example.demo.dto.FindMate.FindMateRoomPageDto;
 import com.example.demo.dto.FindMate.FindMateRoomPageForm;
 import com.example.demo.dto.ResponseDto;
+import com.example.demo.entity.FindMate.RoomUser;
 import com.example.demo.service.FindMateRoomService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -140,7 +141,7 @@ public class FindMateController {
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
 
         model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
-
+        model.addAttribute("addUser", new RoomUser());
 
         return "find-mate-ver1";
     }
@@ -154,6 +155,18 @@ public class FindMateController {
         findMateRoomService.deleteFindMateRoom(roomId);
         return "redirect:/mate";
     }
+
+    /**
+     * 배고픈 사람 입력 (유저 추가하기)
+     */
+    @PostMapping("/mate/room/ver1/addUser/{roomId}")
+    public String addUserFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        log.info("addUser = " + addUser.getUserName());
+        findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
+        log.info("After debug");
+        return "redirect:/mate/room/ver1/" + roomId;
+    }
+
 
     @GetMapping("/mate/room/ver2/{roomId}")
     public String showFindMateRoomVer2(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {

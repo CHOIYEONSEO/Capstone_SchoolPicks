@@ -104,19 +104,22 @@
       <div class="find-mate-ver1-child1"></div>
       <div class="div14" th:text="|*{roomWriter}의 메시지 : |">최땡땡의 메시지 :</div>
       <div class="find-mate-ver1-child2"></div>
-      <div class="div15">배고픈 사람 :</div>
-      <div class="div20">입력</div>
-      <div class="close_time_div">
-        <span class="close_time_text">2023년 11월 27일 (월) 오전 1:29</span>
-        <span class="close_text">마감</span>
-      </div>
-      <div class="guest_div">
-        <ul th:each="user : *{users}">
-          <li th:text="${user}">이땡떙</li>
-        </ul>
-      </div>
-      <div class="message_div" th:text="*{roomMessage}">메시지내용</div>
-      <input type="text" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
+
+      <form th:action="@{/mate/room/ver1/addUser/{roomId}(roomId=${roomId})}" method="post">
+        <div class="div15">배고픈 사람 :</div>
+        <button type="submit"><div class="div20">입력</div></button>>
+        <div class="close_time_div">
+          <span class="close_time_text">2023년 11월 27일 (월) 오전 1:29</span>
+          <span class="close_text">마감</span>
+        </div>
+        <div class="guest_div">
+          <ul th:each="user : *{users}">
+            <li th:text="${user}">이땡떙</li>
+          </ul>
+        </div>
+        <div class="message_div" th:text="*{roomMessage}">메시지내용</div>
+        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
+      </form>
     </div>
 
 
