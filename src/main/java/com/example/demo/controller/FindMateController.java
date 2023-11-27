@@ -33,12 +33,14 @@ public class FindMateController {
 
     @GetMapping("/mate")
     public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm) {
+        log.info("get Mapping /mate 여기");
         return "find-mate-";
     }
 
     @PostMapping("/mate")
     public String postFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model
             , RedirectAttributes redirectAttributes) {
+
         //로그 찍기
         logPostFindMateRoom(findMateRoomForm);
 
@@ -150,7 +152,7 @@ public class FindMateController {
     @PostMapping("/mate/room/ver1/{roomId}")
     public String editFindMateRoomVer1(@PathVariable String roomId) {
         findMateRoomService.deleteFindMateRoom(roomId);
-        return "find-mate-";
+        return "redirect:/mate";
     }
 
     @GetMapping("/mate/room/ver2/{roomId}")

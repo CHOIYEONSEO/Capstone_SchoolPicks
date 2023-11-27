@@ -9,6 +9,7 @@ import com.example.demo.entity.FindMate.RoomUser;
 import com.example.demo.repository.FindMateRoomRepository;
 import com.example.demo.repository.RoomUserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -19,6 +20,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class FindMateRoomService {
     private final FindMateRoomRepository findMateRoomRepository;
     private final RoomUserRepository roomUserRepository;
@@ -194,8 +196,12 @@ public class FindMateRoomService {
     // roomId로 내역지우기
     public void deleteFindMateRoom(String roomId){
         FindMateRoom findMateRoom = findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId);
+        log.info("findMateRoom = " + findMateRoom);
 
         findMateRoomRepository.delete(findMateRoom);
+
+        log.info("findMateRoom = " + findMateRoom);
+        log.info("findMateRoom.getRoomUsers() = " + findMateRoom.getRoomUsers());
 
         List<RoomUser> roomUsers = findMateRoom.getRoomUsers();
         for(RoomUser roomUser: roomUsers){
@@ -203,6 +209,8 @@ public class FindMateRoomService {
         }
 
 
+        log.info("After findMateRoom = " + findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId));
+        log.info("After findMateRoom.getRoomUsers() = " + findMateRoom.getRoomUsers());
     }
 
     public List<FindMateRoom> findMateRoomSearch(String keyword){
