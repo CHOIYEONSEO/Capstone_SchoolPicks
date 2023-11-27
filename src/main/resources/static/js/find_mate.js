@@ -67,6 +67,36 @@ if (groupContainer8) {
     });
 }
 
+var containerVer2 = document.getElementById("editVer2");
+var editVer2Form = document.getElementById("editVer2Form");
+var passwordVer2 = document.getElementById("passwordVer2").innerText;
+if (containerVer2) {
+    containerVer2.addEventListener("click", function(e) {
+        var editpass2 = prompt('비밀번호를 입력하시오',"게시글 수정 비밀번호를 입력하세요");
+        if(!editpass2) { //취소 눌렀을때
+        }
+        if(editpass2.toLowerCase() == passwordVer2){
+            editVer2Form.submit();
+        }
+    });
+}
+
+var containerVer3 = document.getElementById("editVer3");
+var editVer3Form = document.getElementById("editVer3Form");
+var passwordVer3 = document.getElementById("passwordVer3").innerText;
+if (containerVer3) {
+    containerVer3.addEventListener("click", function(e) {
+        var editpass3 = prompt('비밀번호를 입력하시오',"게시글 수정 비밀번호를 입력하세요");
+        if(!editpass3) { //취소 눌렀을때
+        }
+        if(editpass3.toLowerCase() == passwordVer3){
+            editVer3Form.submit();
+        }
+    });
+}
+
+
+
 function clickCheck(target) {
     document.querySelectorAll(`input[type=checkbox]`)
         .forEach(el => el.checked = false);

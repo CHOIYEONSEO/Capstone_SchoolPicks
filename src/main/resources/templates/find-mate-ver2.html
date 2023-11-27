@@ -30,10 +30,13 @@
         <img class="group-7-15" alt="" src="/public/group-7-12@2x.png" />
     </div>
     <img class="find-mate-ver2-item" alt="" src="/public/group-22.svg" />
-    <div class="rectangle-parent16">
-        <div class="group-child13"></div>
-        <div class="div91">수정하기</div>
-    </div>
+    <form th:action method="post" id="editVer2Form">
+        <div class="rectangle-parent16" id="editVer2">
+            <div class="group-child13"></div>
+            <div class="div91">수정하기</div>
+            <div th:text="${password}" id="passwordVer2"></div>
+        </div>
+    </form>
     <div class="group-container">
         <div class="rectangle-parent17" th:onclick="|location.href='@{/mate/instagram/ver2/{roomId}(roomId=${roomId})}'|" id = "insta2"> <!--여기에 클릭시 넘어가는 페이지 url 넣어주세요-->
             <div class="group-child14"></div>
@@ -96,12 +99,14 @@
         <div class="group-child9"></div>
         <div class="reserver_add" th:text="|*{roomWriter}의 메시지|">예약자의 메시지</div>
     </div>
-    <div class="rectangle-parent15">
-        <div class="group-child9"></div>
-        <div class="reserver_add">예약자 추가하기</div>
-    </div>
-    <input type="text" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
-    <div class="div87">추가</div>
+    <form th:action="@{/mate/room/ver2/addUser/{roomId}(roomId=${roomId})}" method="post">
+        <div class="rectangle-parent15">
+            <div class="group-child9"></div>
+            <div class="reserver_add">예약자 추가하기</div>
+        </div>
+        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
+        <button type="submit"><div class="div87">추가</div></button>
+    </form>
     <div class="close_time_div">
         <span class="close_time_text">2023년 11월 27일 (월) 오전 1:29</span>
         <span class="close_text">마감</span>
