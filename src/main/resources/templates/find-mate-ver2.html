@@ -30,11 +30,19 @@
         <img class="group-7-15" alt="" src="/public/group-7-12@2x.png" />
     </div>
     <img class="find-mate-ver2-item" alt="" src="/public/group-22.svg" />
-    <div class="rectangle-parent16">
-        <div class="group-child13"></div>
-        <div class="div91">수정하기</div>
-    </div>
+    <form th:action method="post"  id="editVer1Form">
+        <div class="rectangle-parent16" id="edit">
+            <div class="group-child13"></div>
+            <div class="div91">수정하기</div>
+            <div class="password" th:text="${password}" id="password">1234</div>
+        </div>
+    </form>
     <div class="group-container">
+        <div class="rectangle-parent19">
+            <div class="group-child14"></div>
+            <div class="kakaotalk1">LinkCopy</div>
+            <img class="share-icon2" alt="" src="/public/download_image.png" />
+        </div>
         <div class="rectangle-parent17" th:onclick="|location.href='@{/mate/instagram/ver2/{roomId}(roomId=${roomId})}'|" id = "insta2"> <!--여기에 클릭시 넘어가는 페이지 url 넣어주세요-->
             <div class="group-child14"></div>
             <div class="instagram-story1">
@@ -120,9 +128,9 @@
     <div class="find-mate-ver2-child3"></div>
     <div class="div90">서땡땡</div>
     <div class="find-mate-ver2-child4"></div>-->
-</div>
+    </div>
 
-<script type="text/javascript" src="/js/menu.js"></script>
-<script type="text/javascript" src="/js/find_mate.js"></script>
+    <script type="text/javascript" src="/js/menu.js"></script>
+    <script type="text/javascript" src="/js/find_mate.js"></script>
 </body>
 </html>

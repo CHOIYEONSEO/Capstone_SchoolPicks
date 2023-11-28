@@ -427,6 +427,9 @@ li:nth-child(3n){
   font-size: var(--font-size-3xs);
   color: var(--color-black);
 }
+.password{
+  opacity: 0;
+}
 .group-child14 {
   position: absolute;
   top: 0;
@@ -456,7 +459,7 @@ li:nth-child(3n){
 }
 .rectangle-parent17 {
   position: absolute;
-  top: 0;
+  top: 40px;
   left: calc(50% - 95px);
   width: 80px;
   height: 28px;
@@ -470,13 +473,20 @@ li:nth-child(3n){
 }
 .rectangle-parent18 {
   position: absolute;
-  top: 0;
+  top: 40px;
   left: calc(50% + 15px);
   width: 80px;
   height: 28px;
 }
+.rectangle-parent19 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 28px;
+}
 .group-container {
-  top: 773px;
+  top: 750px;
   left: 102px;
   width: 190px;
   text-align: center;

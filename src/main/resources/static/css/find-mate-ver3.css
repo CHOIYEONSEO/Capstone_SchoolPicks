@@ -299,7 +299,7 @@ li:nth-child(4n){
 }
 .rectangle-container {
   position: absolute;
-  top: 0;
+  top: 40px;
   left: calc(50% - 95px);
   width: 80px;
   height: 28px;
@@ -313,14 +313,24 @@ li:nth-child(4n){
 }
 .group-div {
   position: absolute;
-  top: 0;
+  top: 40px;
   left: calc(50% + 15px);
   width: 80px;
   height: 28px;
 }
+.group-div-1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 40px);
+  width: 80px;
+  height: 28px;
+}
+.password{
+    opacity:0;
+}
 .group-parent {
   position: absolute;
-  top: 773px;
+  top: 750px;
   left: 102px;
   width: 190px;
   height: 28px;

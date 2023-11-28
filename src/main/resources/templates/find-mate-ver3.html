@@ -109,15 +109,23 @@
             <div class="kakaotalk">KakaoTalk</div>
             <img class="share-icon" alt="" src="/public/share@2x.png" />
         </div>
+        <div class="group-div-1">
+            <div class="button_kakao"></div>
+            <div class="kakaotalk">LinkCopy</div>
+            <img class="share-icon" alt="" src="/public/download_image.png" />
+        </div>
     </div>
 
     <div class="header2">
         <img class="menu-1-1" alt="" src="/public/group-7-12@2x.png" />
     </div>
-    <div class="rectangle-parent1">
-        <div class="group-inner"></div>
-        <div class="div33">수정하기</div>
-    </div>
+    <form th:action method="post" id="editVer1Form">
+        <div class="rectangle-parent1" id="edit">
+            <div class="group-inner"></div>
+            <div class="div33">수정하기</div>
+            <div class="password" th:text="${password}" id="password">1234</div>
+        </div>
+    </form>
 </div>
 
 <script type="text/javascript" src="/js/menu.js"></script>
