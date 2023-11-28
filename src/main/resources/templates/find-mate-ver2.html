@@ -104,12 +104,14 @@
         <div class="group-child9"></div>
         <div class="reserver_add" th:text="|*{roomWriter}의 메시지|">예약자의 메시지</div>
     </div>
-    <div class="rectangle-parent15">
-        <div class="group-child9"></div>
-        <div class="reserver_add">예약자 추가하기</div>
-    </div>
-    <input type="text" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
-    <div class="div87">추가</div>
+    <form th:action="@{/mate/room/ver2/addUser/{roomId}(roomId=${roomId})}" method="post">
+        <div class="rectangle-parent15">
+            <div class="group-child9"></div>
+            <div class="reserver_add">예약자 추가하기</div>
+        </div>
+        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
+        <button type="submit"><div class="div87">추가</div></button>
+    </form>
     <div class="close_time_div">
         <span class="close_time_text">2023년 11월 27일 (월) 오전 1:29</span>
         <span class="close_text">마감</span>

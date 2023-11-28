@@ -146,27 +146,6 @@ public class FindMateController {
         return "find-mate-ver1";
     }
 
-    /**
-     * 수정하기
-     * 기존에 있던 게시글을 리포지토리에서 삭제하고, 게시글을 만드는 페이지로 이동한다
-     */
-    @PostMapping("/mate/room/ver1/{roomId}")
-    public String editFindMateRoomVer1(@PathVariable String roomId) {
-        findMateRoomService.deleteFindMateRoom(roomId);
-        return "redirect:/mate";
-    }
-
-    /**
-     * 배고픈 사람 입력 (유저 추가하기)
-     */
-    @PostMapping("/mate/room/ver1/addUser/{roomId}")
-    public String addUserFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
-        log.info("addUser = " + addUser.getUserName());
-        findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
-        log.info("After debug");
-        return "redirect:/mate/room/ver1/" + roomId;
-    }
-
 
     @GetMapping("/mate/room/ver2/{roomId}")
     public String showFindMateRoomVer2(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
@@ -205,6 +184,7 @@ public class FindMateController {
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
 
         model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
+        model.addAttribute("addUser", new RoomUser());
 
         return "find-mate-ver2";
     }
@@ -247,8 +227,53 @@ public class FindMateController {
         findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
 
         model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
+        model.addAttribute("addUser", new RoomUser());
 
         return "find-mate-ver3";
+    }
+
+
+    /**
+     * 수정하기
+     * 기존에 있던 게시글을 리포지토리에서 삭제하고, 게시글을 만드는 페이지로 이동한다
+     */
+    @PostMapping("/mate/room/ver1/{roomId}")
+    public String editFindMateRoomVer1(@PathVariable String roomId) {
+        findMateRoomService.deleteFindMateRoom(roomId);
+        return "redirect:/mate";
+    }
+
+    @PostMapping("/mate/room/ver2/{roomId}")
+    public String editFindMateRoomVer2(@PathVariable String roomId) {
+        findMateRoomService.deleteFindMateRoom(roomId);
+        return "redirect:/mate";
+    }
+
+    @PostMapping("/mate/room/ver3/{roomId}")
+    public String editFindMateRoomVer3(@PathVariable String roomId) {
+        findMateRoomService.deleteFindMateRoom(roomId);
+        return "redirect:/mate";
+    }
+
+    /**
+     * 배고픈 사람 입력 (유저 추가하기)
+     */
+    @PostMapping("/mate/room/ver1/addUser/{roomId}")
+    public String addUserFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
+        return "redirect:/mate/room/ver1/" + roomId;
+    }
+
+    @PostMapping("/mate/room/ver2/addUser/{roomId}")
+    public String addUserFindMateRoomVer2(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
+        return "redirect:/mate/room/ver2/" + roomId;
+    }
+
+    @PostMapping("/mate/room/ver3/addUser/{roomId}")
+    public String addUserFindMateRoomVer3(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
+        return "redirect:/mate/room/ver3/" + roomId;
     }
 
 

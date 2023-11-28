@@ -65,11 +65,13 @@
     <div class="reservater_number" th:text="|총 *{headCount}명|">총 4명</div>
     <div class="reservater_message" th:text="|*{roomWriter}의 메시지|">예약자의 메시지</div>
     <div class="reservater_message_user" th:text="*{roomMessage}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam suscipit repellendus sed ratione, laboriosam nulla aspernatur maiores dolorum quod officiis quas aut, eos amet, voluptates inventore esse distinctio molestiae voluptatem.</div>
-    <div class="add_button">추가하기</div>
-    <div class="find-mate-ver3-inner"></div>
-    <div class="find-mate-ver3-child1"></div>
-    <div class="find-mate-ver3-child2"></div>
-    <input type="text" name="room_manager_name" class="reservater_guest" id="" placeholder="예약자">
+    <form th:action="@{/mate/room/ver3/addUser/{roomId}(roomId=${roomId})}" method="post">
+        <button type="submit"><div class="add_button">추가하기</div></button>
+        <div class="find-mate-ver3-inner"></div>
+        <div class="find-mate-ver3-child1"></div>
+        <div class="find-mate-ver3-child2"></div>
+        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="reservater_guest" id="" placeholder="예약자">
+    </form>
     <div class="close_time_div">
         <div class="close_date_text">2023년 11월 27일 (월)</div>
         <div class="close_time_text1">
