@@ -380,6 +380,7 @@ li:nth-child(4n){
   font-size: var(--font-size-3xs);
   color: var(--color-black);
   font-family: var(--font-inter);
+  cursor: pointer;
 }
 .find-mate-ver3 {
   position: relative;
