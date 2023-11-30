@@ -40,11 +40,11 @@ if (cancelMenu) {
     cancelMenu.addEventListener("click", function (e) {
         history.back();
 });
-}
+}*/
 
 var cancelDetail = document.getElementById("cancel_detail");
 if (cancelDetail) {
     cancelDetail.addEventListener("click", function (e) {
         history.back();
 });
-}*/
+}
