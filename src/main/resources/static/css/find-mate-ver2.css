@@ -464,6 +464,7 @@ li:nth-child(3n){
   left: calc(50% - 95px);
   width: 80px;
   height: 28px;
+  cursor: pointer;
 }
 .kakaotalk1 {
   position: absolute;
@@ -478,6 +479,7 @@ li:nth-child(3n){
   left: calc(50% + 15px);
   width: 80px;
   height: 28px;
+  cursor: pointer;
 }
 .rectangle-parent19 {
   position: absolute;
@@ -485,6 +487,7 @@ li:nth-child(3n){
   left: calc(50% - 40px);
   width: 80px;
   height: 28px;
+  cursor: pointer;
 }
 .group-container {
   top: 750px;

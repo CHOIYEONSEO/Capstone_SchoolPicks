@@ -52,7 +52,7 @@
           <div class="kakaotalk">KakaoTalk</div>
           <img class="share-icon" alt="" src="/public/share@2x.png" />
         </div>
-        <div class="rectangle-group-1" id="clipboard">
+        <div class="rectangle-group-1" id="clipboard" th:onclick="greetWorld()">
           <div class="group-child"></div>
           <div class="kakaotalk">LinkCopy</div>
           <img class="share-icon-link" alt="" src="/public/download_image.png">
@@ -122,8 +122,22 @@
       </form>
     </div>
 
-
     <script type="text/javascript" src="/js/menu.js"></script>
     <script type="text/javascript" src="/js/find_mate.js"></script>
+    <script  th:inline="javascript">
+      function greetWorld() {
+        var groupContainer9 = document.getElementById("clipboard");
+        if (groupContainer9) {
+            groupContainer9.addEventListener("click", function (e) {
+                var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
+                navigator.clipboard.writeText(linkToCopy).then(function() {
+                    alert('링크가 클립보드에 저장되었습니다.');
+                }).catch(function(err) {
+                    console.error('클립보드 저장 실패: ', err);
+                });
+            });
+        }
+      }
+    </script>
   </body>
 </html>

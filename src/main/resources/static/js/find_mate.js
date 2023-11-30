@@ -57,7 +57,7 @@ var editVer1Form = document.getElementById("editVer1Form");
 var password = document.getElementById("password").innerText;
 if (groupContainer8) {
     groupContainer8.addEventListener("click", function (e) {
-        var editpass1 = prompt('비밀번호를 입력하시오',"게시글 수정 비밀번호를 입력하세요");
+        var editpass1 = prompt('비밀번호를 입력하시오',"");
         if(!editpass1) { //취소 눌렀을때
         }
         if(editpass1.toLowerCase() == password){ //1398로 암호지정하면

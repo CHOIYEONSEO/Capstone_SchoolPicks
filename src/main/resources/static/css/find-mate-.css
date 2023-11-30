@@ -233,7 +233,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   position: absolute;
 }
 .div27 {
-  top: 1px;
+  top: -5px;
   right: 10px;
   letter-spacing: 0.11em;
   font-weight: 300;
@@ -245,7 +245,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   position: absolute;
 }
 .div29 {
-  top: 1px;
+  top: -5px;
   right: 70px;
   letter-spacing: 0.11em;
   font-weight: 300;

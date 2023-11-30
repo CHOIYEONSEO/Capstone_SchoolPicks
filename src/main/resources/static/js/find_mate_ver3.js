@@ -55,7 +55,7 @@ var editVer3Form = document.getElementById("editVer3Form");
 var passwordVer3 = document.getElementById("passwordVer3").innerText;
 if (containerVer3) {
     containerVer3.addEventListener("click", function(e) {
-        var editpass3 = prompt('비밀번호를 입력하시오',"게시글 수정 비밀번호를 입력하세요");
+        var editpass3 = prompt('비밀번호를 입력하시오',"");
         if(!editpass3) { //취소 눌렀을때
         }
         if(editpass3.toLowerCase() == passwordVer3){

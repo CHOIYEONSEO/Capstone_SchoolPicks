@@ -304,6 +304,7 @@ li:nth-child(4n){
   margin-top: 35px;
   left: calc(50% + 15px);
   width: 80px;
+  cursor: pointer;
 }
 .group-inner,
 .group-parent,
@@ -374,6 +375,9 @@ li:nth-child(4n){
   left: 17.5px;
   width: 32px;
   height: 36px;
+  cursor: pointer;
+}
+.rectangle-group-1{
   cursor: pointer;
 }
 .find-mate-ver1 {
