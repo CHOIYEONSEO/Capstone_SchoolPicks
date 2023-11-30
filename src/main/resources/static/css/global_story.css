@@ -44,4 +44,12 @@ body {
     --br-lg: 18px;
     --br-38xl: 57px;
   }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:visited,a:active{
+    color: black;
+  }
   

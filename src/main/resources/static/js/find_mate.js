@@ -115,3 +115,73 @@ if (ver4Select) {
     });
 }
 */
+
+
+var restaurantName = document.getElementById("restaurant-name1").innerText;
+var guestNumber = document.getElementById("guest-number1").innerText;
+//약속일자
+//마감시간
+
+/* 카카오톡 공유하기 */
+function kakaoShare() {
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '', //카카오공유하기 시 타이틀. 필수
+        //카카오공유하기 시 설명
+        //description: "음식점 : "+restaurantName+"\n인원 수 : "+guestNumber+"명\n"/* 약속일자, 마감시간 */,
+        //카카오공유하기 시 썸네일 이미지 경로. 경로는 localhost 안됨. 어딘가 서버에 올라가 있는 이미지여야 함. 필수
+        imageUrl: 'https://raw.githubusercontent.com/PaikMyeongGyu/Capston-Project-SchoolPicks/dev/src/main/resources/static/images/%EC%8B%9D%EC%82%AC.png',
+        link: { //필수
+          //ver 변경
+          mobileWebUrl: 'http://localhost:8080/mate/room/ver1/'+roomIDVar, //카카오공유하기 시 클릭 후 이동 경로
+          webUrl: 'http://localhost:8080/mate/room/ver1/'+roomIDVar, //카카오공유하기 시 클릭 후 이동 경로
+        },
+      },
+      itemContent: {
+          profileText: '[SchoolPicks] 나랑 밥먹자',
+          items: [
+            {
+              item: '음식점',
+              itemOp: restaurantName,
+            },
+            {
+              item: '인원 수',
+              itemOp: "총 "+guestNumber+"명",
+            },
+            {
+              item: '약속시간',
+              itemOp: "",
+            },
+            {
+              item: '약속 마감시간',
+              itemOp: "",
+            },
+          ],
+        },
+      buttons: [
+        {
+          title: '같이 밥먹으러 이동', //버튼에 보일 텍스트
+          link: {
+            //ver 변경
+            mobileWebUrl: 'http://localhost:8080/mate/room/ver1/'+roomIDVar, //카카오공유하기 시 클릭 후 이동 경로
+            webUrl: 'http://localhost:8080/mate/room/ver1/'+roomIDVar, //카카오공유하기 시 클릭 후 이동 경로
+          },
+        },
+      ],
+      // 카카오톡 미설치 시 카카오톡 설치 경로이동
+      installTalk: true,
+    })
+
+    /* 템플릿 사용시
+    Kakao.Share.sendCustom({
+          templateId: 템플릿 ID,
+          templateArgs: {
+            kakaoRestaurant: restaurantName,
+            kakaoGuestNumber: guestNumber,
+            kakaoDate: ,
+            kakaoDeadline: ,
+            kakaoLink: 'mate/room/ver1/'+roomIDVar,
+          },
+    });*/
+}

@@ -64,3 +64,11 @@ body {
 button {
   border: none;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
+a:visited,a:active{
+  color: black;
+}
