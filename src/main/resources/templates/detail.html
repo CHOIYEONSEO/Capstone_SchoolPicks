@@ -25,7 +25,10 @@
   </head>
   <body>
     <div class="detail" th:object="${specific}">
-      <div class="image-rectangle" id="map"></div>
+      <div class="image-rectangle" id="map">
+        <div th:text="*{x_position}"></div>
+        <div th:text="*{y_position}"></div>
+      </div>
       <div class="div105">
         <div class="div106" th:text="*{shopName}">음식점이름</div>
       </div>
