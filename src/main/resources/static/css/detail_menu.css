@@ -126,3 +126,11 @@
   color: var(--color-black);
   font-family: var(--font-inter);
 }
+
+#map_x_position{
+  display: none;
+}
+
+#map_y_position{
+  display: none;
+}
