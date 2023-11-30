@@ -332,6 +332,15 @@ li:nth-child(4n){
   bottom: 0.39%;
   left: 0px;
 }
+.component-child22 {
+  position: absolute;
+  height: 30px;
+  top: 130px;
+  left: 380px;
+  overflow: hidden;
+  width: 30px;
+  cursor: pointer;
+}
 .rectangle-parent19 {
   position: absolute;
   top: 97.8px;

@@ -336,3 +336,12 @@ li:nth-child(4n){
   color: var(--color-royalblue);
   font-family: var(--font-suite);
 }
+.component-child22 {
+  position: absolute;
+  height: 30px;
+  top: 130px;
+  left: 380px;
+  overflow: hidden;
+  width: 30px;
+  cursor: pointer;
+}

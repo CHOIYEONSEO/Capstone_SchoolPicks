@@ -645,3 +645,15 @@
   color: var(--ios-key-label);
   font-family: var(--font-inter);
 }
+.manager_message {
+    position: absolute;
+    font-size: 13px;
+    letter-spacing: 0.11em;
+    font-weight: 300;
+    width: 280px;
+    height: 17px;
+    left: 50px;
+    top: 10px;
+    border: none;
+    background-color: transparent;
+}

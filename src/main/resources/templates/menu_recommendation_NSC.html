@@ -78,9 +78,9 @@
         <div class="content4">
             <!--<a href="" class="goto_navermap">네이버 지도로 이동하기</a>-->
             <a href="" th:href="@{/detail/{restaurantId}(restaurantId=${restaurantId})}"><span id="goto_detail">음식점 정보 보기</span></a>
-            <a href="" class="goto_navermap" th:href="@{https://map.naver.com/p/search/{restaurant}(restaurant=${restaurant})}">네이버 지도로 이동하기</a>
         </div>
     </div>
+    <a href="" class="goto_navermap" th:href="@{https://map.naver.com/p/search/{restaurant}(restaurant=${restaurant})}">네이버 지도로 이동하기</a>
 
     <div class="menu-nav5" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
         <div class="menu-nav-child3"></div>
