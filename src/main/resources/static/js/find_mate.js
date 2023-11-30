@@ -1,11 +1,12 @@
 
-
-var groupContainer8 = document.getElementById("groupContainer8");
-/*if (groupContainer8) {
-    groupContainer8.addEventListener("click", function (e) {
-        window.location.href = "./find-mate-ver1.html";
-    });
-}*/
+function check(){
+  if (confirm("모든 항목을 정확히 입력하셨습니까?") == true){    //확인
+      location.href = "./mate/check/"+roomIDVar;
+      return true;
+  }else{   //취소
+      return false;
+  }
+}
 
 //temp for sharing: find-mate-ver1
 var groupContainer8 = document.getElementById("insta1");

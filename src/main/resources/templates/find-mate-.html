@@ -29,7 +29,7 @@
     <img class="group-7-13" alt="" src="./public/group-7-1@2x.png" />
   </div>
 
-  <form th:action th:object="${findMateRoom}" method="post">
+  <form onsubmit="return check()" th:action th:object="${findMateRoom}" method="post">
     <div class="transparent-parent">
       <b class="b">게시글 제목</b>
       <div class="group-child1"></div>
@@ -93,7 +93,7 @@
         />
       </div>
     </div>
-    <button class="div32 rectangle-parent1 group-child11" id="groupContainer8" type="submit" th:onclick="|location.href='@{/mate/check/{roomId}(roomId=${roomId})}'|">
+    <button class="div32 rectangle-parent1 group-child11" id="groupContainer8" type="submit">
         작성완료
     </button>
 
