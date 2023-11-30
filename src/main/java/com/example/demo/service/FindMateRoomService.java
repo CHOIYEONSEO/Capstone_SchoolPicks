@@ -136,7 +136,10 @@ public class FindMateRoomService {
         FindMateRoom findMateRoom = findMateRoomRepository.findFindMateRoomWithRoomUsers(roomId);
 
         List<String> users = new ArrayList<>();
-        users.add(findMateRoom.getRoomUsers().get(0).getUserName());
+        int i = 1;
+        for(RoomUser roomUser : findMateRoom.getRoomUsers()){
+            users.add("익명" + i++);
+        }
 
         // password, shopName, roomId추가
         FindMateRoomPageDto findMateRoomPageDto = FindMateRoomPageDto.builder()
