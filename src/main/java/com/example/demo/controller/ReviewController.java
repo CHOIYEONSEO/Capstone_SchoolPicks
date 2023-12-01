@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.FindMate.FindMateRoomPageDto;
 import com.example.demo.dto.FindMate.FindMateRoomPageForm;
+import com.example.demo.dto.FindMate.KeywordForm;
 import com.example.demo.entity.FindMate.FindMateRoom;
 import com.example.demo.entity.FindMate.RoomUser;
 import com.example.demo.service.FindMateRoomService;
@@ -13,9 +14,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+
 
 
 @Controller
@@ -24,20 +28,19 @@ import java.util.List;
 public class ReviewController {
 
     private final FindMateRoomService findMateRoomService;
-    private boolean isPrivate = true;
 
     @GetMapping("/review")
-    public String reviewVer2(Model model) {
-
-
+    public String reviewVer2(@ModelAttribute("keyword") KeywordForm keyword, Model model) {
         List<FindMateRoom> findMateRooms = findMateRoomService.findAllFindMateRoom();
-
-        log.info("rooms(0) id = " + findMateRooms.get(0).getId());
-        log.info("rooms(0) title = " + findMateRooms.get(0).getRoomTitle());
-        log.info("rooms(0) writer = " + findMateRooms.get(0).getRoomWriter());
-
         model.addAttribute("rooms", findMateRooms);
+        return "reviewver2";
+    }
 
+    @PostMapping("/review")
+    public String reviewSearch(@ModelAttribute("keyword") KeywordForm keywordForm, Model model) {
+        List<FindMateRoom> findMateRooms = findMateRoomService.findMateRoomSearch(keywordForm.getKeyword());
+        log.info("keyword = " + keywordForm.getKeyword());
+        model.addAttribute("rooms", findMateRooms);
         return "reviewver2";
     }
 

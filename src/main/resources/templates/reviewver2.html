@@ -29,16 +29,20 @@
     <div class="header">
         <img class="group-7-1" alt="" src="/public/group-7-1@2x.png" />
     </div>
-    <div class="search_box">
-        <div class="post-box-transparent"></div>
-        <div class="post-box"></div>
-        <img
-                class="glass_icon"
-                alt=""
-                src="/public/magnifiyingglass-1@2x.png"
-        />
-        <input type="text" class="manager_message" placeholder="게시글 혹은 작성자 명을 입력하세요."></input>
-    </div>
+    <form th:action="@{/review}" method="post">
+        <div class="search_box">
+            <div class="post-box-transparent"></div>
+            <div class="post-box"></div>
+            <button type="submit">
+            <img
+                    class="glass_icon"
+                    alt=""
+                    src="/public/magnifiyingglass-1@2x.png"
+            />
+            </button>
+            <input th:field="${keyword.keyword}" type="text" class="manager_message" placeholder="게시글 혹은 작성자 명을 입력하세요."></input>
+        </div>
+    </form>
     <!--<h1>[예시부분]</h1>-->
     <div class="review_content">
         <ul class="ul_border" th:each="room : ${rooms}">
