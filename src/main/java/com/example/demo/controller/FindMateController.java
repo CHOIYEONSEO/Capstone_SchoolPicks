@@ -260,18 +260,25 @@ public class FindMateController {
      */
     @PostMapping("/mate/room/ver1/addUser/{roomId}")
     public String addUserFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        if(addUser.getUserName().equals(""))
+            return "redirect:/mate/room/ver1/" + roomId;
+
         findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
         return "redirect:/mate/room/ver1/" + roomId;
     }
 
     @PostMapping("/mate/room/ver2/addUser/{roomId}")
     public String addUserFindMateRoomVer2(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        if(addUser.getUserName().equals(""))
+            return "redirect:/mate/room/ver2/" + roomId;
         findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
         return "redirect:/mate/room/ver2/" + roomId;
     }
 
     @PostMapping("/mate/room/ver3/addUser/{roomId}")
     public String addUserFindMateRoomVer3(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        if(addUser.getUserName().equals(""))
+            return "redirect:/mate/room/ver3/" + roomId;
         findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
         return "redirect:/mate/room/ver3/" + roomId;
     }

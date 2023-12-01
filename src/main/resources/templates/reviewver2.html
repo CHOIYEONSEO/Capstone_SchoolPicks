@@ -43,7 +43,7 @@
     <div class="review_content">
         <ul class="ul_border" th:each="room : ${rooms}">
             <th:block th:if="${room.version == 1}">
-                <button class="content_button" th:onclick="|location.href='@{/mate/room/ver1/{roomId}(roomId=*{room.roomId})}'|">
+                <button class="content_button" th:onclick="|location.href='@{/mate/room/ver1/review/{roomId}(roomId=*{room.roomId})}'|">
                     <li class="content_no" th:text="|No. ${room.id}|">게시글 인덱스</li>
                     <li class="content_title" th:text="${room.roomTitle}"><span class="title_background">게시글 제목</span></li>
                     <li class="content_writer" th:text="${room.roomWriter}">작성자 이름</li>
@@ -51,7 +51,7 @@
             </th:block>
 
             <th:block th:if="${room.version == 2}">
-                <button class="content_button" th:onclick="|location.href='@{/mate/room/ver2/{roomId}(roomId=*{room.roomId})}'|">
+                <button class="content_button" th:onclick="|location.href='@{/mate/room/ver2/review/{roomId}(roomId=*{room.roomId})}'|">
                     <li class="content_no" th:text="|No. ${room.id}|">게시글 인덱스</li>
                     <li class="content_title" th:text="${room.roomTitle}"><span class="title_background">게시글 제목</span></li>
                     <li class="content_writer" th:text="${room.roomWriter}">작성자 이름</li>
@@ -59,7 +59,15 @@
             </th:block>
 
             <th:block th:if="${room.version == 3}">
-                <button class="content_button" th:onclick="|location.href='@{/mate/room/ver3/{roomId}(roomId=*{room.roomId})}'|">
+                <button class="content_button" th:onclick="|location.href='@{/mate/room/ver3/review/{roomId}(roomId=*{room.roomId})}'|">
+                    <li class="content_no" th:text="|No. ${room.id}|">게시글 인덱스</li>
+                    <li class="content_title" th:text="${room.roomTitle}"><span class="title_background">게시글 제목</span></li>
+                    <li class="content_writer" th:text="${room.roomWriter}">작성자 이름</li>
+                </button>
+            </th:block>
+
+            <th:block th:if="${room.version == 4}">
+                <button class="content_button" th:onclick="|location.href='@{/mate/room/ver1/review/{roomId}(roomId=*{room.roomId})}'|">
                     <li class="content_no" th:text="|No. ${room.id}|">게시글 인덱스</li>
                     <li class="content_title" th:text="${room.roomTitle}"><span class="title_background">게시글 제목</span></li>
                     <li class="content_writer" th:text="${room.roomWriter}">작성자 이름</li>
