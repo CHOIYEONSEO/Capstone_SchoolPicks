@@ -16,5 +16,6 @@ public class SpecificDto {
 
     String shopName;
     String shopDescription;
+    String shopMenuDescription2;
     String shopMenuDescription;
 }

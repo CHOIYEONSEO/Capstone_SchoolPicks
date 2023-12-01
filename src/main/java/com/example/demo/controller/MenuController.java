@@ -98,8 +98,10 @@ public class MenuController {
         log.info("restaurant = " + restaurantId);
 
         SpecificDto specific = shopRecommendService.findShopById(Long.parseLong(restaurantId));
+        List<String> menus = List.of(specific.getShopMenuDescription().split("\n"));
         specificDto.setShopName(specific.getShopName());
-        specificDto.setShopMenuDescription(specific.getShopMenuDescription());
+        specificDto.setShopMenuDescription(menus.get(0));
+        specificDto.setShopMenuDescription2(menus.get(1));
         specificDto.setShopDescription(specific.getShopDescription());
         specificDto.setX_position(specific.getX_position());
         specificDto.setY_position(specific.getY_position());

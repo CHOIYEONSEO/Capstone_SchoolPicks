@@ -157,7 +157,7 @@ public class DataInjectionTest {
         shopRepository.save(shop9);
 
         Shop shop10 = Shop.builder()
-                .name("포크포크매콤돈가스칡불냉면")
+                .name("돈냉")
                 .price(9000)
                 .xPosition("37.2968")
                 .yPosition("126.9715")
@@ -633,7 +633,7 @@ public class DataInjectionTest {
         shopRepository.save(shop43);
 
         Shop shop44 = Shop.builder()
-                .name("경복궁개성손만두메밀소바")
+                .name("경복궁개성손만두")
                 .price(11000)
                 .xPosition("37.3021")
                 .yPosition("126.9728")
@@ -843,7 +843,7 @@ public class DataInjectionTest {
         shopRepository.save(shop59);
 
         Shop shop60 = Shop.builder()
-                .name("백채김치찌개 성균관대점")
+                .name("백채김치찌개")
                 .price(8500)
                 .xPosition("37.2967")
                 .yPosition("126.9691")
@@ -921,7 +921,7 @@ public class DataInjectionTest {
         shopRepository.save(shop3);
 
         Shop shop4 = Shop.builder()
-                .name("스타벅스 성균관대점")
+                .name("스타벅스")
                 .price(4500)
                 .xPosition("37.2988")
                 .yPosition("126.9716")
@@ -949,7 +949,7 @@ public class DataInjectionTest {
         shopRepository.save(shop5);
 
         Shop shop6 = Shop.builder()
-                .name("배스킨라빈스 수원성대점")
+                .name("배스킨라빈스")
                 .xPosition("37.2978")
                 .yPosition("126.9708")
                 .price(9800)
@@ -1173,7 +1173,7 @@ public class DataInjectionTest {
         shopRepository.save(shop21);
 
         Shop shop22= Shop.builder()
-                .name("비사이드 수원성대점")
+                .name("비사이드")
                 .price(4300)
                 .xPosition("37.2997")
                 .yPosition("126.9778")
@@ -1187,7 +1187,7 @@ public class DataInjectionTest {
         shopRepository.save(shop22);
 
         Shop shop23= Shop.builder()
-                .name("사랑해베이글 수원천천점")
+                .name("사랑해베이글")
                 .price(5000)
                 .xPosition("37.2988")
                 .yPosition("126.9794")
@@ -1201,7 +1201,7 @@ public class DataInjectionTest {
         shopRepository.save(shop23);
 
         Shop shop24= Shop.builder()
-                .name("카페코지 수원점")
+                .name("카페코지")
                 .price(6000)
                 .xPosition("37.2997")
                 .yPosition("126.9804")
@@ -1215,7 +1215,7 @@ public class DataInjectionTest {
         shopRepository.save(shop24);
 
         Shop shop25= Shop.builder()
-                .name("카페동네 수원천천점")
+                .name("카페동네")
                 .price(4200)
                 .xPosition("37.3008")
                 .yPosition("126.9813")
@@ -1295,7 +1295,7 @@ public class DataInjectionTest {
     void 데이터입력_술집(){
 
         Shop shop = Shop.builder()
-                .name("주량 성대직영점")
+                .name("주량")
                 .price(15000)
                 .xPosition("37.2972")
                 .yPosition("126.9692")
@@ -1407,7 +1407,7 @@ public class DataInjectionTest {
         shopRepository.save(shop8);
 
         Shop shop9 = Shop.builder()
-                .name("합 성대직영2호점")
+                .name("합")
                 .price(18000)
                 .xPosition("37.297")
                 .yPosition("126.9691")
@@ -2627,7 +2627,7 @@ public class DataInjectionTest {
         shopRepository.save(shop22);
 
         Shop shop23 = Shop.builder()
-                .name("빌리엔젤 대학로점")
+                .name("빌리엔젤")
                 .price(2800)
                 .xPosition("37.5816")
                 .yPosition("127.0035")
@@ -2732,7 +2732,7 @@ public class DataInjectionTest {
     void 데이터입력_술집_인문사회(){
 
         Shop shop = Shop.builder()
-                .name("마님은왜돌쇠에게만술을주시나")
+                .name("마님은왜돌쇠에게만")
                 .price(20000)
                 .xPosition("37.5876")
                 .yPosition("126.9967")
