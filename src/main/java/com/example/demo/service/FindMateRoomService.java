@@ -213,5 +213,11 @@ public class FindMateRoomService {
         return findMateRooms;
     }
 
+    //isPrivate 가져오기
+    public boolean getIsPrivate(String roomId) {
+        FindMateRoom findMateRoom = findMateRoomRepository.findByRoomId(roomId);
+        return findMateRoom.isPrivate();
+    }
+
 
 }

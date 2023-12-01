@@ -30,7 +30,6 @@ public class FindMateController {
 
     private final FindMateRoomService findMateRoomService;
     private String roomId;
-    private boolean isPrivate = true;
 
     @GetMapping("/mate")
     public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm) {
@@ -45,6 +44,7 @@ public class FindMateController {
         //로그 찍기
         logPostFindMateRoom(findMateRoomForm);
 
+        boolean isPrivate;
         if (findMateRoomForm.getIsPrivate().equals("false")) {
             isPrivate = false;
         } else {
@@ -108,7 +108,7 @@ public class FindMateController {
     public String showFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
-        if (isPrivate) {
+        if (findMateRoomService.getIsPrivate(roomId)) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
         } else {
             findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
@@ -156,7 +156,7 @@ public class FindMateController {
     public String showFindMateRoomVer2(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
-        if (isPrivate) {
+        if (findMateRoomService.getIsPrivate(roomId)) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
         } else {
             findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
@@ -203,7 +203,7 @@ public class FindMateController {
     public String showFindMateRoomVer3(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
-        if (isPrivate) {
+        if (findMateRoomService.getIsPrivate(roomId)) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
         } else {
             findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
@@ -302,7 +302,7 @@ public class FindMateController {
     public String shareInstagramVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
-        if (isPrivate) {
+        if (findMateRoomService.getIsPrivate(roomId)) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
         } else {
             findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
@@ -346,7 +346,7 @@ public class FindMateController {
     public String shareInstagramVer2(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
-        if (isPrivate) {
+        if (findMateRoomService.getIsPrivate(roomId)) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
         } else {
             findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
@@ -390,7 +390,7 @@ public class FindMateController {
     public String shareInstagramVer3(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
-        if (isPrivate) {
+        if (findMateRoomService.getIsPrivate(roomId)) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
         } else {
             findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
