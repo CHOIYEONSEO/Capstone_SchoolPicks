@@ -18,6 +18,7 @@ public class FindMateRoomPageForm {
     String date; //29일
     String day; //요일
     String time;
+    String expiredTime;
 
     int headCount;
     String roomWriter;
