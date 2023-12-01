@@ -117,6 +117,7 @@ public class FindMateRoomService {
         // password, shopName추가
         FindMateRoomPageDto findMateRoomPageDto = FindMateRoomPageDto.builder()
                 .localDateTime(findMateRoom.getPlanTime())
+                .expiredTime(findMateRoom.getExpiredTime())
                 .headCount(findMateRoom.getHeadCount())
                 .roomWriter(findMateRoom.getRoomWriter())
                 .roomMessage(findMateRoom.getRoomMessage())
@@ -145,6 +146,7 @@ public class FindMateRoomService {
         // password, shopName, roomId추가
         FindMateRoomPageDto findMateRoomPageDto = FindMateRoomPageDto.builder()
                 .localDateTime(findMateRoom.getPlanTime())
+                .expiredTime(findMateRoom.getExpiredTime())
                 .headCount(findMateRoom.getHeadCount())
                 .roomWriter(findMateRoom.getRoomWriter())
                 .roomMessage(findMateRoom.getRoomMessage())

@@ -17,6 +17,7 @@ public class FindMateRoomPageDto {
 
     String roomId;
     LocalDateTime localDateTime;
+    LocalDateTime expiredTime;
     int headCount;
     String roomWriter;
     String roomMessage;
