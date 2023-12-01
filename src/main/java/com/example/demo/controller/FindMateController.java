@@ -251,7 +251,7 @@ public class FindMateController {
     public String showFindMateRoomVer4(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto;
-        if (isPrivate) {
+        if (findMateRoomService.getIsPrivate(roomId)) {
             findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
         } else {
             findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
