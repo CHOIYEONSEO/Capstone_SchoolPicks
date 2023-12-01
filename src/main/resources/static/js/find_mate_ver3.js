@@ -117,6 +117,7 @@ if (ver4Select) {
 var restaurantName = document.getElementById("restaurant-name3").innerText;
 var guestNumber = document.getElementById("guest-number3").innerText;
 //약속일자
+var appointTime = document.getElementById("appoint-time3").innerText;
 //마감시간
 
 /* 카카오톡 공유하기 */
@@ -145,7 +146,7 @@ function kakaoShare() {
             },
             {
               item: '약속시간',
-              itemOp: "",
+              itemOp: appointTime,
             },
             {
               item: '약속 마감시간',

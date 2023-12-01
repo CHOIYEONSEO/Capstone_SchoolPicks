@@ -121,6 +121,11 @@ if (ver4Select) {
 var restaurantName = document.getElementById("restaurant-name1").innerText;
 var guestNumber = document.getElementById("guest-number1").innerText;
 //약속일자
+var appointYear = document.getElementById("appoint-year1").innerText;
+var appointMonth = document.getElementById("appoint-month1").innerText;
+var appointDate = document.getElementById("appoint-date1").innerText;
+var appointDay = document.getElementById("appoint-day1").innerText;
+var appointTime = document.getElementById("appoint-time1").innerText;
 //마감시간
 
 /* 카카오톡 공유하기 */
@@ -152,7 +157,7 @@ function kakaoShare() {
             },
             {
               item: '약속시간',
-              itemOp: "",
+              itemOp: appointYear+"년 "+appointMonth+"월 "+appointDate+"일 "+appointDay+" "+appointTime,
             },
             {
               item: '약속 마감시간',
