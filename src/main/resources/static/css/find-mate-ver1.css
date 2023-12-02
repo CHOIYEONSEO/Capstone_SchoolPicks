@@ -216,6 +216,36 @@ li:nth-child(4n){
   top: 623px;
   left: 305px;
 }
+
+.rectangle-container-1 {
+  position: absolute;
+  top: 659px;
+  left: 35px;
+  width: 57px;
+  height: 24px;
+  text-align: center;
+  font-size: var(--font-size-3xs);
+  font-family: var(--font-inter);
+  cursor: pointer;
+}
+
+.group-inner-1{
+  position: absolute;
+  top: 0;
+  left: calc(50% - 28.5px);
+  border-radius: var(--br-4xl);
+  background-color: rgba(113,113,113,0.3);
+  width: 57px;
+  height: 24px;
+}
+
+.div21-1{
+  position: absolute;
+  top: 6px;
+  left: calc(50% - 18.5px);
+  letter-spacing: 0.07em;
+}
+
 .group-7-12 {
   height: 100%;
   width: 100%;
@@ -393,6 +423,10 @@ li:nth-child(4n){
   font-family: var(--font-poor-story);
 }
 
-#password5678{
-   display: none;
+#password{
+  display: none;
+}
+
+#password-1{
+  display: none;
 }

@@ -68,6 +68,19 @@ if (groupContainer8) {
     });
 }
 
+var publicVar = document.getElementById("public");
+var password1 = document.getElementById("password-1").innerText;
+if (publicVar) {
+    publicVar.addEventListener("click", function(e) {
+        console.log("click")
+        var passwordpass2 = prompt('비밀번호를 입력하시오',"");
+        if(!passwordpass2) { //취소 눌렀을때
+        }
+        if(passwordpass2.toLowerCase() == password1){
+        }
+    });
+}
+
 function clickCheck(target) {
     document.querySelectorAll(`input[type=checkbox]`)
         .forEach(el => el.checked = false);

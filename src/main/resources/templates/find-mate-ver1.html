@@ -108,6 +108,11 @@
       <form th:action="@{/mate/room/ver1/addUser/{roomId}(roomId=${roomId})}" method="post">
         <div class="div15">배고픈 사람 :</div>
         <button type="submit"><div class="div20">입력</div></button>
+        <div class="rectangle-container-1" id="public">
+          <div class="group-inner-1"></div>
+          <div class="div21-1">이름보기</div>
+          <div th:text="${password}" id="password-1">1234</div>
+        </div>
         <div class="close_time_div">
           <span class="close_time_text" th:text="*{expiredTime}">2023년 11월 27일 (월) 오전 1:29</span>
           <span class="close_text">마감</span>
