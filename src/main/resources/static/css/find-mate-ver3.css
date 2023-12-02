@@ -184,7 +184,7 @@
   top: 0;
   left: calc(50% - 28.5px);
   border-radius: var(--br-4xl);
-  background-color: rgba(113,113,113,0.1);
+  background-color: rgba(113,113,113,0.13);
   width: 57px;
   height: 24px;
 }
