@@ -429,3 +429,9 @@ li:nth-child(4n){
 #password-1{
   display: none;
 }
+
+#submitButton:disabled {
+    opacity: 1;
+    filter: none;
+    color: black;
+}

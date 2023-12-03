@@ -66,11 +66,11 @@
     <div class="reservater_message" th:text="|*{roomWriter}의 메시지|">예약자의 메시지</div>
     <div class="reservater_message_user" th:text="*{roomMessage}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam suscipit repellendus sed ratione, laboriosam nulla aspernatur maiores dolorum quod officiis quas aut, eos amet, voluptates inventore esse distinctio molestiae voluptatem.</div>
     <form th:action="@{/mate/room/ver3/addUser/{roomId}(roomId=${roomId})}" method="post">
-        <button type="submit"><div class="add_button" id="checkname" th:onclick="checkName()">추가하기</div></button>
+        <button type="submit" id="submitButton"><div class="add_button" id="checkname" th:onclick="checkName()">추가하기</div></button>
         <div class="find-mate-ver3-inner"></div>
         <div class="find-mate-ver3-child1"></div>
         <div class="find-mate-ver3-child2"></div>
-        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="reservater_guest" id="" placeholder="예약자">
+        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="reservater_guest" id="username" placeholder="예약자">
     </form>
     <form id="revealFormVer3" th:action="@{/mate/room/ver3/{password}/{roomId}(password=${password}, roomId=${roomId})}" method="post">
         <div class="rectangle-container-1" id="public">
@@ -153,9 +153,20 @@
       }
     }
     function checkName() {
-        var groupContainer10 = document.getElementById("checkname");
-        if (groupContainer10) {
-            alert('작성하신 이름을 확인해주세요.');
+        var groupContainer10 = document.getElementById("username").value;
+        if (groupContainer10 !== "") {
+          var confirmation = confirm('입력하신 이름이 ' + groupContainer10 + ' 맞으신가요?');
+
+          if (confirmation) {
+
+          } else {
+            document.getElementById("submitButton").disabled = true;
+            groupContainer10 = "";
+            return;
+          }
+        }
+        else {
+          alert('입력된 값이 없습니다. 다시 입력해 주세요.');
         }
     }
 </script>
