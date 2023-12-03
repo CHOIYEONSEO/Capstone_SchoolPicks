@@ -41,6 +41,10 @@ public class FindMateRoomService {
 //        if(dto.getExpiredTime().isAfter(dto.getPlanTime()) || dto.getExpiredTime().isBefore(currentTime)){
 //            return ResponseDto.setFailed("마감 시간은 현재시간부터 약속시간까지만 가능합니다.");
 //        }
+        Random random = new Random();
+        if(dto.getVersion() == 4){
+            dto.setVersion(random.nextInt(3) + 1);
+        }
 
         FindMateRoom findMateRoom = FindMateRoom.builder()
                 .roomId(roomId)
