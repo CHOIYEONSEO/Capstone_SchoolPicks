@@ -335,6 +335,13 @@ li:nth-child(4n){
   border-top: 2px solid var(--color-midnightblue-100);
   display: none;
 }
+.insta-link-ver2 {
+  position: absolute;
+  height: 7.44%;
+  width: 12.32%;
+  top: 9.69%;
+  left: 8.9%;
+}
 .div50 {
   position: absolute;
   top: 83.99%;

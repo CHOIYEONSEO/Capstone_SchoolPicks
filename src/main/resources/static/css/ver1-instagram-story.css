@@ -324,6 +324,14 @@ li:nth-child(4n){
   overflow: hidden;
   max-height: 100%;
 }
+.insta-link-ver1 {
+  position: absolute;
+  height: 8%;
+  width: 13%;
+  top: 10.4%;
+  right: 78%;
+  bottom: 78.65%;
+}
 .component-child21 {
   height: 7.24%;
   width: 98.88%;

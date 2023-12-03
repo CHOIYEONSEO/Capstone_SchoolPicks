@@ -77,6 +77,14 @@
   position: absolute;
   letter-spacing: 0.02em;
 }
+.insta-link-ver3 {
+  position: absolute;
+  height: 7.35%;
+  width: 10.7%;
+  top: 10.23%;
+  left: 10%;
+  transform: rotate(-3deg);
+}
 .date {
   top: 20.25%;
   left: 19.48%;
