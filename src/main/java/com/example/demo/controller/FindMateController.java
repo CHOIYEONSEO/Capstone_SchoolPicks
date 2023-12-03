@@ -33,8 +33,11 @@ public class FindMateController {
     private final FindMateRoomService findMateRoomService;
 
     @GetMapping("/mate")
-    public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm) {
+    public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model) {
         log.info("get Mapping /mate 여기");
+        findMateRoomForm.setHeadCount(3);
+        findMateRoomForm.setIsPrivate(String.valueOf(false));
+        findMateRoomForm.setVersion(1);
         return "find-mate-";
     }
 
