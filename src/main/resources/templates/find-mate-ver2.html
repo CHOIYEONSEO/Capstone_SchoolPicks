@@ -109,8 +109,8 @@
             <div class="group-child9"></div>
             <div class="reserver_add">예약자 추가하기</div>
         </div>
-        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
-        <button type="submit"><div class="div87" id="checkname" th:onclick="checkName()">추가</div></button>
+        <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="rectangle-div" id="username" placeholder="이름을 입력하세요">
+        <button type="submit" id="submitButton"><div class="div87" id="checkname" th:onclick="checkName()">추가</div></button>
     </form>
     <form id="revealFormVer2" th:action="@{/mate/room/ver2/{password}/{roomId}(password=${password}, roomId=${roomId})}" method="post">
         <div class="rectangle-container-1" id="public">
@@ -155,9 +155,20 @@
           }
         }
         function checkName() {
-            var groupContainer10 = document.getElementById("checkname");
-            if (groupContainer10) {
-                alert('작성하신 이름을 확인해주세요.');
+            var groupContainer10 = document.getElementById("username").value;
+            if (groupContainer10 !== "") {
+              var confirmation = confirm('입력하신 이름이 ' + groupContainer10 + ' 맞으신가요?');
+
+              if (confirmation) {
+
+              } else {
+                document.getElementById("submitButton").disabled = true;
+                groupContainer10 = "";
+                return;
+              }
+            }
+            else {
+              alert('입력된 값이 없습니다. 다시 입력해 주세요.');
             }
         }
     </script>
