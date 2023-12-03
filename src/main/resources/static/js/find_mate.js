@@ -77,6 +77,7 @@ if (groupContainer8) {
 }
 
 var publicVar = document.getElementById("public");
+var revealForm = document.getElementById("revealForm");
 var password1 = document.getElementById("password-1").innerText;
 if (publicVar) {
     publicVar.addEventListener("click", function(e) {
@@ -85,6 +86,7 @@ if (publicVar) {
         if(!passwordpass2) { //취소 눌렀을때
         }
         if(passwordpass2.toLowerCase() == password1){
+            revealForm.submit();
         }
     });
 }

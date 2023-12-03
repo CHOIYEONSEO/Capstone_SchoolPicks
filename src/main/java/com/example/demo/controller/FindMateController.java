@@ -321,10 +321,14 @@ public class FindMateController {
      */
     @PostMapping("/mate/room/ver1/addUser/{roomId}")
     public String addUserFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("addUser") RoomUser addUser) {
+        log.info("addUser.getUserName() = " + addUser.getUserName());
+        log.info("roomId = " + roomId);
+
         if(addUser.getUserName().equals(""))
             return "redirect:/mate/room/ver1/" + roomId;
 
         findMateRoomService.joinFindMateRoom(addUser.getUserName(), roomId);
+
         return "redirect:/mate/room/ver1/" + roomId;
     }
 
@@ -348,8 +352,8 @@ public class FindMateController {
      * 이름 보기
      * '이름보기' 버튼 클릭 -> 비밀번호 입력 -> 맞을시 이름 공개
      */
-    @PostMapping("/mate/room/ver1/reveal/{roomId}")
-    public String revealUserNameVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
+    @PostMapping("/mate/room/ver1/{password}/{roomId}")
+    public String revealUserNameVer1(@PathVariable String password, @PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
         FindMateRoomPageDto findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
 
