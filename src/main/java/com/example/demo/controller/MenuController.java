@@ -25,6 +25,11 @@ public class MenuController {
 
     private final ShopRecommendService shopRecommendService;
 
+    @GetMapping("/")
+    public String indexPage() {
+        return "redirect:/menu_recommendation_NSC";
+    }
+
     @GetMapping("/menu_recommendation_NSC")
     public String findRestaurantNSC(@ModelAttribute("recommend") RecommendForm recommendForm, Model model) {
         recommendForm.setPriceLow(7000);
