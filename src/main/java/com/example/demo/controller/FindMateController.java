@@ -31,7 +31,6 @@ import java.util.Random;
 public class FindMateController {
 
     private final FindMateRoomService findMateRoomService;
-    private String roomId;
 
     @GetMapping("/mate")
     public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm) {
@@ -151,8 +150,6 @@ public class FindMateController {
 
         return "find-mate-ver1";
     }
-
-
 
 
     @GetMapping("/mate/room/ver2/{roomId}")
@@ -344,7 +341,54 @@ public class FindMateController {
         return "redirect:/mate/room/ver3/" + roomId;
     }
 
+    /**
+     * 이름 보기
+     * '이름보기' 버튼 클릭 -> 비밀번호 입력 -> 맞을시 이름 공개
+     */
+    @PostMapping("/mate/room/ver1/reveal/{roomId}")
+    public String revealUserNameVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
+        FindMateRoomPageDto findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
+
+        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
+        String[] localDateTimeSplit = localDateTime.split("-");
+        String year = localDateTimeSplit[0];
+        String month = localDateTimeSplit[1];
+        String date = localDateTimeSplit[2];
+        String day = "(" + localDateTimeSplit[3] + ")";
+        int hour = Integer.parseInt(localDateTimeSplit[4]);
+        String minute = localDateTimeSplit[5];
+        String time;
+        if (hour >= 12) {
+            time = "오후 " + (hour - 12) + ":" + minute;
+        } else {
+            time = "오전 " + hour + ":" + minute;
+        }
+
+        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
+
+        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
+        findMateRoomPageForm.setYear(year);
+        findMateRoomPageForm.setMonth(month);
+        findMateRoomPageForm.setDate(date);
+        findMateRoomPageForm.setDay(day);
+        findMateRoomPageForm.setTime(time);
+        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
+        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
+        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
+        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
+        findMateRoomPageForm.setExpiredTime(expiredTimeSentence);
+
+        model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
+        model.addAttribute("addUser", new RoomUser());
+
+        return "find-mate-ver1";
+    }
+
+
+    /**
+     * 인스타그램 사진 페이지
+     */
     @GetMapping("/mate/instagram/ver1/{roomId}")
     public String shareInstagramVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
