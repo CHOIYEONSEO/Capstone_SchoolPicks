@@ -26,9 +26,14 @@ public class MenuController {
     private final ShopRecommendService shopRecommendService;
 
     @GetMapping("/menu_recommendation_NSC")
-    public String findRestaurantNSC(@ModelAttribute("recommend") RecommendForm recommendForm) {
+    public String findRestaurantNSC(@ModelAttribute("recommend") RecommendForm recommendForm, Model model) {
         recommendForm.setPriceLow(7000);
         recommendForm.setPriceHigh(18000);
+        Shop restaurant = shopRecommendService.recommend("nsc", List.of("cafe", "pub", "restaurant"), recommendForm.getPriceLow(), recommendForm.getPriceHigh());
+        log.info("RESTAURANT = " + restaurant.getName());
+
+        model.addAttribute("restaurant", restaurant.getName());
+        model.addAttribute("restaurantId", restaurant.getId());
         return "menu_recommendation_NSC";
     }
 
@@ -60,9 +65,15 @@ public class MenuController {
     }
 
     @GetMapping("/menu_recommendation_HSSC")
-    public String findRestaurantHSSC(@ModelAttribute("recommend") RecommendForm recommendForm) {
+    public String findRestaurantHSSC(@ModelAttribute("recommend") RecommendForm recommendForm, Model model) {
         recommendForm.setPriceLow(7000);
         recommendForm.setPriceHigh(18000);
+
+        Shop restaurant = shopRecommendService.recommend("hssc", List.of("cafe", "pub", "restaurant"), recommendForm.getPriceLow(), recommendForm.getPriceHigh());
+        log.info("RESTAURANT = " + restaurant.getName());
+
+        model.addAttribute("restaurant", restaurant.getName());
+        model.addAttribute("restaurantId", restaurant.getId());
         return "menu_recommendation_HSSC";
     }
 

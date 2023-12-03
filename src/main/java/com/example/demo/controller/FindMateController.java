@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
@@ -40,7 +41,7 @@ public class FindMateController {
 
     @PostMapping("/mate")
     public String postFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model
-            , RedirectAttributes redirectAttributes) {
+            , RedirectAttributes redirectAttributes, ModelAndView mav) {
 
         //로그 찍기
         logPostFindMateRoom(findMateRoomForm);
@@ -68,18 +69,19 @@ public class FindMateController {
                     findMateRoomForm.getVersion()
             );
         } catch(DateTimeParseException e){ // 시간값 제대로 입력 안한 경우 처리
+            // 이거 나중에 출력하실 때 사용하세요.
+            model.addAttribute("message", "시간 양식이 잘못되었습니다.");
             return "find-mate-";
         }
 
         ResponseDto<String> response = findMateRoomService.createFindMateRoom(findMateRoomDto);
 
-        if(!response.getResult()){ // 시간값이 앞이거나 다른 값을 제대로 안 넣은 경우 처리
+        if(!response.getResult()) { // 시간값이 앞이거나 다른 값을 제대로 안 넣은 경우 처리
+            // 이거 나중에 출력하실 때 사용하세요.
+            model.addAttribute("message", response.getMessage());
             return "find-mate-";
         }
 
-
-        // 이거 나중에 출력하실 때 사용하세요.
-        model.addAttribute("message", response.getMessage());
 
         String roomId = response.getData();
         model.addAttribute("roomId", roomId);

@@ -38,9 +38,25 @@ public class FindMateRoomService {
         }
 
         // 마감시간이 만료시간보다 뒤에 있거나, 현재 시간보다 앞에 있는 경우 에러 발생
-//        if(dto.getExpiredTime().isAfter(dto.getPlanTime()) || dto.getExpiredTime().isBefore(currentTime)){
-//            return ResponseDto.setFailed("마감 시간은 현재시간부터 약속시간까지만 가능합니다.");
-//        }
+        if(dto.getExpiredTime().isAfter(dto.getPlanTime()) || dto.getExpiredTime().isBefore(currentTime)){
+            return ResponseDto.setFailed("마감 시간은 현재시간부터 약속시간까지만 가능합니다.");
+        }
+
+        if(dto.getRoomTitle().equals(""))
+            return ResponseDto.setFailed("제목을 작성해주세요!");
+
+        if(dto.getShopName().equals(""))
+            return ResponseDto.setFailed("식당을 작성해주세요!");
+
+        if(dto.getRoomWriter().equals(""))
+            return ResponseDto.setFailed("작성자명을 작성해주세요!");
+
+        if(dto.getRoomMessage().equals(""))
+            return ResponseDto.setFailed("작성자의 메세지를 작성해주세요!");
+
+        if(dto.getRoomPassword().equals(""))
+            return ResponseDto.setFailed("비밀 번호를 작성해주세요!");
+
         Random random = new Random();
         if(dto.getVersion() == 4){
             dto.setVersion(random.nextInt(3) + 1);
