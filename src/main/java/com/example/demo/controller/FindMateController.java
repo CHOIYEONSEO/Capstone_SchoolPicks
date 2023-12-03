@@ -57,6 +57,12 @@ public class FindMateController {
 
         FindMateRoomDto findMateRoomDto = null;
 
+        int version = findMateRoomForm.getVersion();
+        if (version == 4) {
+            version = (int) ((Math.random() * 10000) % 3) + 1;
+        }
+        log.info("version = " + version);
+
         try{
             findMateRoomDto = new FindMateRoomDto(
                     findMateRoomForm.getRoomTitle(),
@@ -68,7 +74,7 @@ public class FindMateController {
                     findMateRoomForm.getRoomMessage(),
                     isPrivate,
                     findMateRoomForm.getRoomPassword(),
-                    findMateRoomForm.getVersion()
+                    version
             );
         } catch(DateTimeParseException e){ // 시간값 제대로 입력 안한 경우 처리
             // 이거 나중에 출력하실 때 사용하세요.
@@ -87,12 +93,6 @@ public class FindMateController {
         String roomId = response.getData();
         model.addAttribute("roomId", roomId);
 
-        int version = findMateRoomForm.getVersion();
-        if (version == 4) {
-            version = (int) ((Math.random() * 10000) % 3) + 1;
-        }
-        log.info("version = " + version);
-
         if (version == 1) {
             return "redirect:/mate/room/ver1/" + roomId;
         } else if (version == 2) {
@@ -104,20 +104,17 @@ public class FindMateController {
         }
     }
 
+    /**
+     * 게시글 ver123
+     */
     @GetMapping("/mate/room/ver1/{roomId}")
     public String showFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
-        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDto(roomId);
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
         setDtoInForm(findMateRoomPageForm, findMateRoomPageDto);
         model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
         model.addAttribute("addUser", new RoomUser());
         return "find-mate-ver1";
     }
-
-    private FindMateRoomPageDto getFindMateRoomPageDto(String roomId) {
-        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
-        return findMateRoomPageDto;
-    }
-
 
     @GetMapping("/mate/room/ver2/{roomId}")
     public String showFindMateRoomVer2(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
@@ -127,7 +124,6 @@ public class FindMateController {
         model.addAttribute("addUser", new RoomUser());
         return "find-mate-ver2";
     }
-
 
     @GetMapping("/mate/room/ver3/{roomId}")
     public String showFindMateRoomVer3(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
@@ -171,6 +167,7 @@ public class FindMateController {
         return "find-mate-ver3";
     }
 
+    /*
     @GetMapping("/mate/room/ver4/{roomId}")
     public String showFindMateRoomVer4(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
@@ -209,6 +206,7 @@ public class FindMateController {
         int randVersion = random.nextInt(3) + 1;
         return "find-mate-ver" + randVersion;
     }
+    */
 
 
     /**
