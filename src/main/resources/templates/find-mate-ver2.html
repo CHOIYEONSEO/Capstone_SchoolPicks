@@ -112,11 +112,13 @@
         <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="rectangle-div" id="" placeholder="이름을 입력하세요">
         <button type="submit"><div class="div87">추가</div></button>
     </form>
-    <div class="rectangle-container-1" id="public">
-        <div class="group-inner-1"></div>
-        <div class="div21-1">이름보기</div>
-        <div th:text="${password}" id="password-1">1234</div>
-    </div>
+    <form id="revealFormVer2" th:action="@{/mate/room/ver2/{password}/{roomId}(password=${password}, roomId=${roomId})}" method="post">
+        <div class="rectangle-container-1" id="public">
+            <div class="group-inner-1"></div>
+            <div class="div21-1">이름보기</div>
+            <div th:text="${password}" id="password-1">1234</div>
+        </div>
+    </form>
     <div class="close_time_div">
         <span class="close_time_text" th:text="*{expiredTime}">2023년 11월 27일 (월) 오전 1:29</span>
         <span class="close_text">마감</span>

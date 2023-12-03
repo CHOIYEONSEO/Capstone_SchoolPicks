@@ -66,6 +66,7 @@ if (containerVer2) {
 }
 
 var publicVar = document.getElementById("public");
+var revealFormVer2 = document.getElementById("revealFormVer2");
 var password1 = document.getElementById("password-1").innerText;
 if (publicVar) {
     publicVar.addEventListener("click", function(e) {
@@ -74,6 +75,7 @@ if (publicVar) {
         if(!passwordpass2) { //취소 눌렀을때
         }
         if(passwordpass2.toLowerCase() == password1){
+            revealFormVer2.submit();
         }
     });
 }

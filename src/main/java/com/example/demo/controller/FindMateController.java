@@ -276,6 +276,56 @@ public class FindMateController {
         return "find-mate-ver1";
     }
 
+    @PostMapping("/mate/room/ver2/{password}/{roomId}")
+    public String revealUserNameVer2(@PathVariable String password, @PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
+        FindMateRoomPageDto findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
+        setDtoInForm(findMateRoomPageForm, findMateRoomPageDto);
+        model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
+        model.addAttribute("addUser", new RoomUser());
+        return "find-mate-ver2";
+    }
+
+    @PostMapping("/mate/room/ver3/{password}/{roomId}")
+    public String revealUserNameVer3(@PathVariable String password, @PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
+        FindMateRoomPageDto findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
+
+        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
+        String[] localDateTimeSplit = localDateTime.split("-");
+        String year = localDateTimeSplit[0];
+        String month = localDateTimeSplit[1];
+        String date = localDateTimeSplit[2];
+        String day = "(" + localDateTimeSplit[3] + ")";
+        int hour = Integer.parseInt(localDateTimeSplit[4]);
+        String minute = localDateTimeSplit[5];
+        String time;
+        if (hour >= 12) {
+            time = "오후 " + (hour - 12) + ":" + minute;
+        } else {
+            time = "오전 " + hour + ":" + minute;
+        }
+
+        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
+        String[] expiredTimeSentenceSplit = expiredTimeSentence.split("오");
+
+        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
+        findMateRoomPageForm.setYear(year);
+        findMateRoomPageForm.setMonth(month);
+        findMateRoomPageForm.setDate(date);
+        findMateRoomPageForm.setDay(day);
+        findMateRoomPageForm.setTime(time);
+        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
+        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
+        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
+        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
+
+        model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
+        model.addAttribute("addUser", new RoomUser());
+        model.addAttribute("expiredTime1", expiredTimeSentenceSplit[0]);
+        model.addAttribute("expiredTime2", "오" + expiredTimeSentenceSplit[1]);
+
+        return "find-mate-ver3";
+    }
+
 
 
     /**
