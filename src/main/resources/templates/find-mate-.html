@@ -157,7 +157,14 @@
 
 
 </div>
-<div th:text="${message}">message</div>
+<script th:inline="javascript">
+  var message = /*[[${message}]]*/ '';
+
+  if (message.trim() !== '') {
+    alert(message);
+    // 또는 원하는 형태의 팝업창을 띄우는 코드 작성
+  }
+</script>
 
 <script type="text/javascript" src="./js/menu.js"></script>
 <script type="text/javascript" src="./js/find_mate.js"></script>
