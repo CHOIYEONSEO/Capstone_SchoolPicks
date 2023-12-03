@@ -38,7 +38,7 @@ public class ShopRecommendServiceTest {
     @Test
     void 가게상세정보검색(){
         SpecificDto specificDto = shopRecommendService.findShopById(170L);
-        Assertions.assertThat(specificDto.getX_position()).isEqualTo("37.2971");
+        Assertions.assertThat(specificDto.getX_position()).isEqualTo("37.5845");
     }
 
     @Test

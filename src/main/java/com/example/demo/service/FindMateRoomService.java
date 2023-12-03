@@ -105,7 +105,7 @@ public class FindMateRoomService {
         log.info("findMateRoom.getHeadCount() = " + findMateRoom.getHeadCount());
         log.info("findMateRoom.getRoomUsers().size() = " + findMateRoom.getRoomUsers().size());
 
-        // 적정 인원보다 많은 경우 reject, 나중에 이거 신호로 변경
+        // 적정 인원보다 많은 경우 reject
         if(findMateRoom.getRoomUsers().size() == findMateRoom.getHeadCount()){
             return;
         }
