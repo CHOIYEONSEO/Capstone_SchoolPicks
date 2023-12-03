@@ -84,13 +84,8 @@ public class FindMateController {
             return "find-mate-";
         }
 
-
         String roomId = response.getData();
         model.addAttribute("roomId", roomId);
-
-
-        log.info("Before roomId = " + roomId);
-        log.info("Before isPrivacy = " + isPrivate);
 
         int version = findMateRoomForm.getVersion();
         if (version == 4) {
@@ -111,93 +106,25 @@ public class FindMateController {
 
     @GetMapping("/mate/room/ver1/{roomId}")
     public String showFindMateRoomVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
-
-        FindMateRoomPageDto findMateRoomPageDto;
-        if (findMateRoomService.getIsPrivate(roomId)) {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
-        } else {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-        }
-
-        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
-        String[] localDateTimeSplit = localDateTime.split("-");
-        String year = localDateTimeSplit[0];
-        String month = localDateTimeSplit[1];
-        String date = localDateTimeSplit[2];
-        String day = "(" + localDateTimeSplit[3] + ")";
-        int hour = Integer.parseInt(localDateTimeSplit[4]);
-        String minute = localDateTimeSplit[5];
-        String time;
-        if (hour >= 12) {
-            time = "오후 " + (hour - 12) + ":" + minute;
-        } else {
-            time = "오전 " + hour + ":" + minute;
-        }
-
-        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
-
-        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
-        findMateRoomPageForm.setYear(year);
-        findMateRoomPageForm.setMonth(month);
-        findMateRoomPageForm.setDate(date);
-        findMateRoomPageForm.setDay(day);
-        findMateRoomPageForm.setTime(time);
-        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
-        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
-        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
-        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
-        findMateRoomPageForm.setExpiredTime(expiredTimeSentence);
-
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDto(roomId);
+        setDtoInForm(findMateRoomPageForm, findMateRoomPageDto);
         model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
         model.addAttribute("addUser", new RoomUser());
-
         return "find-mate-ver1";
+    }
+
+    private FindMateRoomPageDto getFindMateRoomPageDto(String roomId) {
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
+        return findMateRoomPageDto;
     }
 
 
     @GetMapping("/mate/room/ver2/{roomId}")
     public String showFindMateRoomVer2(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
-
-        FindMateRoomPageDto findMateRoomPageDto;
-        if (findMateRoomService.getIsPrivate(roomId)) {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
-        } else {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-        }
-
-        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
-        String[] localDateTimeSplit = localDateTime.split("-");
-        String year = localDateTimeSplit[0];
-        String month = localDateTimeSplit[1];
-        String date = localDateTimeSplit[2];
-        String day = "(" + localDateTimeSplit[3] + ")";
-        int hour = Integer.parseInt(localDateTimeSplit[4]);
-        String minute = localDateTimeSplit[5];
-        String time;
-        if (hour >= 12) {
-            time = "오후 " + (hour - 12) + ":" + minute;
-        } else {
-            time = "오전 " + hour + ":" + minute;
-        }
-
-        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
-
-        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
-        findMateRoomPageForm.setYear(year);
-        findMateRoomPageForm.setMonth(month);
-        findMateRoomPageForm.setDate(date);
-        findMateRoomPageForm.setDay(day);
-        findMateRoomPageForm.setTime(time);
-        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
-        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
-        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
-        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
-        findMateRoomPageForm.setExpiredTime(expiredTimeSentence);
-
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
+        setDtoInForm(findMateRoomPageForm, findMateRoomPageDto);
         model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
         model.addAttribute("addUser", new RoomUser());
-
-
         return "find-mate-ver2";
     }
 
@@ -205,12 +132,7 @@ public class FindMateController {
     @GetMapping("/mate/room/ver3/{roomId}")
     public String showFindMateRoomVer3(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
-        FindMateRoomPageDto findMateRoomPageDto;
-        if (findMateRoomService.getIsPrivate(roomId)) {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
-        } else {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-        }
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
 
         String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
         String[] localDateTimeSplit = localDateTime.split("-");
@@ -252,12 +174,7 @@ public class FindMateController {
     @GetMapping("/mate/room/ver4/{roomId}")
     public String showFindMateRoomVer4(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
-        FindMateRoomPageDto findMateRoomPageDto;
-        if (findMateRoomService.getIsPrivate(roomId)) {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
-        } else {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-        }
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
 
         String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
         String[] localDateTimeSplit = localDateTime.split("-");
@@ -354,43 +271,13 @@ public class FindMateController {
      */
     @PostMapping("/mate/room/ver1/{password}/{roomId}")
     public String revealUserNameVer1(@PathVariable String password, @PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
-
         FindMateRoomPageDto findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-
-        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
-        String[] localDateTimeSplit = localDateTime.split("-");
-        String year = localDateTimeSplit[0];
-        String month = localDateTimeSplit[1];
-        String date = localDateTimeSplit[2];
-        String day = "(" + localDateTimeSplit[3] + ")";
-        int hour = Integer.parseInt(localDateTimeSplit[4]);
-        String minute = localDateTimeSplit[5];
-        String time;
-        if (hour >= 12) {
-            time = "오후 " + (hour - 12) + ":" + minute;
-        } else {
-            time = "오전 " + hour + ":" + minute;
-        }
-
-        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
-
-        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
-        findMateRoomPageForm.setYear(year);
-        findMateRoomPageForm.setMonth(month);
-        findMateRoomPageForm.setDate(date);
-        findMateRoomPageForm.setDay(day);
-        findMateRoomPageForm.setTime(time);
-        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
-        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
-        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
-        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
-        findMateRoomPageForm.setExpiredTime(expiredTimeSentence);
-
+        setDtoInForm(findMateRoomPageForm, findMateRoomPageDto);
         model.addAttribute("password", findMateRoomPageDto.getRoomPassword());
         model.addAttribute("addUser", new RoomUser());
-
         return "find-mate-ver1";
     }
+
 
 
     /**
@@ -398,101 +285,24 @@ public class FindMateController {
      */
     @GetMapping("/mate/instagram/ver1/{roomId}")
     public String shareInstagramVer1(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
-
-        FindMateRoomPageDto findMateRoomPageDto;
-        if (findMateRoomService.getIsPrivate(roomId)) {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
-        } else {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-        }
-
-        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
-        String[] localDateTimeSplit = localDateTime.split("-");
-        String year = localDateTimeSplit[0];
-        String month = localDateTimeSplit[1];
-        String date = localDateTimeSplit[2];
-        String day = "(" + localDateTimeSplit[3] + ")";
-        int hour = Integer.parseInt(localDateTimeSplit[4]);
-        String minute = localDateTimeSplit[5];
-        String time;
-        if (hour >= 12) {
-            time = "오후 " + (hour - 12) + ":" + minute;
-        } else {
-            time = "오전 " + hour + ":" + minute;
-        }
-
-        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
-
-        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
-        findMateRoomPageForm.setYear(year);
-        findMateRoomPageForm.setMonth(month);
-        findMateRoomPageForm.setDate(date);
-        findMateRoomPageForm.setDay(day);
-        findMateRoomPageForm.setTime(time);
-        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
-        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
-        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
-        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
-        findMateRoomPageForm.setExpiredTime(expiredTimeSentence);
-
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
+        setDtoInForm(findMateRoomPageForm, findMateRoomPageDto);
         model.addAttribute("roomId", roomId);
-
         return "ver1-instagram-story";
     }
 
     @GetMapping("/mate/instagram/ver2/{roomId}")
     public String shareInstagramVer2(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
-
-        FindMateRoomPageDto findMateRoomPageDto;
-        if (findMateRoomService.getIsPrivate(roomId)) {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
-        } else {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-        }
-
-        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
-        String[] localDateTimeSplit = localDateTime.split("-");
-        String year = localDateTimeSplit[0];
-        String month = localDateTimeSplit[1];
-        String date = localDateTimeSplit[2];
-        String day = "(" + localDateTimeSplit[3] + ")";
-        int hour = Integer.parseInt(localDateTimeSplit[4]);
-        String minute = localDateTimeSplit[5];
-        String time;
-        if (hour >= 12) {
-            time = "오후 " + (hour - 12) + ":" + minute;
-        } else {
-            time = "오전 " + hour + ":" + minute;
-        }
-
-        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
-
-        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
-        findMateRoomPageForm.setYear(year);
-        findMateRoomPageForm.setMonth(month);
-        findMateRoomPageForm.setDate(date);
-        findMateRoomPageForm.setDay(day);
-        findMateRoomPageForm.setTime(time);
-        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
-        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
-        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
-        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
-        findMateRoomPageForm.setExpiredTime(expiredTimeSentence);
-
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
+        setDtoInForm(findMateRoomPageForm, findMateRoomPageDto);
         model.addAttribute("roomId", roomId);
-
         return "ver2-instagram-story";
     }
 
     @GetMapping("/mate/instagram/ver3/{roomId}")
     public String shareInstagramVer3(@PathVariable String roomId, @ModelAttribute("findMateRoomPage") FindMateRoomPageForm findMateRoomPageForm, Model model) {
 
-        FindMateRoomPageDto findMateRoomPageDto;
-        if (findMateRoomService.getIsPrivate(roomId)) {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
-        } else {
-            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
-        }
+        FindMateRoomPageDto findMateRoomPageDto = getFindMateRoomPageDtoDistinguishedPrivate(roomId);
 
         String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
         String[] localDateTimeSplit = localDateTime.split("-");
@@ -560,6 +370,51 @@ public class FindMateController {
         }
         return expiredTimeSentence;
     }
+
+    private static void setDtoInForm(FindMateRoomPageForm findMateRoomPageForm, FindMateRoomPageDto findMateRoomPageDto) {
+        setDateTimeInForm(findMateRoomPageForm, findMateRoomPageDto);
+        String expiredTimeSentence = setExpiredTimeSentence(findMateRoomPageDto);
+
+        findMateRoomPageForm.setShopName(findMateRoomPageDto.getShopName());
+        findMateRoomPageForm.setHeadCount(findMateRoomPageDto.getHeadCount());
+        findMateRoomPageForm.setRoomWriter(findMateRoomPageDto.getRoomWriter());
+        findMateRoomPageForm.setRoomMessage(findMateRoomPageDto.getRoomMessage());
+        findMateRoomPageForm.setUsers(findMateRoomPageDto.getUsers());
+        findMateRoomPageForm.setExpiredTime(expiredTimeSentence);
+    }
+
+    private static void setDateTimeInForm(FindMateRoomPageForm findMateRoomPageForm, FindMateRoomPageDto findMateRoomPageDto) {
+        String localDateTime = findMateRoomPageDto.getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd-E-HH-mm-ss"));
+        String[] localDateTimeSplit = localDateTime.split("-");
+        String year = localDateTimeSplit[0];
+        String month = localDateTimeSplit[1];
+        String date = localDateTimeSplit[2];
+        String day = "(" + localDateTimeSplit[3] + ")";
+        int hour = Integer.parseInt(localDateTimeSplit[4]);
+        String minute = localDateTimeSplit[5];
+        String time;
+        if (hour >= 12) {
+            time = "오후 " + (hour - 12) + ":" + minute;
+        } else {
+            time = "오전 " + hour + ":" + minute;
+        }
+        findMateRoomPageForm.setYear(year);
+        findMateRoomPageForm.setMonth(month);
+        findMateRoomPageForm.setDate(date);
+        findMateRoomPageForm.setDay(day);
+        findMateRoomPageForm.setTime(time);
+    }
+
+    private FindMateRoomPageDto getFindMateRoomPageDtoDistinguishedPrivate(String roomId) {
+        FindMateRoomPageDto findMateRoomPageDto;
+        if (findMateRoomService.getIsPrivate(roomId)) {
+            findMateRoomPageDto = findMateRoomService.showFindMateRoomWithBlindMode(roomId);
+        } else {
+            findMateRoomPageDto = findMateRoomService.showFindMateRoom(roomId);
+        }
+        return findMateRoomPageDto;
+    }
+
 
 
 }
