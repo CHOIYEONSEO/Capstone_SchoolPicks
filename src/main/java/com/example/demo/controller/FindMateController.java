@@ -10,15 +10,18 @@ import com.example.demo.service.FindMateRoomService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -33,18 +36,48 @@ public class FindMateController {
     private final FindMateRoomService findMateRoomService;
 
     @GetMapping("/mate")
-    public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model) {
+    public String writeFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model
+            , @Nullable HttpServletRequest request) {
+
         log.info("get Mapping /mate 여기");
+        if(request != null){
+            try{
+                Cookie[] cookies = request.getCookies();
+                if(cookies != null){
+                    for(Cookie cookie: cookies){
+                        String str = URLDecoder.decode(cookie.getValue(), "UTF-8");
+
+                        if(cookie.getName().equals("prevName"))
+                            findMateRoomForm.setRoomWriter(str);
+                        else if(cookie.getName().equals("prevPassword"))
+                            findMateRoomForm.setRoomPassword(str);
+                    }
+                }
+
+            } catch (UnsupportedEncodingException e) {
+
+            }
+        }
+
         findMateRoomForm.setHeadCount(2);
         findMateRoomForm.setIsPrivate(String.valueOf(false));
         findMateRoomForm.setVersion(4);
+
         return "find-mate-";
     }
 
     @PostMapping("/mate")
     public String postFindMateRoom(@ModelAttribute("findMateRoom") FindMateRoomForm findMateRoomForm, Model model
-            , RedirectAttributes redirectAttributes, ModelAndView mav) {
+            , HttpServletResponse httpServletResponse) {
 
+        Cookie cookie = new Cookie("prevName", findMateRoomForm.getRoomWriter());
+        cookie.setMaxAge(3600 * 12 * 7);
+
+        Cookie cookie2 = new Cookie("prevPassword", findMateRoomForm.getRoomPassword());
+        cookie2.setMaxAge(3600 * 12 * 7);
+
+        httpServletResponse.addCookie(cookie);
+        httpServletResponse.addCookie(cookie2);
         //로그 찍기
         logPostFindMateRoom(findMateRoomForm);
 
