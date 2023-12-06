@@ -306,7 +306,7 @@ input[type="checkbox"]{
 /* content4 - 네이버지도로 이동하기 */
 .content4{
     position: absolute;
-    left: 145px;
+    left: 153px;
     top: 650px;
 }
 
@@ -317,8 +317,8 @@ input[type="checkbox"]{
     line-height: 13px;
     letter-spacing: 0.03em;
     position: absolute;
-    left: 125px;
-    top: 685px;
+    left: 134px;
+    top: 679px;
 }
 
 #goto_detail{
