@@ -34,8 +34,15 @@
       <form th:action method="post" id="editVer1Form">
         <div class="rectangle-container" id="edit">
           <div class="group-inner"></div>
-          <div class="div21">수정하기</div>
+          <div class="div21">수정</div>
           <div th:text="${password}" id="password">1234</div>
+        </div>
+      </form>
+      <form th:action method="post" id="delVer1Form">
+        <div class="rectangle-containerD" id="delete">
+          <div class="group-inner"></div>
+          <div class="div21">삭제</div>
+          <div th:text="${password}" id="passwordD">1234</div>
         </div>
       </form>
       <div class="group-parent">

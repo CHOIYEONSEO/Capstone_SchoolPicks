@@ -393,7 +393,7 @@ li:nth-child(4n){
   left: calc(50% - 28.5px);
   border-radius: var(--br-4xl);
   background-color: var(--color-lightsteelblue-100);
-  width: 57px;
+  width: 47px;
   height: 28px;
 }
 .div33 {
@@ -405,8 +405,20 @@ li:nth-child(4n){
 .rectangle-parent1 {
   position: absolute;
   top: 66px;
-  left: 294px;
-  width: 57px;
+  left: 265px;
+  width: 47px;
+  height: 28px;
+  text-align: center;
+  font-size: var(--font-size-3xs);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+  cursor: pointer;
+}
+.rectangle-parent1D {
+  position: absolute;
+  top: 66px;
+  left: 317px;
+  width: 47px;
   height: 28px;
   text-align: center;
   font-size: var(--font-size-3xs);
