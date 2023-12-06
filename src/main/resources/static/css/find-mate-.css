@@ -90,6 +90,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   letter-spacing: 0.11em;
   font-weight: 300;
   width: 300px;
+  border: none;
 }
 .transparent-parent {
   position: absolute;
@@ -109,6 +110,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   font-weight: 300;
   text-align: right;
   width: 170px;
+  border: none;
 }
 .transparent-group {
   position: absolute;
@@ -126,6 +128,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   font-size: var(--font-size-3xs);
   font-weight: 300;
   text-align: right;
+  border: none;
 }
 .transparent-container,
 .transparent3 {
@@ -146,6 +149,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   font-weight: 300;
   text-align: right;
   width: 50px;
+  border: none;
 }
 .div25-1 {
   position: absolute;
@@ -284,6 +288,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   letter-spacing: 0.11em;
   font-weight: 300;
   text-align: right;
+  border: none;
 }
 .menu-nav-child1,
 .transparent-parent4 {
@@ -311,6 +316,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   font-size: var(--font-size-3xs);
   font-weight: 300;
   text-align: right;
+  border: none;
 }
 
 .menu-nav-child1 {
@@ -359,6 +365,7 @@ input[type=radio]:checked + .selected>.ver4-selected{
   left: calc(50% - 27px);
   letter-spacing: 0.13em;
   font-weight: 300;
+  color: black;
 }
 .rectangle-parent1 {
   position: absolute;
