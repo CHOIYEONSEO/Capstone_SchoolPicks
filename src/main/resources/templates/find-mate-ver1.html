@@ -166,6 +166,7 @@
         }
       }
       function checkName() {
+        document.getElementById("submitButton").disabled = false;
         var groupContainer10 = document.getElementById("username").value;
         if (groupContainer10 !== "") {
           var confirmation = confirm('입력하신 이름이 ' + groupContainer10 + ' 맞으신가요?');
