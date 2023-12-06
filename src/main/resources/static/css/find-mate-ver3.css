@@ -442,6 +442,11 @@ li:nth-child(4n){
   display: none;
 }
 
+#submitButton{
+  background-color: transparent;
+  border: 0px transparent solid;
+}
+
 #submitButton:disabled {
     opacity: 1;
     filter: none;
