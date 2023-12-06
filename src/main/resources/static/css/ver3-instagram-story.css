@@ -79,10 +79,10 @@
 }
 .insta-link-ver3 {
   position: absolute;
-  height: 7.35%;
-  width: 10.7%;
-  top: 10.23%;
-  left: 10%;
+  height: 30px;
+  width: 30px;
+  top: 9.4%;
+  left: 7%;
   transform: rotate(-3deg);
 }
 .date {

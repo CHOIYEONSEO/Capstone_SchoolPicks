@@ -337,10 +337,10 @@ li:nth-child(4n){
 }
 .insta-link-ver2 {
   position: absolute;
-  height: 7.44%;
-  width: 12.32%;
-  top: 9.69%;
-  left: 8.9%;
+  height: 30px;
+  width: 30px;
+  top: 9.4%;
+  left: 7%;
 }
 .div50 {
   position: absolute;
