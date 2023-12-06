@@ -134,6 +134,8 @@ var guestNumber = document.getElementById("guest-number3").innerText;
 //약속일자
 var appointTime = document.getElementById("appoint-time3").innerText;
 //마감시간
+var closeDate = document.getElementById("close-date3").innerText;
+var closeTime = document.getElementById("close-time3").innerText;
 
 /* 카카오톡 공유하기 */
 function kakaoShare() {
@@ -165,7 +167,7 @@ function kakaoShare() {
             },
             {
               item: '약속 마감시간',
-              itemOp: "",
+              itemOp: closeDate+" "+closeTime,
             },
           ],
         },

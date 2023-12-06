@@ -1,10 +1,10 @@
 //한국시간으로 맞추기
 const offset = 1000 * 60 * 60 * 9;
 
-let date = new Date((new Date()).getTime() + offset);
-date.setHours(date.getHours() + 1);
-document.getElementById('tempt3').value= date.toISOString().slice(0, 16);
+let dateDf= new Date((new Date()).getTime() + offset);
+dateDf.setHours(dateDf.getHours() + 1);
+document.getElementById('tempt3').value= dateDf.toISOString().slice(0, 16);
 
-let closeTime = new Date((new Date()).getTime() + offset);
-closeTime.setMinutes(closeTime.getMinutes() + 50);
-document.getElementById('tempt8').value= closeTime.toISOString().slice(0, 16);
+let closeTimeDf = new Date((new Date()).getTime() + offset);
+closeTimeDf.setMinutes(closeTimeDf.getMinutes() + 50);
+document.getElementById('tempt8').value= closeTimeDf.toISOString().slice(0, 16);

@@ -142,6 +142,7 @@ var appointDate = document.getElementById("appoint-date1").innerText;
 var appointDay = document.getElementById("appoint-day1").innerText;
 var appointTime = document.getElementById("appoint-time1").innerText;
 //마감시간
+var closeTime = document.getElementById("close-time1").innerText;
 
 /* 카카오톡 공유하기 */
 function kakaoShare() {
@@ -176,7 +177,7 @@ function kakaoShare() {
             },
             {
               item: '약속 마감시간',
-              itemOp: "",
+              itemOp: closeTime,
             },
           ],
         },
