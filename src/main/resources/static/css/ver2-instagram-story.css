@@ -1,3 +1,8 @@
+body{
+  min-width: 479px;
+  min-height: 852px;
+}
+
 .instance-child2 {
   position: absolute;
   height: 706px;

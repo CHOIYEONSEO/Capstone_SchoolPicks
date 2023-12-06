@@ -1,3 +1,8 @@
+body{
+  min-width: 479px;
+  min-height: 852px;
+}
+
 .ver1-instagram-story-child {
   position: absolute;
   top: 64px;
@@ -211,7 +216,7 @@
 .close_time_div{
   position: absolute;
   top: 79.5%;
-  left: 43%;
+  left: 41%;
   font-size: var(--font-size-base);
   color: var(--color-dimgray);
 }
