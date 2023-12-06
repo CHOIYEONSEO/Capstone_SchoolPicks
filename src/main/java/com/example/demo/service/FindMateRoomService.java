@@ -34,7 +34,7 @@ public class FindMateRoomService {
         LocalDateTime targetTime = currentTime.plus(30, ChronoUnit.MINUTES);
 
         if(dto.getPlanTime().isBefore(targetTime)){ // 30분보다 일찍 잡힌 경우
-            return ResponseDto.setFailed("약속 시간을 현재시간으로부터 최소 30분 이후로 설정해주세요.");
+            return ResponseDto.setFailed("약속 시간을 현재시간으로부터 최소 30분 이후로git 설정해주세요.");
         }
 
         // 마감시간이 만료시간보다 뒤에 있거나, 현재 시간보다 앞에 있는 경우 에러 발생

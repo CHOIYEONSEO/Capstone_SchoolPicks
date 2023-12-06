@@ -26,20 +26,19 @@ public class ShopRecommendService {
         List<Shop> shops = recommendRepository.findSelectedShop(schoolTypes, shopTypes, priceMin, priceMax);
         String answer; // 결과 값 리턴
 
+        Random random = new Random();
         // 조건에 맞는 경우가 없으면?
         if(shops.isEmpty()){
-//            return "다시 선택해주세요.";
-            return null;
-            // 이 경우에 인터넷 위에 뜨는 Toast 메세지 같은 거처럼
-            // 금액조건에 맞는 식당이 없습니다, 금액의 범위를 더 넓게 조정해주세요.
-            // 라고 띄워주시면 될 것 같습니다.
+            List<Shop> tmpShops = shopRepository.findAll();
+            int idx = random.nextInt(tmpShops.size());
+            return tmpShops.get(idx);
+
         }
-        Random random = new Random();
+
 
         int idx = random.nextInt(shops.size());
-        Shop shop = shops.get(idx);
-//        return shop.getName();
-        return shop;
+
+        return shops.get(idx);
     }
 
     public SpecificDto findShopById(Long id){
