@@ -225,7 +225,7 @@
 .close_time_div{
   position: absolute;
   top: 80.6%;
-  left: 43%;
+  left: 41%;
   font-size: var(--font-size-base);
   color: rgba(38, 57, 159, 0.55);
 }
