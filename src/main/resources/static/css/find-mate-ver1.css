@@ -213,8 +213,14 @@ li:nth-child(4n){
 .div20,
 .group-7-12 {
   position: absolute;
-  top: 623px;
+  top: 622px;
   left: 305px;
+}
+
+.div20{
+  font-size: 18px;
+  color: var(--ios-key-label);
+  font-family: var(--font-poor-story);
 }
 
 .rectangle-container-1 {
@@ -361,7 +367,7 @@ li:nth-child(4n){
 .div21 {
   position: absolute;
   top: 8px;
-  left: calc(50% - 18.5px);
+  left: calc(50% - 17px);
   letter-spacing: 0.07em;
 }
 .rectangle-container {

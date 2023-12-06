@@ -67,7 +67,6 @@
     <div class="reservater_message_user" th:text="*{roomMessage}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam suscipit repellendus sed ratione, laboriosam nulla aspernatur maiores dolorum quod officiis quas aut, eos amet, voluptates inventore esse distinctio molestiae voluptatem.</div>
     <form th:action="@{/mate/room/ver3/addUser/{roomId}(roomId=${roomId})}" method="post">
         <button type="submit" id="submitButton"><div class="add_button" id="checkname" th:onclick="checkName()">추가하기</div></button>
-        <div class="find-mate-ver3-inner"></div>
         <div class="find-mate-ver3-child1"></div>
         <div class="find-mate-ver3-child2"></div>
         <input type="text" th:field="${addUser.userName}" name="room_manager_name" class="reservater_guest" id="username" placeholder="예약자">

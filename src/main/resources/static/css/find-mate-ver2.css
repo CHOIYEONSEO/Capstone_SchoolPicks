@@ -225,6 +225,10 @@
   background-color: transparent;
 }
 
+.rectangle-div::placeholder{
+  color: rgb(130,130,130);
+}
+
 .rectangle-parent14 {
   position: absolute;
   top: 431px;
@@ -249,6 +253,7 @@
   left: 335px;
   font-size: var(--font-size-smi);
   font-weight: 500;
+  color: black;
 }
 
 .rectangle-container-1 {
@@ -284,7 +289,7 @@
 .close_time_div{
   position: absolute;
   top: 630px;
-  left: 160px;
+  left: 156px;
   font-size: var(--font-size-smi);
   color: var(--color-midnightblue-200);
 }
@@ -322,10 +327,10 @@ li:nth-child(3n){
 .find-mate-ver2-inner {
   position: absolute;
   top: 621px;
-  left: 14px;
+  left: 15px;
   border-top: 2px solid var(--color-midnightblue-100);
   box-sizing: border-box;
-  width: 365px;
+  width: 363px;
   height: 2px;
 }
 .find-mate-ver2-child1 {
@@ -444,7 +449,7 @@ li:nth-child(3n){
 .div91 {
   position: absolute;
   top: 8px;
-  left: calc(50% - 18.5px);
+  left: calc(50% - 17px);
   letter-spacing: 0.07em;
 }
 .rectangle-parent16 {
