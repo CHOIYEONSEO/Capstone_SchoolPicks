@@ -67,6 +67,12 @@
   top: 196px;
   left: 28.7px;
   width: 335.7px;
+  height: 535px;
+  overflow: auto;
+}
+
+.review_content::-webkit-scrollbar{
+    display: none;
 }
 
 .ul_border{
