@@ -84,7 +84,7 @@ $ cd Capston-Project-SchoolPicks
 
 | Main Menu                                               | Recommendation                                          | Find Mate                                               | Histroy                                                 |
 |---------------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|
-| <img src="./img/screen1.png" width="400" height="auto"> | <img src="./img/screen2.png" width="200" height="auto"> | <img src="./img/screen3.png" width="400" height="auto"> | <img src="./img/screen4.png" width="400" height="auto"> |
+| <img src="./img/screen1.png" width="400" height="auto"> | <img src="./img/screen2.png" width="400" height="auto"> | <img src="./img/screen3.png" width="400" height="auto"> | <img src="./img/screen4.png" width="400" height="auto"> |
 
 
 
