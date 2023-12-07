@@ -45,11 +45,6 @@
         </div>
     </form>
     <div class="group-container">
-        <div class="rectangle-parent19" id="clipboard" th:onclick="greetWorld()">
-            <div class="group-child14"></div>
-            <div class="kakaotalk1">LinkCopy</div>
-            <img class="share-icon2" alt="" src="/public/download_image.png" />
-        </div>
         <div class="rectangle-parent17" th:onclick="|location.href='@{/mate/instagram/ver2/{roomId}(roomId=${roomId})}'|" id = "insta2"> <!--여기에 클릭시 넘어가는 페이지 url 넣어주세요-->
             <div class="group-child14"></div>
             <div class="instagram-story1">
@@ -58,6 +53,11 @@
             </div>
             <img class="share-icon2" alt="" src="/public/share@2x.png" />
         </div>
+        <a class="rectangle-parent19" id="clipboard" th:onclick="greetWorld()">
+            <div class="group-child14"></div>
+            <div class="kakaotalk1">LinkCopy</div>
+            <img class="share-icon2" alt="" src="/public/download_image.png" />
+        </a>
         <a class="rectangle-parent18" href="javascript:kakaoShare()">
             <div class="group-child14"></div>
             <div class="kakaotalk1">KakaoTalk</div>
@@ -148,18 +148,18 @@
 
     <script type="text/javascript" src="/js/menu.js"></script>
     <script  th:inline="javascript">
+        function copyToClipboard(val) {
+          const t = document.createElement("textarea");
+          document.body.appendChild(t);
+          t.value = val;
+          t.select();
+          document.execCommand('copy');
+          document.body.removeChild(t);
+        }
         function greetWorld() {
-          var groupContainer9 = document.getElementById("clipboard");
-          if (groupContainer9) {
-              groupContainer9.addEventListener("click", function (e) {
-                  var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
-                  navigator.clipboard.writeText(linkToCopy).then(function() {
-                      alert('링크가 클립보드에 저장되었습니다.');
-                  }).catch(function(err) {
-                      console.error('클립보드 저장 실패: ', err);
-                  });
-              });
-          }
+          var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
+          copyToClipboard(linkToCopy);
+          console.log('Copied!');
         }
         function checkName() {
             document.getElementById("submitButton").disabled = false;

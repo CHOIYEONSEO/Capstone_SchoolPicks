@@ -54,16 +54,16 @@
           </div>
           <img class="share-icon" alt="" src="/public/share@2x.png" />
         </div>
+        <a class="rectangle-group-1" id="clipboard" th:onclick="greetWorld()">
+          <div class="group-child"></div>
+          <div class="kakaotalk">LinkCopy</div>
+          <img class="share-icon-link" alt="" src="/public/download_image.png">
+        </a>
         <a class="rectangle-group" href="javascript:kakaoShare()">
           <div class="group-child"></div>
           <div class="kakaotalk">KakaoTalk</div>
           <img class="share-icon" alt="" src="/public/share@2x.png" />
         </a>
-        <div class="rectangle-group-1" id="clipboard" th:onclick="greetWorld()">
-          <div class="group-child"></div>
-          <div class="kakaotalk">LinkCopy</div>
-          <img class="share-icon-link" alt="" src="/public/download_image.png">
-        </div>
       </div>
       <div class="menu-nav2" id="menuNavContainer" th:onclick="|location.href='@{/menu}'|">
         <div class="menu-nav-inner"></div>
@@ -151,19 +151,22 @@
       Kakao.init('');
     </script>
 
+    <script src="./js/clipboard.min.js"></script>
+    <script src="./js/copy2clipboard.js"></script>
+
     <script  th:inline="javascript">
+      function copyToClipboard(val) {
+        const t = document.createElement("textarea");
+        document.body.appendChild(t);
+        t.value = val;
+        t.select();
+        document.execCommand('copy');
+        document.body.removeChild(t);
+      }
       function greetWorld() {
-        var groupContainer9 = document.getElementById("clipboard");
-        if (groupContainer9) {
-            groupContainer9.addEventListener("click", function (e) {
-                var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
-                navigator.clipboard.writeText(linkToCopy).then(function() {
-                    alert('링크가 클립보드에 저장되었습니다.');
-                }).catch(function(err) {
-                    console.error('클립보드 저장 실패: ', err);
-                });
-            });
-        }
+        var linkToCopy = window.location.href; // 현재 페이지의 링크를 가져옴
+        copyToClipboard(linkToCopy);
+        console.log('Copied!');
       }
       function checkName() {
         document.getElementById("submitButton").disabled = false;
