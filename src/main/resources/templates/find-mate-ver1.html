@@ -38,7 +38,7 @@
           <div th:text="${password}" id="password">1234</div>
         </div>
       </form>
-      <form th:action method="post" id="delVer1Form">
+      <form th:action="@{/mate/room/ver1/delete/{roomId}(roomId=${roomId})}" method="post" id="delVer1Form">
         <div class="rectangle-containerD" id="delete">
           <div class="group-inner"></div>
           <div class="div21">삭제</div>

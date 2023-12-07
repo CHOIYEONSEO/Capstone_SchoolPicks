@@ -265,6 +265,27 @@ public class FindMateController {
     }
 
     /**
+     * 삭제하기
+     */
+    @PostMapping("/mate/room/ver1/delete/{roomId}")
+    public String deleteFindMateRoomVer1(@PathVariable String roomId) {
+        findMateRoomService.deleteFindMateRoom(roomId);
+        return "redirect:/menu";
+    }
+
+    @PostMapping("/mate/room/ver2/delete/{roomId}")
+    public String deleteFindMateRoomVer2(@PathVariable String roomId) {
+        findMateRoomService.deleteFindMateRoom(roomId);
+        return "redirect:/menu";
+    }
+
+    @PostMapping("/mate/room/ver3/delete/{roomId}")
+    public String deleteFindMateRoomVer3(@PathVariable String roomId) {
+        findMateRoomService.deleteFindMateRoom(roomId);
+        return "redirect:/menu";
+    }
+
+    /**
      * 배고픈 사람 입력 (유저 추가하기)
      */
     @PostMapping("/mate/room/ver1/addUser/{roomId}")

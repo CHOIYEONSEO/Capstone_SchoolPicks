@@ -64,6 +64,22 @@ if (containerVer3) {
     });
 }
 
+// delete the post
+var deleteGroupContainer = document.getElementById("delVer3");
+var deleteVer3Form = document.getElementById("delVer3Form");
+var deletePassword = document.getElementById("passwordVer3D").innerText;
+if (deleteGroupContainer) {
+    deleteGroupContainer.addEventListener("click", function (e) {
+        var deletepass3 = prompt('비밀번호를 입력하시오',"");
+        if(!deletepass3) { //취소 눌렀을때
+        }
+        if(deletepass3.toLowerCase() == deletePassword){ //1398로 암호지정하면
+//            window.location.href = "/mate";
+            deleteVer3Form.submit();
+        }
+    });
+}
+
 var publicVar = document.getElementById("public");
 var revealFormVer3 = document.getElementById("revealFormVer3");
 var password1 = document.getElementById("password-1").innerText;
